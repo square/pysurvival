@@ -69,7 +69,7 @@ print("MTLR model c-index = {:.2f}".format(c_index2))
 
 ---
 
-## Support and License
+## Citation and License
 
 ### Citation
 If you use Pysurvival in your research and we would greatly appreciate if you could use the following:
@@ -77,7 +77,7 @@ If you use Pysurvival in your research and we would greatly appreciate if you co
 ```
 @Misc{ pysurvival_cite,
   author =    {Stephane Fotso and others},
-  title =     {{PySurvival}: Open source package for Survival Analysis modeling},
+  title =     {PySurvival: Open source package for Survival Analysis modeling},
   year =      {2019--},
   url = "https://www.pysurvival.io/",
   note = {[Online; accessed <today>]}
