@@ -1,0 +1,1245 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+
+<style>
+  h1, h2, h3 { color: #04A9F4; }
+  pre { color: black !important; }
+</style>
+
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <meta name="description" content="Open source package for Survival Analysis modeling">
+
+
+        <link rel="canonical" href="https://www.pysurvival.io/models/mtlr_theory.html">
+
+
+        <meta name="author" content="The PySurvival Team">
+
+
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+
+        <meta name="lang:search.language" content="en">
+
+        <meta name="lang:search.pipeline.stopwords" content="True">
+
+        <meta name="lang:search.pipeline.trimmer" content="True">
+
+        <meta name="lang:search.result.none" content="No matching documents">
+
+        <meta name="lang:search.result.one" content="1 matching document">
+
+        <meta name="lang:search.result.other" content="# matching documents">
+
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+      <link rel="shortcut icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+
+
+
+        <title>Theory - PySurvival</title>
+
+
+
+      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
+
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+
+
+
+
+        <meta name="theme-color" content="#2196f3">
+
+
+
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+
+
+
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=:300,400,400i,700|">
+        <style>body,input{font-family:"","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"","Courier New",Courier,monospace}</style>
+
+
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+
+
+
+
+
+
+  </head>
+
+
+
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="purple">
+
+    <svg class="md-svg">
+      <defs>
+
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+
+      <a href="#multi-task-logistic-regression-models" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+
+
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.pysurvival.io/" title="PySurvival" class="md-header-nav__button md-logo">
+
+            <img src="../images/logo.ico" width="24" height="24">
+
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+
+            <span class="md-header-nav__topic">
+              PySurvival
+            </span>
+            <span class="md-header-nav__topic">
+              Theory
+            </span>
+
+        </div>
+      </div>
+
+              <!-- Global site tag (gtag.js) - Google Analytics -->
+              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136790579-1"></script>
+              <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-136790579-1');
+              </script>
+
+      <div class="md-flex__cell md-flex__cell--shrink">
+
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+
+
+
+
+
+<a href="https://github.com/square/pysurvival/" title="Go to repository" class="md-source" >
+
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+
+  <div class="md-source__repository">
+    square/pysurvival
+  </div>
+</a>
+          </div>
+        </div>
+
+    </div>
+  </nav>
+</header>
+
+    <div class="md-container">
+
+
+
+
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+
+
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.pysurvival.io/" title="PySurvival" class="md-nav__button md-logo">
+
+        <img src="../images/logo.ico" width="48" height="48">
+
+    </a>
+    PySurvival
+  </label>
+
+    <div class="md-nav__source">
+
+
+
+
+
+<a href="https://github.com/square/pysurvival/" title="Go to repository" class="md-source" >
+
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+
+  <div class="md-source__repository">
+    square/pysurvival
+  </div>
+</a>
+    </div>
+
+  <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../index.html" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../installation.html" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../intro.html" title="Introduction to Survival Analysis" class="md-nav__link">
+      Introduction to Survival Analysis
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../math.html" title="The math of Survival Analysis" class="md-nav__link">
+      The math of Survival Analysis
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+
+    <label class="md-nav__link" for="nav-5">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/churn.html" title="Churn Prediction" class="md-nav__link">
+      Churn Prediction
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/credit_risk.html" title="Credit Risk" class="md-nav__link">
+      Credit Risk
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/employee_retention.html" title="Employee Retention" class="md-nav__link">
+      Employee Retention
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/maintenance.html" title="Predictive Maintenance" class="md-nav__link">
+      Predictive Maintenance
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+
+    <label class="md-nav__link" for="nav-6">
+      Models
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Models
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+
+    <label class="md-nav__link" for="nav-6-1">
+      Cox Proportional Hazard
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Cox Proportional Hazard
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="coxph.html" title="Standard CoxPH  (API)" class="md-nav__link">
+      Standard CoxPH  (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="nonlinear_coxph.html" title="DeepSurv/Nonlinear CoxPH (API)" class="md-nav__link">
+      DeepSurv/Nonlinear CoxPH (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="semi_parametric.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2" checked>
+
+    <label class="md-nav__link" for="nav-6-2">
+      Multi-Task Logistic Regression (MTLR)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Multi-Task Logistic Regression (MTLR)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="linear_mtlr.html" title="Linear MTLR (API)" class="md-nav__link">
+      Linear MTLR (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="neural_mtlr.html" title="Neural MTLR (API)" class="md-nav__link">
+      Neural MTLR (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--active">
+
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+
+
+
+
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Theory
+      </label>
+
+    <a href="mtlr_theory.html" title="Theory" class="md-nav__link md-nav__link--active">
+      Theory
+    </a>
+
+
+<nav class="md-nav md-nav--secondary">
+
+
+
+
+
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+
+        <li class="md-nav__item">
+  <a href="#linear-mtlr-model" title="Linear MTLR model" class="md-nav__link">
+    Linear MTLR model
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#neural-mtlr-model" title="Neural MTLR model" class="md-nav__link">
+    Neural MTLR model
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+
+</li>
+
+
+
+
+
+    </ul>
+
+</nav>
+
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+
+    <label class="md-nav__link" for="nav-6-3">
+      Non-Parametric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        Non-Parametric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="kaplan_meier.html" title="Kaplan Meier (API)" class="md-nav__link">
+      Kaplan Meier (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="smooth_kaplan_meier.html" title="Smoothed Kaplan Meier (API)" class="md-nav__link">
+      Smoothed Kaplan Meier (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="non_parametric.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+
+    <label class="md-nav__link" for="nav-6-4">
+      Parametric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        Parametric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="parametric.html" title="Parametric models (API)" class="md-nav__link">
+      Parametric models (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="parametric_theory.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+
+    <label class="md-nav__link" for="nav-6-5">
+      Simulation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        Simulation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="simulations.html" title="Simulation models (API)" class="md-nav__link">
+      Simulation models (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="simulations_theory.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6">
+
+    <label class="md-nav__link" for="nav-6-6">
+      Survival Forest
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-6">
+        Survival Forest
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="conditional_survival_forest.html" title="Conditional Survival Forest (API)" class="md-nav__link">
+      Conditional Survival Forest (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="extra_survival_trees.html" title="Extra Survival Trees (API)" class="md-nav__link">
+      Extra Survival Trees (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="random_survival_forest.html" title="Random Survival Forest (API)" class="md-nav__link">
+      Random Survival Forest (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="survival_forest.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-7" type="checkbox" id="nav-6-7">
+
+    <label class="md-nav__link" for="nav-6-7">
+      Survival SVM
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-7">
+        Survival SVM
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="linear_svm.html" title="Linear Survival SVM (API)" class="md-nav__link">
+      Linear Survival SVM (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="kernel_svm.html" title="Kernel Survival SVM (API)" class="md-nav__link">
+      Kernel Survival SVM (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="survival_svm.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+
+    <label class="md-nav__link" for="nav-7">
+      Performance metrics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Performance metrics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../metrics/c_index.html" title="C-index" class="md-nav__link">
+      C-index
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../metrics/brier_score.html" title="Brier Score" class="md-nav__link">
+      Brier Score
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+
+    <label class="md-nav__link" for="nav-8">
+      Miscellaneous
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Miscellaneous
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../miscellaneous/activation_functions.html" title="Activation Functions" class="md-nav__link">
+      Activation Functions
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../miscellaneous/save_load.html" title="Saving/Loading models" class="md-nav__link">
+      Saving/Loading models
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../miscellaneous/tips.html" title="Tips for fitting models" class="md-nav__link">
+      Tips for fitting models
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+
+<nav class="md-nav md-nav--secondary">
+
+
+
+
+
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+
+        <li class="md-nav__item">
+  <a href="#linear-mtlr-model" title="Linear MTLR model" class="md-nav__link">
+    Linear MTLR model
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#neural-mtlr-model" title="Neural MTLR model" class="md-nav__link">
+    Neural MTLR model
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+
+</li>
+
+
+
+
+
+    </ul>
+
+</nav>
+                  </div>
+                </div>
+              </div>
+
+
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+
+
+                  <a href="https://github.com/square/pysurvival/edit/master/docs/models/mtlr_theory.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+
+
+                <!-- # MTLR models-->
+
+<style>
+  h1, h2, h3 { color: #04A9F4; }
+</style>
+
+<h1 id="multi-task-logistic-regression-models">Multi-Task Logistic Regression models</h1>
+<p>When it comes to predicting the survival function for a specific unit, the <a href="coxph.html">Cox Proportional Hazard Model</a> is usually the go-to model. However, it presents some important drawbacks:</p>
+<ul>
+<li>It relies on the proportional hazard assumption, which specifies that the ratio of the hazards for any two individuals is constant over time.</li>
+<li>The exact formula of the model that can handle ties isn’t computationally efficient, and is often rewritten using approximations, such as the Efron’s or Breslow’s approximations, in order to fit the model in a reasonable time.</li>
+<li>The fact that the time component of the hazard function remains unspecified makes the CoxPH model ill-suited for actual survival function predictions.</li>
+</ul>
+<p>The Multi-Task Logistic Regression models were therefore introduced to provide great alternatives.</p>
+<hr />
+<h2 id="linear-mtlr-model"><a href="linear_mtlr.html">Linear MTLR model</a></h2>
+<p>The <a href="http://www.cs.cornell.edu/~cnyu/papers/nips11_survival.pdf">Multi-Task Logistic Regression (MTLR) model created by Yu, Chun-Nam, et al. in 2011 </a> can be seen as a series of logistic regression models built on different time intervals so as to estimate the probability that the event of interest happened within each interval.</p>
+<p>The model can be built using the following steps:</p>
+<ol>
+<li>
+<p>We start by dividing the time axis into <script type="math/tex">J</script> time intervals such that <script type="math/tex">\forall j \in [\![1, J ]\!]</script>, <script type="math/tex"> a_j = [ \tau_{j-1}, \tau_j )</script> with <script type="math/tex"> \tau_0 = 0 </script> and <script type="math/tex">\tau_J = \infty</script>.
+<center><img src="images/mtlr_discretizing_time.png" alt="PySurvival - Multi-Task Logistic Regression (MTLR) Discretizing time" title="PySurvival - Multi-Task Logistic Regression (MTLR) Discretizing time" width=100%, height=100% /></center>
+<center>Figure 1 - Subdivisions of the time axis in J intervals</center></p>
+</li>
+<li>
+<p>We then build a logistic regression model on each interval <script type="math/tex">a_j</script>, with the parameters <script type="math/tex">\left( \vec{\theta_j}, b_j \right)</script>  and the response variable
+<script type="math/tex; mode=display">\begin{equation}
+y_j  =
+                 \begin{cases}
+                 1 \text{    , if } T \in a_j \text{ i.e., the event happened in the interval } a_j \\
+                 0 \text{    , otherwise} \\
+                    \end{cases}
+\end{equation}</script>
+But, because we are not analyzing the effects of recurrent events, we need to make sure that when a unit experiences an event on interval <script type="math/tex">a_s</script> with <script type="math/tex">s \in [\![1, J ]\!]</script>, its status for the remaining intervals stays the same. Thus, the response vector <strong><script type="math/tex">{Y}</script></strong> is:
+<script type="math/tex; mode=display">\begin{equation*}
+ \vec{Y} =  \begin{bmatrix}y_1 = 0 \\  y_2 = 0 \\ \vdots \\ y_{s-1} = 0 \\  y_{s} = 1 \\  \vdots  \\  y_{J} =1 \end{bmatrix}
+\end{equation*}</script>
+Chun-Nam Yu et al. proposed the following definitions for the density and survival functions:</p>
+<ul>
+<li>
+<p><em>Density function</em>:
+  <script type="math/tex; mode=display">\begin{equation}
+   \tag{MTLR - density}
+  \begin{split}
+f(a_s,  \vec{x}) & = P\left[  T \in [\tau_{s-1}, \tau_s) | \vec{x} \right]  \\
+    & = \frac{\exp\left(   \sum_{j = s}^{J-1} \vec{x} \cdot \vec{\theta}_j + b_j \right) }{ Z(\vec{x}) } \\
+    & = \frac{\exp\left(  \left(\vec{x} \cdot \textbf{$\Theta$} + \vec{b} \right)\cdot \textbf{$\Delta$}  \right) \circ \vec{Y}  }{ Z(\vec{x}) }
+\end{split}
+  \end{equation}</script>
+</p>
+</li>
+<li>
+<p><em>Survival function</em>:
+   <script type="math/tex; mode=display">\begin{equation}
+   \tag{MTLR - survival}
+    \begin{split}
+S(\tau_{s-1}, \vec{x})  = P\left[  T \geq \tau_{s-1}|\vec{x} \right ]  & =  \sum^{J}_{k = s} P\left[  T \in [\tau_{k-1}, \tau_k) | \vec{x} \right ]  \\
+ & =  \sum^{J}_{k = s} \frac{ \exp \left(   \sum^{J-1}_{j=s} (\vec{x} \cdot \vec{ \theta}_j + b_j) \right) }{  Z(  \vec{x})}    \\
+ & =  \sum^{J}_{k = s} \frac{ \exp \left(  \left(  \vec{x} \cdot \textbf{$\Theta$} + \vec{b} \right) \cdot \textbf{$\Delta$} \right) \circ \vec{Y} }{  Z\left(  \vec{x}\right)}
+\end{split}
+  \end{equation}</script>
+</p>
+</li>
+</ul>
+<p>with:</p>
+<ul>
+<li>
+<script type="math/tex"> \circ </script>, the <a href="https://en.wikipedia.org/wiki/Hadamard_product_(matrices)">Hadamard product</a></li>
+<li>
+<p>the coefficients matrix, <script type="math/tex; mode=display">\displaystyle \Theta =  \begin{bmatrix} \theta_{1, 1} & \theta_{1, 2}  & ... &  \theta_{1, J-1}&  \theta_{1, J} \\
+                                       \theta_{2, 1} & \theta_{2, 2}  & ... &  \theta_{2, J-1}&  \theta_{2, J} \\
+                                       ...   &   ...  & ... & ...  & ...  \\
+                                       \theta_{p, 1} & \theta_{p, 2} & ... &  \theta_{p, J-1}& \theta_{p, J} \\
+                      \end{bmatrix}
+                     = \left[\vec{\theta}_1,  \vec{\theta}_2, ...,    \vec{\theta}_{J-1},  \vec{\theta}_J \right]</script>
+</p>
+</li>
+<li>
+<p>the bias vector: <script type="math/tex; mode=display"> \vec{b} = \begin{bmatrix} b_1, & b_2,   & ... &  b_{J-1}, &  b_J \end{bmatrix}</script>
+</p>
+</li>
+<li>
+<p>the <script type="math/tex">(J \times J+1)</script>-triangular matrix: <script type="math/tex; mode=display">\Delta = \begin{bmatrix} 1 & 0 & 0 & ... & 0 & 0 \\
+                                                      1 & 1  & 0 & ... & 0 & 0 \\
+                                                      \vdots  & \vdots  &  \vdots  &... &   \vdots & \vdots   \\
+                                                      1 & 1  & 1 & ... & 0 & 0 \\
+                                                      1 & 1  & 1 & ... & 1 & 0 \\
+                                      \end{bmatrix} </script>
+</p>
+</li>
+<li>
+<p>the normalization constant <script type="math/tex; mode=display">Z \left(  \vec{x}\right) = \sum_{j=1}^J \exp \left( \sum_{l=j+1}^J \vec{\theta}_l  \cdot \vec{x} + b_l\right)</script>
+</p>
+</li>
+</ul>
+</li>
+<li>
+<p>We can therefore compute the loss function and minimize it to find the optimal model parameters.</p>
+<p>
+<script type="math/tex; mode=display">\begin{equation*}
+    l(\Theta, b) = \sum_{i=1}^N \delta_i \log\left(f(a_s,  \vec{x_i}) \right) + (1-\delta_i)\log\left( S(\tau_{s-1}, \vec{x_i}) \right) + \alpha_{l2}\left(|| \Theta ||^2 + || b ||^2 \right)
+\end{equation*}</script>
+</p>
+</li>
+</ol>
+<hr />
+<h2 id="neural-mtlr-model"><a href="neural_mtlr.html">Neural MTLR model</a></h2>
+<p>Although the MTLR model provides similar results as the CoxPH model without having to rely on the assumptions required by the latter, at its core, it is still powered by a linear transformation. Thus, in the presence of nonlinear elements in the data, it will stop yielding satisfactory performances. The <a href="https://arxiv.org/pdf/1801.05512">Neural Multi-Task Logistic Regression (N-MTLR)</a> which allows the use of Neural Networks within the original MTLR design, will help solve this issue.</p>
+<p>In the case of Neural Multi-Task Logistic Regression, the density and survival functions become:</p>
+<ul>
+<li>
+<p><em>Density function</em>:
+<script type="math/tex; mode=display">\begin{equation}
+\tag{N-MTLR - density}
+\begin{split}
+f(a_s, \vec{x}) = P\left[  T \in [\tau_{s-1}, \tau_s) | \vec{x} \right ]  & =   \frac{ \exp \left(  \psi( \vec{x})  \cdot \textbf{$\Delta$}  \right)  \circ  \vec{Y} }{ Z\left( \psi( \vec{x})\right) }
+\end{split}
+\end{equation}</script>
+</p>
+</li>
+<li>
+<p><em>Survival function</em>:
+<script type="math/tex; mode=display">\begin{equation}
+\tag{N-MTLR - survival}
+\begin{split}
+S(\tau_{s-1}, \vec{x})  =   \sum^{J}_{k = s} \frac{ \exp \left(   \psi( \vec{x})  \cdot  \textbf{$\Delta$}  \right) \circ  \vec{Y} }{ Z\left( \psi( \vec{x})\right) }
+\end{split}
+\end{equation}</script>
+</p>
+</li>
+</ul>
+<p>with <script type="math/tex">  \psi: \mathbb{R}^p \mapsto \mathbb{R}^{J} </script> is the nonlinear transformation using <script type="math/tex">\vec{x} \in  \mathbb{R}^{p}</script> feature vector as its input. Its output is a <script type="math/tex">\mathbb{R}^{J}</script> vector whose values are mapped to the <script type="math/tex">J</script> subdivisions of the time axis
+<center><img src="images/mtlr_mlp.png" alt="PySurvival - Neural Multi-Task Logistic Regression (N-MTLR) - MLP structure" title="PySurvival - Neural Multi-Task Logistic Regression (N-MTLR) - MLP structure" width=70%, height=70%  /></center>
+<center>Figure 2 - Representation of a 2-hidden layer transformation</center></p>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://papers.nips.cc/paper/4210-learning-patient-specific-cancer-survival-distributions-as-a-sequence-of-dependent-regressors.pdf">"Learning patient-specific cancer survival distributions as a sequence of dependent regressors." Yu, Chun-Nam, et al. Advances in Neural Information Processing Systems. 2011.</a></li>
+<li><a href="https://arxiv.org/abs/1801.05512">"Deep Neural Networks for Survival Analysis Based on a Multi-Task Framework." Fotso, S. (2018). arXiv:1801.05512.</a></li>
+<li><a href="https://medium.com/square-corner-blog/deep-neural-networks-for-survival-analysis-based-on-a-multi-task-framework-ded8697be85c">Square's Technical Blog - Deep Learning + Survival Analysis: Our Approach to Multi-Task Frameworks</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+            </article>
+          </div>
+        </div>
+      </main>
+
+
+<footer class="md-footer">
+
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Square Inc.
+          </div>
+
+
+
+        brought to you by
+        <a href="https://squareup.com/us">
+        <img src="images/Square_logo.png" alt="Square Logo" title="Square Logo" width=20%, height=20% align="center"  /></a>
+
+
+      </div>
+
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+
+      <a href="https://pysurvival.io/" class="md-footer-social__link fa fa-home"></a>
+
+      <a href="https://github.com/square/pysurvival" class="md-footer-social__link fa fa-github"></a>
+
+  </div>
+
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+      <script src="../assets/javascripts/application.d9aa80ab.js"></script>
+
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  </body>
+</html>

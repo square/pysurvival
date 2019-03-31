@@ -1,0 +1,1375 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+
+<style>
+  h1, h2, h3 { color: #04A9F4; }
+  pre { color: black !important; }
+</style>
+
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <meta name="description" content="Open source package for Survival Analysis modeling">
+
+
+        <link rel="canonical" href="https://www.pysurvival.io/models/simulations.html">
+
+
+        <meta name="author" content="The PySurvival Team">
+
+
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+
+        <meta name="lang:search.language" content="en">
+
+        <meta name="lang:search.pipeline.stopwords" content="True">
+
+        <meta name="lang:search.pipeline.trimmer" content="True">
+
+        <meta name="lang:search.result.none" content="No matching documents">
+
+        <meta name="lang:search.result.one" content="1 matching document">
+
+        <meta name="lang:search.result.other" content="# matching documents">
+
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+      <link rel="shortcut icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+
+
+
+        <title>Simulation models (API) - PySurvival</title>
+
+
+
+      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
+
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+
+
+
+
+        <meta name="theme-color" content="#2196f3">
+
+
+
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+
+
+
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=:300,400,400i,700|">
+        <style>body,input{font-family:"","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"","Courier New",Courier,monospace}</style>
+
+
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+
+
+
+
+
+
+  </head>
+
+
+
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="purple">
+
+    <svg class="md-svg">
+      <defs>
+
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+
+      <a href="#simulation-models" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+
+
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.pysurvival.io/" title="PySurvival" class="md-header-nav__button md-logo">
+
+            <img src="../images/logo.ico" width="24" height="24">
+
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+
+            <span class="md-header-nav__topic">
+              PySurvival
+            </span>
+            <span class="md-header-nav__topic">
+              Simulation models (API)
+            </span>
+
+        </div>
+      </div>
+
+              <!-- Global site tag (gtag.js) - Google Analytics -->
+              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136790579-1"></script>
+              <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-136790579-1');
+              </script>
+
+      <div class="md-flex__cell md-flex__cell--shrink">
+
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+
+
+
+
+
+<a href="https://github.com/square/pysurvival/" title="Go to repository" class="md-source" >
+
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+
+  <div class="md-source__repository">
+    square/pysurvival
+  </div>
+</a>
+          </div>
+        </div>
+
+    </div>
+  </nav>
+</header>
+
+    <div class="md-container">
+
+
+
+
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+
+
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.pysurvival.io/" title="PySurvival" class="md-nav__button md-logo">
+
+        <img src="../images/logo.ico" width="48" height="48">
+
+    </a>
+    PySurvival
+  </label>
+
+    <div class="md-nav__source">
+
+
+
+
+
+<a href="https://github.com/square/pysurvival/" title="Go to repository" class="md-source" >
+
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+
+  <div class="md-source__repository">
+    square/pysurvival
+  </div>
+</a>
+    </div>
+
+  <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../index.html" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../installation.html" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../intro.html" title="Introduction to Survival Analysis" class="md-nav__link">
+      Introduction to Survival Analysis
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../math.html" title="The math of Survival Analysis" class="md-nav__link">
+      The math of Survival Analysis
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+
+    <label class="md-nav__link" for="nav-5">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/churn.html" title="Churn Prediction" class="md-nav__link">
+      Churn Prediction
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/credit_risk.html" title="Credit Risk" class="md-nav__link">
+      Credit Risk
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/employee_retention.html" title="Employee Retention" class="md-nav__link">
+      Employee Retention
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/maintenance.html" title="Predictive Maintenance" class="md-nav__link">
+      Predictive Maintenance
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+
+    <label class="md-nav__link" for="nav-6">
+      Models
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Models
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+
+    <label class="md-nav__link" for="nav-6-1">
+      Cox Proportional Hazard
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Cox Proportional Hazard
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="coxph.html" title="Standard CoxPH  (API)" class="md-nav__link">
+      Standard CoxPH  (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="nonlinear_coxph.html" title="DeepSurv/Nonlinear CoxPH (API)" class="md-nav__link">
+      DeepSurv/Nonlinear CoxPH (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="semi_parametric.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+
+    <label class="md-nav__link" for="nav-6-2">
+      Multi-Task Logistic Regression (MTLR)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Multi-Task Logistic Regression (MTLR)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="linear_mtlr.html" title="Linear MTLR (API)" class="md-nav__link">
+      Linear MTLR (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="neural_mtlr.html" title="Neural MTLR (API)" class="md-nav__link">
+      Neural MTLR (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="mtlr_theory.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+
+    <label class="md-nav__link" for="nav-6-3">
+      Non-Parametric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        Non-Parametric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="kaplan_meier.html" title="Kaplan Meier (API)" class="md-nav__link">
+      Kaplan Meier (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="smooth_kaplan_meier.html" title="Smoothed Kaplan Meier (API)" class="md-nav__link">
+      Smoothed Kaplan Meier (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="non_parametric.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+
+    <label class="md-nav__link" for="nav-6-4">
+      Parametric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        Parametric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="parametric.html" title="Parametric models (API)" class="md-nav__link">
+      Parametric models (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="parametric_theory.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5" checked>
+
+    <label class="md-nav__link" for="nav-6-5">
+      Simulation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        Simulation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--active">
+
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+
+
+
+
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Simulation models (API)
+      </label>
+
+    <a href="simulations.html" title="Simulation models (API)" class="md-nav__link md-nav__link--active">
+      Simulation models (API)
+    </a>
+
+
+<nav class="md-nav md-nav--secondary">
+
+
+
+
+
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+
+        <li class="md-nav__item">
+  <a href="#instance" title="Instance" class="md-nav__link">
+    Instance
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#attributes" title="Attributes" class="md-nav__link">
+    Attributes
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+
+</li>
+
+
+
+
+
+    </ul>
+
+</nav>
+
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="simulations_theory.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6">
+
+    <label class="md-nav__link" for="nav-6-6">
+      Survival Forest
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-6">
+        Survival Forest
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="conditional_survival_forest.html" title="Conditional Survival Forest (API)" class="md-nav__link">
+      Conditional Survival Forest (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="extra_survival_trees.html" title="Extra Survival Trees (API)" class="md-nav__link">
+      Extra Survival Trees (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="random_survival_forest.html" title="Random Survival Forest (API)" class="md-nav__link">
+      Random Survival Forest (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="survival_forest.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-7" type="checkbox" id="nav-6-7">
+
+    <label class="md-nav__link" for="nav-6-7">
+      Survival SVM
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-7">
+        Survival SVM
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="linear_svm.html" title="Linear Survival SVM (API)" class="md-nav__link">
+      Linear Survival SVM (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="kernel_svm.html" title="Kernel Survival SVM (API)" class="md-nav__link">
+      Kernel Survival SVM (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="survival_svm.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+
+    <label class="md-nav__link" for="nav-7">
+      Performance metrics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Performance metrics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../metrics/c_index.html" title="C-index" class="md-nav__link">
+      C-index
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../metrics/brier_score.html" title="Brier Score" class="md-nav__link">
+      Brier Score
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+
+    <label class="md-nav__link" for="nav-8">
+      Miscellaneous
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Miscellaneous
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../miscellaneous/activation_functions.html" title="Activation Functions" class="md-nav__link">
+      Activation Functions
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../miscellaneous/save_load.html" title="Saving/Loading models" class="md-nav__link">
+      Saving/Loading models
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../miscellaneous/tips.html" title="Tips for fitting models" class="md-nav__link">
+      Tips for fitting models
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+
+<nav class="md-nav md-nav--secondary">
+
+
+
+
+
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+
+        <li class="md-nav__item">
+  <a href="#instance" title="Instance" class="md-nav__link">
+    Instance
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#attributes" title="Attributes" class="md-nav__link">
+    Attributes
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#api" title="API" class="md-nav__link">
+    API
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+
+</li>
+
+
+
+
+
+    </ul>
+
+</nav>
+                  </div>
+                </div>
+              </div>
+
+
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+
+
+                  <a href="https://github.com/square/pysurvival/edit/master/docs/models/simulations.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+
+
+                <!-- # Simulation models-->
+
+<style>
+  h1, h2, h3 { color: #04A9F4; }
+</style>
+
+<h1 id="simulation-models">Simulation models</h1>
+<p>PySurvival can generate random survival times based on the most commonly used distributions such as:</p>
+<ul>
+<li>Exponential</li>
+<li>Weibull</li>
+<li>Gompertz</li>
+<li>Log-Logistic</li>
+<li>Lognormal</li>
+</ul>
+<hr />
+<h2 id="instance">Instance</h2>
+<p>To create an instance, use <code>pysurvival.models.simulations.SimulationModel</code>.</p>
+<hr />
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li><code>alpha</code>: <strong>double</strong> -- the scale parameter</li>
+<li><code>beta</code>: <strong>double</strong> -- the shape parameter</li>
+<li><code>censored_parameter</code>: <strong>double</strong> -- coefficient used to calculate the censored distribution. </li>
+<li><code>risk_type</code>: <strong>string</strong> -- Defines the type of risk function. </li>
+<li><code>risk_parameter</code>: <strong>double</strong> -- scaling coefficient of the risk score</li>
+<li><code>survival_distribution</code>: <strong>string</strong> -- Defines a known survival distribution. </li>
+<li><code>times</code>: <strong>array-like</strong> -- representation of the time axis of the model</li>
+<li><code>time_buckets</code>: <strong>array-like</strong> -- representation of the time axis of the model using time bins, which are represented by <script type="math/tex">[ t_{k-1}, t_k )</script>
+</li>
+</ul>
+<hr />
+<h2 id="api">API</h2>
+<div class="admonition abstract">
+<p class="admonition-title"><code>__init__</code>  - Initialization</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>SimulationModel( survival_distribution = &#39;exponential&#39;, risk_type = &#39;linear&#39;,
+                 censored_parameter = 1., alpha = 1, beta = 1., bins = 100,
+                 risk_parameter = 1.)
+</pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>survival_distribution</code>: <strong>string</strong> <em>(default = 'exponential')</em> --
+    Defines a known survival distribution. The available distributions are:</p>
+<ul>
+<li><code>Exponential</code></li>
+<li><code>Weibull</code></li>
+<li><code>Gompertz</code></li>
+<li><code>Log-Logistic</code></li>
+<li><code>Log-Normal</code></li>
+</ul>
+</li>
+<li>
+<p><code>risk_type</code>: <strong>string</strong> <em>(default='linear')</em> --
+    Defines the type of risk function:
+        - Linear
+        - Square
+        - Gaussian</p>
+</li>
+<li>
+<p><code>censored_parameter</code>: <strong>double</strong> <em>(default = 1.)</em> --
+     Coefficient used to calculate the censored distribution. This
+     distribution is a normal such that N(loc=censored_parameter, scale=5)</p>
+</li>
+<li>
+<p><code>alpha</code>: <strong>double</strong> <em>(default = 1.)</em>  --
+     the scale parameter</p>
+</li>
+<li>
+<p><code>beta</code>: <strong>double</strong> <em>(default = 1.)</em> --
+     the shape parameter</p>
+</li>
+<li>
+<p><code>bins</code>: <strong>int</strong> <em>(default=100)</em> --
+    the number of bins of the time axis</p>
+</li>
+<li>
+<p><code>risk_parameter</code>: <strong>double</strong> <em>(default = 1.)</em> --
+    Scaling coefficient for the risk score which can be written as follow:</p>
+<ul>
+<li><code>linear</code>: <script type="math/tex">r(x) = \exp(x \cdot \omega)</script>
+</li>
+<li><code>square</code>: <script type="math/tex">r(x) = \exp( \text{risk_parameter} *(x \cdot \omega)^2)</script>
+</li>
+<li><code>gaussian</code>: <script type="math/tex">r(x) = \exp \left( e^{-(x \cdot \omega)^2*\text{risk_parameter}} \right) </script>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title"><code>generate_data</code>  - Generating a dataset of simulated survival times from a given distribution through the hazard function using the Cox model</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>generate_data(num_samples = 100, num_features = 3, feature_weights=None)
+</pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>num_samples</code>: <strong>int</strong> <em>(default=100)</em> --
+    Number of samples to generate</p>
+</li>
+<li>
+<p><code>num_features</code>: <strong>int</strong> <em>(default=3)</em> --
+    Number of features to generate</p>
+</li>
+<li>
+<p><code>feature_weights</code>: <strong>array-like</strong> <em>(default=None)</em> --
+    list of the coefficients of the underlying Cox-Model.
+    The features linked to each coefficient are generated from random distribution from the following list:</p>
+<ul>
+<li>binomial</li>
+<li>chisquare</li>
+<li>exponential</li>
+<li>gamma</li>
+<li>normal</li>
+<li>uniform</li>
+<li>laplace</li>
+</ul>
+<p>If None then <code>feature_weights = [1.]*num_features</code></p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>dataset</code>: <strong>pandas.DataFrame</strong> --
+    dataset of simulated survival times, event status and features</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title"><code>predict_hazard</code> - Predicts the hazard function <script type="math/tex">h(t, x)</script>
+</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>predict_hazard(x, t = None)
+</pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>x</code> : <strong>array-like</strong>  --
+    input samples; where the rows correspond to an individual sample and the columns represent the features <em>(shape=[n_samples, n_features])</em>.
+    x should not be standardized before, the model will take care of it</p>
+</li>
+<li>
+<p><code>t</code>: <strong>double</strong> <em>(default=None)</em> --
+     time at which the prediction should be performed.
+     If None, then it returns the function for all available t.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>hazard</code>: <strong>numpy.ndarray</strong> --
+    array-like representing the prediction of the hazard function</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title"><code>predict_risk</code> - Predicts the risk score <script type="math/tex">r(x)</script>
+</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>predict_risk(x)
+</pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>x</code> : <strong>array-like</strong> --
+    input samples; where the rows correspond to an individual sample and the columns represent the features <em>(shape=[n_samples, n_features])</em>.
+    x should not be standardized before, the model will take care of it</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>risk_score</code>: <strong>numpy.ndarray</strong> --
+    array-like representing the prediction of the risk score</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title"><code>predict_survival</code> - Predicts the survival function <script type="math/tex">S(t, x)</script>
+</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>predict_survival(x, t = None)
+</pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>x</code> : <strong>array-like</strong> --
+    input samples; where the rows correspond to an individual sample and the columns represent the features <em>(shape=[n_samples, n_features])</em>.
+    x should not be standardized before, the model will take care of it</p>
+</li>
+<li>
+<p><code>t</code>: <strong>double</strong> <em>(default=None)</em> --
+     time at which the prediction should be performed.
+     If None, then return the function for all available t.</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>survival</code>: <strong>numpy.ndarray</strong> --
+    array-like representing the prediction of the survival function</li>
+</ul>
+</div>
+<hr />
+<h2 id="example">Example</h2>
+<p>Let's now see how to generate a dataset designed for survival analysis.
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pysurvival.models.simulations</span> <span style="color: #008000; font-weight: bold">import</span> SimulationModel
+<span style="color: #666666">%</span>pylab inline
+
+<span style="color: #408080; font-style: italic"># Initializing the simulation model</span>
+sim <span style="color: #666666">=</span> SimulationModel( survival_distribution <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;gompertz&#39;</span>,
+                       risk_type <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;linear&#39;</span>,
+                       censored_parameter <span style="color: #666666">=</span> <span style="color: #666666">5.0</span>,
+                       alpha <span style="color: #666666">=</span> <span style="color: #666666">0.01</span>,
+                       beta <span style="color: #666666">=</span> <span style="color: #666666">5.</span>, )
+
+<span style="color: #408080; font-style: italic"># Generating N Random samples</span>
+N <span style="color: #666666">=</span> <span style="color: #666666">1000</span>
+dataset <span style="color: #666666">=</span> sim<span style="color: #666666">.</span>generate_data(num_samples <span style="color: #666666">=</span> N, num_features<span style="color: #666666">=5</span>)
+
+<span style="color: #408080; font-style: italic"># Showing a few data-points</span>
+dataset<span style="color: #666666">.</span>head(<span style="color: #666666">2</span>)
+</pre></div></p>
+<p>We can now see an overview of the data:</p>
+<table>
+<thead>
+<tr>
+<th>x_1</th>
+<th>x_2</th>
+<th>x_3</th>
+<th>x_4</th>
+<th>x_5</th>
+<th>time</th>
+<th>event</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.956896</td>
+<td>124.0</td>
+<td>0.018274</td>
+<td>57.480199</td>
+<td>-5.42258</td>
+<td>0.024329</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>4.106100</td>
+<td>117.0</td>
+<td>0.111276</td>
+<td>51.770875</td>
+<td>4.105588</td>
+<td>0.175530</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>PySurvival also displays the Base Survival function of the Simulation model:
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pysurvival.utils.display</span> <span style="color: #008000; font-weight: bold">import</span> display_baseline_simulations
+display_baseline_simulations(sim, figure_size<span style="color: #666666">=</span>(<span style="color: #666666">20</span>, <span style="color: #666666">6</span>))
+</pre></div>
+<center><img src="images/simulations_example.png" alt="PySurvival - Simulations model - Base Survival function of the Simulation model" title="PySurvival - Simulations model - Base Survival function of the Simulation model" width=100%, height=100%  /></center>
+<center>Figure 1 - Base Survival function of the Simulation model</center></p>
+
+
+
+
+
+
+
+
+
+            </article>
+          </div>
+        </div>
+      </main>
+
+
+<footer class="md-footer">
+
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Square Inc.
+          </div>
+
+
+
+        brought to you by
+        <a href="https://squareup.com/us">
+        <img src="images/Square_logo.png" alt="Square Logo" title="Square Logo" width=20%, height=20% align="center"  /></a>
+
+
+      </div>
+
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+
+      <a href="https://pysurvival.io/" class="md-footer-social__link fa fa-home"></a>
+
+      <a href="https://github.com/square/pysurvival" class="md-footer-social__link fa fa-github"></a>
+
+  </div>
+
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+      <script src="../assets/javascripts/application.d9aa80ab.js"></script>
+
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  </body>
+</html>

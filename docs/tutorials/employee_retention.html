@@ -1,0 +1,1691 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+
+<style>
+  h1, h2, h3 { color: #04A9F4; }
+  pre { color: black !important; }
+</style>
+
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <meta name="description" content="Open source package for Survival Analysis modeling">
+
+
+        <link rel="canonical" href="https://www.pysurvival.io/tutorials/employee_retention.html">
+
+
+        <meta name="author" content="The PySurvival Team">
+
+
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+
+        <meta name="lang:search.language" content="en">
+
+        <meta name="lang:search.pipeline.stopwords" content="True">
+
+        <meta name="lang:search.pipeline.trimmer" content="True">
+
+        <meta name="lang:search.result.none" content="No matching documents">
+
+        <meta name="lang:search.result.one" content="1 matching document">
+
+        <meta name="lang:search.result.other" content="# matching documents">
+
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+      <link rel="shortcut icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+
+
+
+        <title>Employee Retention - PySurvival</title>
+
+
+
+      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
+
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+
+
+
+
+        <meta name="theme-color" content="#2196f3">
+
+
+
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+
+
+
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=:300,400,400i,700|">
+        <style>body,input{font-family:"","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"","Courier New",Courier,monospace}</style>
+
+
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+
+
+
+
+
+
+  </head>
+
+
+
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="purple">
+
+    <svg class="md-svg">
+      <defs>
+
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+
+      <a href="#knowing-when-your-employees-will-quit" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+
+
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.pysurvival.io/" title="PySurvival" class="md-header-nav__button md-logo">
+
+            <img src="../images/logo.ico" width="24" height="24">
+
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+
+            <span class="md-header-nav__topic">
+              PySurvival
+            </span>
+            <span class="md-header-nav__topic">
+              Employee Retention
+            </span>
+
+        </div>
+      </div>
+
+              <!-- Global site tag (gtag.js) - Google Analytics -->
+              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136790579-1"></script>
+              <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-136790579-1');
+              </script>
+
+      <div class="md-flex__cell md-flex__cell--shrink">
+
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+
+
+
+
+
+<a href="https://github.com/square/pysurvival/" title="Go to repository" class="md-source" >
+
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+
+  <div class="md-source__repository">
+    square/pysurvival
+  </div>
+</a>
+          </div>
+        </div>
+
+    </div>
+  </nav>
+</header>
+
+    <div class="md-container">
+
+
+
+
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+
+
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.pysurvival.io/" title="PySurvival" class="md-nav__button md-logo">
+
+        <img src="../images/logo.ico" width="48" height="48">
+
+    </a>
+    PySurvival
+  </label>
+
+    <div class="md-nav__source">
+
+
+
+
+
+<a href="https://github.com/square/pysurvival/" title="Go to repository" class="md-source" >
+
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+
+  <div class="md-source__repository">
+    square/pysurvival
+  </div>
+</a>
+    </div>
+
+  <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../index.html" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../installation.html" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../intro.html" title="Introduction to Survival Analysis" class="md-nav__link">
+      Introduction to Survival Analysis
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../math.html" title="The math of Survival Analysis" class="md-nav__link">
+      The math of Survival Analysis
+    </a>
+  </li>
+
+
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+
+    <label class="md-nav__link" for="nav-5">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="churn.html" title="Churn Prediction" class="md-nav__link">
+      Churn Prediction
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="credit_risk.html" title="Credit Risk" class="md-nav__link">
+      Credit Risk
+    </a>
+  </li>
+
+
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--active">
+
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+
+
+
+
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Employee Retention
+      </label>
+
+    <a href="employee_retention.html" title="Employee Retention" class="md-nav__link md-nav__link--active">
+      Employee Retention
+    </a>
+
+
+<nav class="md-nav md-nav--secondary">
+
+
+
+
+
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+
+        <li class="md-nav__item">
+  <a href="#1-introduction" title="1 - Introduction" class="md-nav__link">
+    1 - Introduction
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#2-dataset" title="2 - Dataset" class="md-nav__link">
+    2 - Dataset
+  </a>
+
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+
+          <li class="md-nav__item">
+  <a href="#21-overview" title="2.1 - Overview" class="md-nav__link">
+    2.1 - Overview
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#22-from-categorical-to-numerical" title="2.2 - From categorical to numerical" class="md-nav__link">
+    2.2 - From categorical to numerical
+  </a>
+
+</li>
+
+      </ul>
+    </nav>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#3-exploratory-data-analysis" title="3 - Exploratory Data Analysis" class="md-nav__link">
+    3 - Exploratory Data Analysis
+  </a>
+
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+
+          <li class="md-nav__item">
+  <a href="#31-null-values-and-duplicates" title="3.1 - Null values and duplicates" class="md-nav__link">
+    3.1 - Null values and duplicates
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#32-correlations" title="3.2 - Correlations" class="md-nav__link">
+    3.2 - Correlations
+  </a>
+
+</li>
+
+      </ul>
+    </nav>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#4-modeling" title="4 - Modeling" class="md-nav__link">
+    4 - Modeling
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#5-cross-validation" title="5 - Cross Validation" class="md-nav__link">
+    5 - Cross Validation
+  </a>
+
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+
+          <li class="md-nav__item">
+  <a href="#51-c-index" title="5.1 - C-index" class="md-nav__link">
+    5.1 - C-index
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#52-brier-score" title="5.2 - Brier Score" class="md-nav__link">
+    5.2 - Brier Score
+  </a>
+
+</li>
+
+      </ul>
+    </nav>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#6-predictions" title="6 - Predictions" class="md-nav__link">
+    6 - Predictions
+  </a>
+
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+
+          <li class="md-nav__item">
+  <a href="#61-overall-predictions" title="6.1 - Overall predictions" class="md-nav__link">
+    6.1 - Overall predictions
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#62-individual-predictions" title="6.2 - Individual predictions" class="md-nav__link">
+    6.2 - Individual predictions
+  </a>
+
+</li>
+
+      </ul>
+    </nav>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#7-conclusion" title="7 - Conclusion" class="md-nav__link">
+    7 - Conclusion
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+
+</li>
+
+
+
+
+
+    </ul>
+
+</nav>
+
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="maintenance.html" title="Predictive Maintenance" class="md-nav__link">
+      Predictive Maintenance
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+
+    <label class="md-nav__link" for="nav-6">
+      Models
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Models
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+
+    <label class="md-nav__link" for="nav-6-1">
+      Cox Proportional Hazard
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Cox Proportional Hazard
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/coxph.html" title="Standard CoxPH  (API)" class="md-nav__link">
+      Standard CoxPH  (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/nonlinear_coxph.html" title="DeepSurv/Nonlinear CoxPH (API)" class="md-nav__link">
+      DeepSurv/Nonlinear CoxPH (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/semi_parametric.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+
+    <label class="md-nav__link" for="nav-6-2">
+      Multi-Task Logistic Regression (MTLR)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Multi-Task Logistic Regression (MTLR)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/linear_mtlr.html" title="Linear MTLR (API)" class="md-nav__link">
+      Linear MTLR (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/neural_mtlr.html" title="Neural MTLR (API)" class="md-nav__link">
+      Neural MTLR (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/mtlr_theory.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+
+    <label class="md-nav__link" for="nav-6-3">
+      Non-Parametric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        Non-Parametric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/kaplan_meier.html" title="Kaplan Meier (API)" class="md-nav__link">
+      Kaplan Meier (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/smooth_kaplan_meier.html" title="Smoothed Kaplan Meier (API)" class="md-nav__link">
+      Smoothed Kaplan Meier (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/non_parametric.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+
+    <label class="md-nav__link" for="nav-6-4">
+      Parametric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        Parametric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/parametric.html" title="Parametric models (API)" class="md-nav__link">
+      Parametric models (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/parametric_theory.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+
+    <label class="md-nav__link" for="nav-6-5">
+      Simulation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        Simulation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/simulations.html" title="Simulation models (API)" class="md-nav__link">
+      Simulation models (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/simulations_theory.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6">
+
+    <label class="md-nav__link" for="nav-6-6">
+      Survival Forest
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-6">
+        Survival Forest
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/conditional_survival_forest.html" title="Conditional Survival Forest (API)" class="md-nav__link">
+      Conditional Survival Forest (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/extra_survival_trees.html" title="Extra Survival Trees (API)" class="md-nav__link">
+      Extra Survival Trees (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/random_survival_forest.html" title="Random Survival Forest (API)" class="md-nav__link">
+      Random Survival Forest (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/survival_forest.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-7" type="checkbox" id="nav-6-7">
+
+    <label class="md-nav__link" for="nav-6-7">
+      Survival SVM
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-7">
+        Survival SVM
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/linear_svm.html" title="Linear Survival SVM (API)" class="md-nav__link">
+      Linear Survival SVM (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/kernel_svm.html" title="Kernel Survival SVM (API)" class="md-nav__link">
+      Kernel Survival SVM (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../models/survival_svm.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+
+    <label class="md-nav__link" for="nav-7">
+      Performance metrics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Performance metrics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../metrics/c_index.html" title="C-index" class="md-nav__link">
+      C-index
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../metrics/brier_score.html" title="Brier Score" class="md-nav__link">
+      Brier Score
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+
+    <label class="md-nav__link" for="nav-8">
+      Miscellaneous
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Miscellaneous
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../miscellaneous/activation_functions.html" title="Activation Functions" class="md-nav__link">
+      Activation Functions
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../miscellaneous/save_load.html" title="Saving/Loading models" class="md-nav__link">
+      Saving/Loading models
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../miscellaneous/tips.html" title="Tips for fitting models" class="md-nav__link">
+      Tips for fitting models
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+
+<nav class="md-nav md-nav--secondary">
+
+
+
+
+
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+
+        <li class="md-nav__item">
+  <a href="#1-introduction" title="1 - Introduction" class="md-nav__link">
+    1 - Introduction
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#2-dataset" title="2 - Dataset" class="md-nav__link">
+    2 - Dataset
+  </a>
+
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+
+          <li class="md-nav__item">
+  <a href="#21-overview" title="2.1 - Overview" class="md-nav__link">
+    2.1 - Overview
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#22-from-categorical-to-numerical" title="2.2 - From categorical to numerical" class="md-nav__link">
+    2.2 - From categorical to numerical
+  </a>
+
+</li>
+
+      </ul>
+    </nav>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#3-exploratory-data-analysis" title="3 - Exploratory Data Analysis" class="md-nav__link">
+    3 - Exploratory Data Analysis
+  </a>
+
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+
+          <li class="md-nav__item">
+  <a href="#31-null-values-and-duplicates" title="3.1 - Null values and duplicates" class="md-nav__link">
+    3.1 - Null values and duplicates
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#32-correlations" title="3.2 - Correlations" class="md-nav__link">
+    3.2 - Correlations
+  </a>
+
+</li>
+
+      </ul>
+    </nav>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#4-modeling" title="4 - Modeling" class="md-nav__link">
+    4 - Modeling
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#5-cross-validation" title="5 - Cross Validation" class="md-nav__link">
+    5 - Cross Validation
+  </a>
+
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+
+          <li class="md-nav__item">
+  <a href="#51-c-index" title="5.1 - C-index" class="md-nav__link">
+    5.1 - C-index
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#52-brier-score" title="5.2 - Brier Score" class="md-nav__link">
+    5.2 - Brier Score
+  </a>
+
+</li>
+
+      </ul>
+    </nav>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#6-predictions" title="6 - Predictions" class="md-nav__link">
+    6 - Predictions
+  </a>
+
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+
+          <li class="md-nav__item">
+  <a href="#61-overall-predictions" title="6.1 - Overall predictions" class="md-nav__link">
+    6.1 - Overall predictions
+  </a>
+
+</li>
+
+          <li class="md-nav__item">
+  <a href="#62-individual-predictions" title="6.2 - Individual predictions" class="md-nav__link">
+    6.2 - Individual predictions
+  </a>
+
+</li>
+
+      </ul>
+    </nav>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#7-conclusion" title="7 - Conclusion" class="md-nav__link">
+    7 - Conclusion
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+
+</li>
+
+
+
+
+
+    </ul>
+
+</nav>
+                  </div>
+                </div>
+              </div>
+
+
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+
+
+                  <a href="https://github.com/square/pysurvival/edit/master/docs/tutorials/employee_retention.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+
+
+                <!--  Tutorial - Employee retention -->
+
+<style>
+  h1, h2, h3, h4 { color: #04A9F4; }
+</style>
+
+<h1 id="knowing-when-your-employees-will-quit">Knowing when your employees will quit</h1>
+<h2 id="1-introduction">1 - Introduction</h2>
+<p>Employees attrition can be very costly for companies: reports show that it costs employers <a href="https://www.benefitnews.com/news/avoidable-turnover-costing-employers-big">33% of an employee's annual salary to hire a replacement</a> if that worker leaves. Moreover, it can jeopardize productivity, cause loss of knowledge and curb staff morale. </p>
+<p>Thus, providing solutions that could predict employee turnover could be greatly beneficial for companies. Furthermore, by using Survival Analysis and taking into account the time dimension, predicting when an employee will quit becomes possible.</p>
+<hr />
+<h2 id="2-dataset">2 - Dataset</h2>
+<p>In this tutorial, we will use the human resources dataset <a href="https://github.com/ludovicbenistant/Management-Analytics/blob/master/HR/HR.csv">Employee Attrition dataset</a> to demonstrate the usefulness of Survival Analysis. </p>
+<h3 id="21-overview">2.1 - Overview</h3>
+<p>Here, we will consider the following features:</p>
+<table>
+<thead>
+<tr>
+<th>Feature category</th>
+<th>Feature name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="color:blue"> Time </span></td>
+<td><code>time_spend_company</code></td>
+<td>numerical</td>
+<td>Time spent at the company</td>
+</tr>
+<tr>
+<td><span style="color:blue"> Event </span></td>
+<td><code>left</code></td>
+<td>categorical</td>
+<td>Specifies if the employee left the company</td>
+</tr>
+<tr>
+<td>Evaluation/Scoring</td>
+<td><code>satisfaction</code></td>
+<td>numerical</td>
+<td>Employee satisfaction level</td>
+</tr>
+<tr>
+<td>Evaluation/Scoring</td>
+<td><code>last_evaluation</code></td>
+<td>numerical</td>
+<td>Last evaluation score</td>
+</tr>
+<tr>
+<td>Day-to-Day activities</td>
+<td><code>number_projects</code></td>
+<td>numerical</td>
+<td>Number of projects assigned to the employee</td>
+</tr>
+<tr>
+<td>Day-to-Day activities</td>
+<td><code>average_monthly_hour</code></td>
+<td>numerical</td>
+<td>Average monthly hours worked</td>
+</tr>
+<tr>
+<td>Day-to-Day activities</td>
+<td><code>work_accident</code></td>
+<td>numerical</td>
+<td>Whether the employee has had a work accident</td>
+</tr>
+<tr>
+<td>Department</td>
+<td><code>department</code></td>
+<td>categorical</td>
+<td>Department name/Specialized functional area within the company</td>
+</tr>
+<tr>
+<td>Salary</td>
+<td><code>salary</code></td>
+<td>categorical</td>
+<td>Salary category</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Importing modules</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pandas</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">pd</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> pyplot <span style="color: #008000; font-weight: bold">as</span> plt
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pysurvival.datasets</span> <span style="color: #008000; font-weight: bold">import</span> Dataset
+<span style="color: #666666">%</span>pylab inline
+
+<span style="color: #408080; font-style: italic"># Reading the dataset</span>
+raw_dataset <span style="color: #666666">=</span> Dataset(<span style="color: #BA2121">&#39;employee_attrition&#39;</span>)<span style="color: #666666">.</span>load()
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;The raw_dataset has the following shape: {}.&quot;</span><span style="color: #666666">.</span>format(raw_dataset<span style="color: #666666">.</span>shape))
+raw_dataset<span style="color: #666666">.</span>head(<span style="color: #666666">3</span>)
+</pre></div>
+
+<p>Here is an overview of the raw dataset:</p>
+<table>
+<thead>
+<tr>
+<th>satisfaction_level</th>
+<th>last_evaluation</th>
+<th>number_projects</th>
+<th>...</th>
+<th>department</th>
+<th>salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.38</td>
+<td>0.53</td>
+<td>2</td>
+<td>...</td>
+<td>sales</td>
+<td>low</td>
+</tr>
+<tr>
+<td>0.80</td>
+<td>0.86</td>
+<td>5</td>
+<td>...</td>
+<td>sales</td>
+<td>medium</td>
+</tr>
+<tr>
+<td>0.11</td>
+<td>0.88</td>
+<td>7</td>
+<td>...</td>
+<td>sales</td>
+<td>medium</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-from-categorical-to-numerical">2.2 - From categorical to numerical</h3>
+<p>Let's encode the categorical features into one-hot vectors and define the modeling features:</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Creating the time and event columns</span>
+time_column <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;time_spend_company&#39;</span>
+event_column <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;left&#39;</span>
+
+<span style="color: #408080; font-style: italic"># Creating one-hot vectors</span>
+category_columns <span style="color: #666666">=</span> [<span style="color: #BA2121">&#39;department&#39;</span>, <span style="color: #BA2121">&#39;salary&#39;</span>]
+dataset <span style="color: #666666">=</span> pd<span style="color: #666666">.</span>get_dummies(raw_dataset, columns<span style="color: #666666">=</span>category_columns, drop_first<span style="color: #666666">=</span><span style="color: #008000">True</span>)
+dataset<span style="color: #666666">.</span>head()
+
+<span style="color: #408080; font-style: italic"># Creating the features</span>
+features <span style="color: #666666">=</span> np<span style="color: #666666">.</span>setdiff1d(dataset<span style="color: #666666">.</span>columns, [time_column, event_column] )<span style="color: #666666">.</span>tolist()
+</pre></div>
+
+<hr />
+<h2 id="3-exploratory-data-analysis">3 - Exploratory Data Analysis</h2>
+<p>As this tutorial is mainly designed to provide an example of how to use PySurvival, we will not do a thorough exploratory data analysis here but greatly encourage the reader to do so by checking the <a href="maintenance.html#4-exploratory-data-analysis">predictive maintenance tutorial that provides a detailed analysis.</a></p>
+<p>Here, we will just check if the dataset contains Null values or if it has duplicated rows. Then, we will take a look at feature correlations.</p>
+<h3 id="31-null-values-and-duplicates">3.1 - Null values and duplicates</h3>
+<p>The first thing to do is checking if the dataset contains Null values and has duplicated rows.
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Checking for null values</span>
+N_null <span style="color: #666666">=</span> <span style="color: #008000">sum</span>(dataset[features]<span style="color: #666666">.</span>isnull()<span style="color: #666666">.</span>sum())
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;The dataset contains {} null values&quot;</span><span style="color: #666666">.</span>format(N_null)) <span style="color: #408080; font-style: italic">#0 null values</span>
+
+<span style="color: #408080; font-style: italic"># Removing duplicates if there exist</span>
+N_dupli <span style="color: #666666">=</span> <span style="color: #008000">sum</span>(dataset<span style="color: #666666">.</span>duplicated(keep<span style="color: #666666">=</span><span style="color: #BA2121">&#39;first&#39;</span>))
+dataset <span style="color: #666666">=</span> dataset<span style="color: #666666">.</span>drop_duplicates(keep<span style="color: #666666">=</span><span style="color: #BA2121">&#39;first&#39;</span>)<span style="color: #666666">.</span>reset_index(drop<span style="color: #666666">=</span><span style="color: #008000">True</span>)
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&quot;The dataset contains {} duplicates&quot;</span><span style="color: #666666">.</span>format(N_dupli))
+
+<span style="color: #408080; font-style: italic"># Number of samples in the dataset</span>
+N <span style="color: #666666">=</span> dataset<span style="color: #666666">.</span>shape[<span style="color: #666666">0</span>]
+</pre></div>
+As it turns out the dataset doesn't have any Null values but had 3,008 duplicated rows, that we removed.</p>
+<h3 id="32-correlations">3.2 - Correlations</h3>
+<p>Let's compute and visualize the correlation between the features
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pysurvival.utils.display</span> <span style="color: #008000; font-weight: bold">import</span> correlation_matrix
+correlation_matrix(dataset[features], figure_size<span style="color: #666666">=</span>(<span style="color: #666666">20</span>,<span style="color: #666666">10</span>), text_fontsize<span style="color: #666666">=10</span>)
+</pre></div></p>
+<p><center><img src="images/employee_correlations.png" alt="PySurvival - Employee Retention - Correlations" title="PySurvival - Employee Retention - Correlations" width=100%, height=100%  /></center>
+<center>Figure 1 - Correlations </center></p>
+<p>This shows that there is a pretty big correlation between the features <code>salaray_low</code> and <code>salary_medium</code>.
+So we will be removing <code>salaray_low</code>.</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">del</span> dataset[<span style="color: #BA2121">&#39;salary_low&#39;</span>]
+features <span style="color: #666666">=</span> np<span style="color: #666666">.</span>setdiff1d( dataset<span style="color: #666666">.</span>columns, [time_column, event_column] )<span style="color: #666666">.</span>tolist()
+</pre></div>
+
+<hr />
+<h2 id="4-modeling">4 - Modeling</h2>
+<p>As there are ~15,000 rows, we will first downsample the dataset to speed up computations, in case the computer that you are using cannot handle that size.
+Then, so as to perform cross-validation later on and assess the performance of the model, we will split the dataset into training and testing sets.
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Downsampling the dataset to speed up computations</span>
+indexes_choices <span style="color: #666666">=</span> np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>choice(N, <span style="color: #008000">int</span>(N<span style="color: #666666">*0.3</span>), replace<span style="color: #666666">=</span><span style="color: #008000">False</span>)<span style="color: #666666">.</span>tolist()
+
+<span style="color: #408080; font-style: italic"># Building training and testing sets #</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">sklearn.model_selection</span> <span style="color: #008000; font-weight: bold">import</span> train_test_split
+index_train, index_test <span style="color: #666666">=</span> train_test_split( indexes_choices, test_size <span style="color: #666666">=</span> <span style="color: #666666">0.4</span>)
+data_train <span style="color: #666666">=</span> dataset<span style="color: #666666">.</span>loc[index_train]<span style="color: #666666">.</span>reset_index( drop <span style="color: #666666">=</span> <span style="color: #008000">True</span> )
+data_test  <span style="color: #666666">=</span> dataset<span style="color: #666666">.</span>loc[index_test]<span style="color: #666666">.</span>reset_index( drop <span style="color: #666666">=</span> <span style="color: #008000">True</span> )
+
+<span style="color: #408080; font-style: italic"># Creating the X, T and E inputs</span>
+X_train, X_test <span style="color: #666666">=</span> data_train[features], data_test[features]
+T_train, T_test <span style="color: #666666">=</span> data_train[time_column], data_test[time_column]
+E_train, E_test <span style="color: #666666">=</span> data_train[event_column], data_test[event_column]
+</pre></div></p>
+<p>Let's now fit a <a href="../models/conditional_survival_forest.html">Conditional Survival Forest model</a> (CSF) to the training set. </p>
+<p><em>Note: The choice of the model and hyperparameters was obtained using grid-search selection, not displayed in this tutorial.</em>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pysurvival.models.survival_forest</span> <span style="color: #008000; font-weight: bold">import</span> ConditionalSurvivalForestModel
+
+<span style="color: #408080; font-style: italic"># Fitting the model</span>
+csf <span style="color: #666666">=</span> ConditionalSurvivalForestModel(num_trees<span style="color: #666666">=200</span>)
+csf<span style="color: #666666">.</span>fit(X_train, T_train, E_train, max_features<span style="color: #666666">=</span><span style="color: #BA2121">&#39;sqrt&#39;</span>,
+        alpha<span style="color: #666666">=0.05</span>, minprop<span style="color: #666666">=0.1</span>, max_depth<span style="color: #666666">=5</span>, min_node_size<span style="color: #666666">=30</span>)
+</pre></div></p>
+<h2 id="5-cross-validation">5 - Cross Validation</h2>
+<p>In order to assess the model performance, we previously split the original dataset into training and testing sets, so that we can now compute its performance metrics on the testing set:</p>
+<h3 id="51-c-index">5.1 - <a href="../metrics/c_index.html">C-index</a></h3>
+<p>The <a href="../metrics/c_index.html">C-index</a> represents the global assessment of the model discrimination power: <strong><em>this is the model’s ability to correctly provide a reliable ranking of the survival times based on the individual risk scores</em></strong>. In general, when the C-index is close to 1, the model has an almost perfect discriminatory power; but if it is close to 0.5, it has no ability to discriminate between low and high risk subjects.</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pysurvival.utils.metrics</span> <span style="color: #008000; font-weight: bold">import</span> concordance_index
+c_index <span style="color: #666666">=</span> concordance_index(csf, X_test, T_test, E_test)
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&#39;C-index: {:.2f}&#39;</span><span style="color: #666666">.</span>format(c_index)) <span style="color: #408080; font-style: italic">#0.89</span>
+</pre></div>
+
+<h3 id="52-brier-score">5.2 - <a href="../metrics/brier_score.html">Brier Score</a></h3>
+<p>The <strong><em><a href="../metrics/brier_score.html">Brier score</a> measures the average discrepancies between the status and the estimated probabilities at a given time.</em></strong>
+Thus, the lower the score (<em>usually below 0.25</em>), the better the predictive performance. To assess the overall error measure across multiple time points, the Integrated Brier Score (IBS) is usually computed as well.</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pysurvival.utils.display</span> <span style="color: #008000; font-weight: bold">import</span> integrated_brier_score
+ibs <span style="color: #666666">=</span> integrated_brier_score(csf, X_test, T_test, E_test, t_max<span style="color: #666666">=12</span>,
+    figure_size<span style="color: #666666">=</span>(<span style="color: #666666">15</span>,<span style="color: #666666">5</span>))
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #BA2121">&#39;IBS: {:.2f}&#39;</span><span style="color: #666666">.</span>format(ibs))
+</pre></div>
+
+<p><center><img src="images/employee_brier.png" alt="PySurvival - Employee Tutorial - Conditional Survival Forest - Brier score & Prediction error curve" title="PySurvival - Employee Tutorial - Conditional Survival Forest - Brier score & Prediction error curve" width=100%, height=100%  /></center>
+<center>Figure 2 - Conditional Survival Forest - Brier score &amp; Prediction error curve </center></p>
+<p>The IBS is equal to 0.12 on the entire model time axis. This indicates that the model has good predictive abilities.</p>
+<h2 id="6-predictions">6 - Predictions</h2>
+<h3 id="61-overall-predictions">6.1 - Overall predictions</h3>
+<p>Now that we have built a model that seems to provide great performances, let's compare the time series of the actual and predicted number of employees who left the company, for each time t.
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pysurvival.utils.display</span> <span style="color: #008000; font-weight: bold">import</span> compare_to_actual
+results <span style="color: #666666">=</span> compare_to_actual(csf, X_test, T_test, E_test,
+                            is_at_risk <span style="color: #666666">=</span> <span style="color: #008000">False</span>,  figure_size<span style="color: #666666">=</span>(<span style="color: #666666">16</span>, <span style="color: #666666">6</span>),
+                            metrics <span style="color: #666666">=</span> [<span style="color: #BA2121">&#39;rmse&#39;</span>, <span style="color: #BA2121">&#39;mean&#39;</span>, <span style="color: #BA2121">&#39;median&#39;</span>])
+</pre></div></p>
+<p><center><img src="images/employee_global_pred_1.png" alt="PySurvival - Employee Tutorial - Conditional Survival Forest - Actual vs Predicted - Number of employees who left the company" title="PySurvival - Employee Tutorial - Conditional Survival Forest - Actual vs Predicted - Number of employees who left the company" width=100%, height=100%  /></center>
+<center>Figure 3 - Actual vs Predicted - Number of employees who left the company</center></p>
+<hr />
+<h3 id="62-individual-predictions">6.2 - Individual predictions</h3>
+<p>Now that we know that we can provide reliable predictions for an entire cohort, let's compute the probability of remaining an employee for all times t.</p>
+<p>First, we can construct the risk groups based on risk scores distribution. The helper function <code>create_risk_groups</code>, which can be found in <code>pysurvival.utils.display</code>, will help us do that:
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pysurvival.utils.display</span> <span style="color: #008000; font-weight: bold">import</span> create_risk_groups
+
+risk_groups <span style="color: #666666">=</span> create_risk_groups(model<span style="color: #666666">=</span>csf, X<span style="color: #666666">=</span>X_test,
+    use_log <span style="color: #666666">=</span> <span style="color: #008000">False</span>, num_bins<span style="color: #666666">=50</span>, figure_size<span style="color: #666666">=</span>(<span style="color: #666666">20</span>, <span style="color: #666666">4</span>),
+    low<span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;lower_bound&#39;</span>:<span style="color: #666666">0</span>, <span style="color: #BA2121">&#39;upper_bound&#39;</span>:<span style="color: #666666">3.5</span>, <span style="color: #BA2121">&#39;color&#39;</span>:<span style="color: #BA2121">&#39;red&#39;</span>},
+    high<span style="color: #666666">=</span> {<span style="color: #BA2121">&#39;lower_bound&#39;</span>:<span style="color: #666666">3.5</span>, <span style="color: #BA2121">&#39;upper_bound&#39;</span>:<span style="color: #666666">10</span>, <span style="color: #BA2121">&#39;color&#39;</span>:<span style="color: #BA2121">&#39;blue&#39;</span>}
+    )
+</pre></div></p>
+<p><center><img src="images/employee_risk.png" alt="PySurvival - Employee Tutorial - Conditional Survival Forest - Risk groups" title="PySurvival - Employee Tutorial - Conditional Survival Forest - Risk groups" width=100%, height=100%  /></center>
+<center>Figure 4 - Creating risk groups </center></p>
+<p><em>Note: The current choice of the lower and upper bounds for each group is based on my intuition; so feel free to change the values so as to match your situation instead.</em></p>
+<p>Here, it is possible to distinguish 2 main groups, <em>low</em> and <em>high</em> risk groups. Because the C-index is high, the model will be able to perfectly rank the survival times of a random unit of each group, such that  <script type="math/tex"> t_{high}  \leq t_{low}</script>. </p>
+<p>Let's randomly select individual unit in each group and compare their speed of repayment functions. To demonstrate our point, we will purposely select units which experienced an event to visualize the actual time of event.
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Initializing the figure</span>
+fig, ax <span style="color: #666666">=</span> plt<span style="color: #666666">.</span>subplots(figsize<span style="color: #666666">=</span>(<span style="color: #666666">15</span>, <span style="color: #666666">8</span>))
+
+<span style="color: #408080; font-style: italic"># Selecting a random individual that experienced failure from each group</span>
+groups <span style="color: #666666">=</span> []
+<span style="color: #008000; font-weight: bold">for</span> i, (label, (color, indexes)) <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">enumerate</span>(risk_groups<span style="color: #666666">.</span>items()) :
+
+    <span style="color: #408080; font-style: italic"># Selecting the individuals that belong to this group</span>
+    <span style="color: #008000; font-weight: bold">if</span> <span style="color: #008000">len</span>(indexes) <span style="color: #666666">==</span> <span style="color: #666666">0</span> :
+        <span style="color: #008000; font-weight: bold">continue</span>
+    X <span style="color: #666666">=</span> X_test<span style="color: #666666">.</span>values[indexes, :]
+    T <span style="color: #666666">=</span> T_test<span style="color: #666666">.</span>values[indexes]
+    E <span style="color: #666666">=</span> E_test<span style="color: #666666">.</span>values[indexes]
+
+    <span style="color: #408080; font-style: italic"># Randomly extracting an individual that experienced an event</span>
+    choices <span style="color: #666666">=</span> np<span style="color: #666666">.</span>argwhere((E<span style="color: #666666">==1.</span>))<span style="color: #666666">.</span>flatten()
+    <span style="color: #008000; font-weight: bold">if</span> <span style="color: #008000">len</span>(choices) <span style="color: #666666">==</span> <span style="color: #666666">0</span> :
+        <span style="color: #008000; font-weight: bold">continue</span>
+    k <span style="color: #666666">=</span> np<span style="color: #666666">.</span>random<span style="color: #666666">.</span>choice( choices, <span style="color: #666666">1</span>)[<span style="color: #666666">0</span>]
+
+    <span style="color: #408080; font-style: italic"># Saving the time of event</span>
+    t <span style="color: #666666">=</span> T[k]
+
+    <span style="color: #408080; font-style: italic"># Computing the Survival function for all times t</span>
+    survival <span style="color: #666666">=</span> csf<span style="color: #666666">.</span>predict_survival(X[k, :])<span style="color: #666666">.</span>flatten()
+
+    <span style="color: #408080; font-style: italic"># Displaying the functions</span>
+    label_ <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;{} risk&#39;</span><span style="color: #666666">.</span>format(label)
+    plt<span style="color: #666666">.</span>plot(csf<span style="color: #666666">.</span>times, survival, color <span style="color: #666666">=</span> color, label<span style="color: #666666">=</span>label_, lw<span style="color: #666666">=2</span>)
+    groups<span style="color: #666666">.</span>append(label)
+
+    <span style="color: #408080; font-style: italic"># Actual time</span>
+    plt<span style="color: #666666">.</span>axvline(x<span style="color: #666666">=</span>t, color<span style="color: #666666">=</span>color, ls <span style="color: #666666">=</span><span style="color: #BA2121">&#39;--&#39;</span>)
+    ax<span style="color: #666666">.</span>annotate(<span style="color: #BA2121">&#39;T={:.1f}&#39;</span><span style="color: #666666">.</span>format(t), xy<span style="color: #666666">=</span>(t, <span style="color: #666666">0.5*</span>(<span style="color: #666666">1.+0.2*</span>i)),
+        xytext<span style="color: #666666">=</span>(t, <span style="color: #666666">0.5*</span>(<span style="color: #666666">1.+0.2*</span>i)), fontsize<span style="color: #666666">=12</span>)
+
+<span style="color: #408080; font-style: italic"># Show everything</span>
+groups_str <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;, &#39;</span><span style="color: #666666">.</span>join(groups)
+title <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;Comparing Survival functions between {} risk grades&quot;</span><span style="color: #666666">.</span>format(groups_str)
+plt<span style="color: #666666">.</span>legend(fontsize<span style="color: #666666">=12</span>)
+plt<span style="color: #666666">.</span>title(title, fontsize<span style="color: #666666">=15</span>)
+plt<span style="color: #666666">.</span>ylim(<span style="color: #666666">0</span>, <span style="color: #666666">1.05</span>)
+plt<span style="color: #666666">.</span>show()
+</pre></div>
+<center><img src="images/employee_individual_speed.png" alt="PySurvival - Employee Tutorial - Conditional Survival Forest - Predicting individual probability to remain in the company" title="PySurvival - Employee Tutorial - Conditional Survival Forest - Predicting individual probability to remain in the company" width=100%, height=100%  /></center>
+<center>Figure 5 - Predicting individual probability to remain in the company</center></p>
+<hr />
+<h2 id="7-conclusion">7 - Conclusion</h2>
+<p>We can now save our model so as to put it in production and score future employees.
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Let&#39;s now save our model</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">pysurvival.utils</span> <span style="color: #008000; font-weight: bold">import</span> save_model
+save_model(csf, <span style="color: #BA2121">&#39;/Users/xxx/Desktop/employee_csf.zip&#39;</span>)
+</pre></div></p>
+<p>In conclusion, we can see that it is possible to predict the number of employees that will leave the company at different time points.
+Moreover, thanks to the feature importance of the CSF model, we can understand the reasons behind an employee decision to leave:
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Computing variables importance</span>
+csf<span style="color: #666666">.</span>variable_importance_table<span style="color: #666666">.</span>head(<span style="color: #666666">5</span>)
+</pre></div></p>
+<p>Here is the top 5 of the most important features. </p>
+<table>
+<thead>
+<tr>
+<th>feature</th>
+<th>importance</th>
+<th>pct_importance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>number_project</td>
+<td>11.544101</td>
+<td>0.341608</td>
+</tr>
+<tr>
+<td>satisfaction_level</td>
+<td>6.603040</td>
+<td>0.195394</td>
+</tr>
+<tr>
+<td>Work_accident</td>
+<td>5.465851</td>
+<td>0.161743</td>
+</tr>
+<tr>
+<td>average_montly_hours</td>
+<td>4.353429</td>
+<td>0.128825</td>
+</tr>
+<tr>
+<td>last_evaluation</td>
+<td>4.118671</td>
+<td>0.121878</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: The importance is the difference in prediction error between the perturbed and unperturbed error rate as depicted by <a href="https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf">Breiman et al</a>.</em></p>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.benefitnews.com/news/avoidable-turnover-costing-employers-big">2017 report by Employee Benefit News (EBN)</a></li>
+<li><a href="https://www.hrdive.com/news/study-turnover-costs-employers-15000-per-worker/449142/">HR Dive - Study: Turnover costs employers $15,000 per worker</a></li>
+<li><a href="https://github.com/ludovicbenistant/Management-Analytics/blob/master/HR/HR.csv">Employee Attrition dataset</a></li>
+<li><a href="https://www.kaggle.com/c/employee-churn-prediction">Kaggle Competition - Employee Churn Prediction</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+            </article>
+          </div>
+        </div>
+      </main>
+
+
+<footer class="md-footer">
+
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Square Inc.
+          </div>
+
+
+
+        brought to you by
+        <a href="https://squareup.com/us">
+        <img src="images/Square_logo.png" alt="Square Logo" title="Square Logo" width=20%, height=20% align="center"  /></a>
+
+
+      </div>
+
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+
+      <a href="https://pysurvival.io/" class="md-footer-social__link fa fa-home"></a>
+
+      <a href="https://github.com/square/pysurvival" class="md-footer-social__link fa fa-github"></a>
+
+  </div>
+
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+      <script src="../assets/javascripts/application.d9aa80ab.js"></script>
+
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  </body>
+</html>

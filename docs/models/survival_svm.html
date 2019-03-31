@@ -1,0 +1,1219 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+
+<style>
+  h1, h2, h3 { color: #04A9F4; }
+  pre { color: black !important; }
+</style>
+
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <meta name="description" content="Open source package for Survival Analysis modeling">
+
+
+        <link rel="canonical" href="https://www.pysurvival.io/models/survival_svm.html">
+
+
+        <meta name="author" content="The PySurvival Team">
+
+
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+
+        <meta name="lang:search.language" content="en">
+
+        <meta name="lang:search.pipeline.stopwords" content="True">
+
+        <meta name="lang:search.pipeline.trimmer" content="True">
+
+        <meta name="lang:search.result.none" content="No matching documents">
+
+        <meta name="lang:search.result.one" content="1 matching document">
+
+        <meta name="lang:search.result.other" content="# matching documents">
+
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+      <link rel="shortcut icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+
+
+
+        <title>Theory - PySurvival</title>
+
+
+
+      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
+
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+
+
+
+
+        <meta name="theme-color" content="#2196f3">
+
+
+
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+
+
+
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=:300,400,400i,700|">
+        <style>body,input{font-family:"","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"","Courier New",Courier,monospace}</style>
+
+
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+
+
+
+
+
+
+  </head>
+
+
+
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="purple">
+
+    <svg class="md-svg">
+      <defs>
+
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+
+      <a href="#survival-svm-model" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+
+
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.pysurvival.io/" title="PySurvival" class="md-header-nav__button md-logo">
+
+            <img src="../images/logo.ico" width="24" height="24">
+
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+
+            <span class="md-header-nav__topic">
+              PySurvival
+            </span>
+            <span class="md-header-nav__topic">
+              Theory
+            </span>
+
+        </div>
+      </div>
+
+              <!-- Global site tag (gtag.js) - Google Analytics -->
+              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136790579-1"></script>
+              <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'UA-136790579-1');
+              </script>
+
+      <div class="md-flex__cell md-flex__cell--shrink">
+
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+
+
+
+
+
+<a href="https://github.com/square/pysurvival/" title="Go to repository" class="md-source" >
+
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+
+  <div class="md-source__repository">
+    square/pysurvival
+  </div>
+</a>
+          </div>
+        </div>
+
+    </div>
+  </nav>
+</header>
+
+    <div class="md-container">
+
+
+
+
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+
+
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.pysurvival.io/" title="PySurvival" class="md-nav__button md-logo">
+
+        <img src="../images/logo.ico" width="48" height="48">
+
+    </a>
+    PySurvival
+  </label>
+
+    <div class="md-nav__source">
+
+
+
+
+
+<a href="https://github.com/square/pysurvival/" title="Go to repository" class="md-source" >
+
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+
+  <div class="md-source__repository">
+    square/pysurvival
+  </div>
+</a>
+    </div>
+
+  <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../index.html" title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../installation.html" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../intro.html" title="Introduction to Survival Analysis" class="md-nav__link">
+      Introduction to Survival Analysis
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../math.html" title="The math of Survival Analysis" class="md-nav__link">
+      The math of Survival Analysis
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+
+    <label class="md-nav__link" for="nav-5">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/churn.html" title="Churn Prediction" class="md-nav__link">
+      Churn Prediction
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/credit_risk.html" title="Credit Risk" class="md-nav__link">
+      Credit Risk
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/employee_retention.html" title="Employee Retention" class="md-nav__link">
+      Employee Retention
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../tutorials/maintenance.html" title="Predictive Maintenance" class="md-nav__link">
+      Predictive Maintenance
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+
+    <label class="md-nav__link" for="nav-6">
+      Models
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Models
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+
+    <label class="md-nav__link" for="nav-6-1">
+      Cox Proportional Hazard
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Cox Proportional Hazard
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="coxph.html" title="Standard CoxPH  (API)" class="md-nav__link">
+      Standard CoxPH  (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="nonlinear_coxph.html" title="DeepSurv/Nonlinear CoxPH (API)" class="md-nav__link">
+      DeepSurv/Nonlinear CoxPH (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="semi_parametric.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+
+    <label class="md-nav__link" for="nav-6-2">
+      Multi-Task Logistic Regression (MTLR)
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Multi-Task Logistic Regression (MTLR)
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="linear_mtlr.html" title="Linear MTLR (API)" class="md-nav__link">
+      Linear MTLR (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="neural_mtlr.html" title="Neural MTLR (API)" class="md-nav__link">
+      Neural MTLR (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="mtlr_theory.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+
+    <label class="md-nav__link" for="nav-6-3">
+      Non-Parametric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        Non-Parametric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="kaplan_meier.html" title="Kaplan Meier (API)" class="md-nav__link">
+      Kaplan Meier (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="smooth_kaplan_meier.html" title="Smoothed Kaplan Meier (API)" class="md-nav__link">
+      Smoothed Kaplan Meier (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="non_parametric.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+
+    <label class="md-nav__link" for="nav-6-4">
+      Parametric
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        Parametric
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="parametric.html" title="Parametric models (API)" class="md-nav__link">
+      Parametric models (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="parametric_theory.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-5" type="checkbox" id="nav-6-5">
+
+    <label class="md-nav__link" for="nav-6-5">
+      Simulation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-5">
+        Simulation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="simulations.html" title="Simulation models (API)" class="md-nav__link">
+      Simulation models (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="simulations_theory.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-6" type="checkbox" id="nav-6-6">
+
+    <label class="md-nav__link" for="nav-6-6">
+      Survival Forest
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-6">
+        Survival Forest
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="conditional_survival_forest.html" title="Conditional Survival Forest (API)" class="md-nav__link">
+      Conditional Survival Forest (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="extra_survival_trees.html" title="Extra Survival Trees (API)" class="md-nav__link">
+      Extra Survival Trees (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="random_survival_forest.html" title="Random Survival Forest (API)" class="md-nav__link">
+      Random Survival Forest (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="survival_forest.html" title="Theory" class="md-nav__link">
+      Theory
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-7" type="checkbox" id="nav-6-7" checked>
+
+    <label class="md-nav__link" for="nav-6-7">
+      Survival SVM
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-7">
+        Survival SVM
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="linear_svm.html" title="Linear Survival SVM (API)" class="md-nav__link">
+      Linear Survival SVM (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="kernel_svm.html" title="Kernel Survival SVM (API)" class="md-nav__link">
+      Kernel Survival SVM (API)
+    </a>
+  </li>
+
+
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--active">
+
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+
+
+
+
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Theory
+      </label>
+
+    <a href="survival_svm.html" title="Theory" class="md-nav__link md-nav__link--active">
+      Theory
+    </a>
+
+
+<nav class="md-nav md-nav--secondary">
+
+
+
+
+
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+
+        <li class="md-nav__item">
+  <a href="#linear-approach" title="Linear approach" class="md-nav__link">
+    Linear approach
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#kernel-approach" title="Kernel approach" class="md-nav__link">
+    Kernel approach
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+
+</li>
+
+
+
+
+
+    </ul>
+
+</nav>
+
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+
+    <label class="md-nav__link" for="nav-7">
+      Performance metrics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Performance metrics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../metrics/c_index.html" title="C-index" class="md-nav__link">
+      C-index
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../metrics/brier_score.html" title="Brier Score" class="md-nav__link">
+      Brier Score
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item md-nav__item--nested">
+
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+
+    <label class="md-nav__link" for="nav-8">
+      Miscellaneous
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Miscellaneous
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../miscellaneous/activation_functions.html" title="Activation Functions" class="md-nav__link">
+      Activation Functions
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../miscellaneous/save_load.html" title="Saving/Loading models" class="md-nav__link">
+      Saving/Loading models
+    </a>
+  </li>
+
+
+
+
+
+
+
+  <li class="md-nav__item">
+    <a href="../miscellaneous/tips.html" title="Tips for fitting models" class="md-nav__link">
+      Tips for fitting models
+    </a>
+  </li>
+
+
+      </ul>
+    </nav>
+  </li>
+
+
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+
+<nav class="md-nav md-nav--secondary">
+
+
+
+
+
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+
+        <li class="md-nav__item">
+  <a href="#linear-approach" title="Linear approach" class="md-nav__link">
+    Linear approach
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#kernel-approach" title="Kernel approach" class="md-nav__link">
+    Kernel approach
+  </a>
+
+</li>
+
+        <li class="md-nav__item">
+  <a href="#references" title="References" class="md-nav__link">
+    References
+  </a>
+
+</li>
+
+
+
+
+
+    </ul>
+
+</nav>
+                  </div>
+                </div>
+              </div>
+
+
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+
+
+                  <a href="https://github.com/square/pysurvival/edit/master/docs/models/survival_svm.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+
+
+                <!-- # SVM models-->
+
+<style>
+  h1, h2, h3 { color: #04A9F4; }
+</style>
+
+<h1 id="survival-svm-model">Survival SVM model</h1>
+<p>Instead of modeling the probability that an event will occur, we could look at Survival Analysis as a Ranking Problem.
+Indeed, the idea behind formulating the survival problem as a ranking problem is that in some applications, like clinical applications, one is only interested in defining risks groups, and not the prediction of the survival time, but whether the unit has a high or low risk of experiencing the event. </p>
+<p>Van Belle et al. developed the <a href="ftp://ftp.esat.kuleuven.be/SISTA/vanbelle/reports/07-70.pdf">Rank Support Vector Machines (RankSVMs)</a> and Polsterl et al. designed a straightforward algorithm to efficiently use the primal formulation, by computing a convex quadratic loss function, so that we can use the Newton optimization to minimize it, for <a href="https://link.springer.com/chapter/10.1007/978-3-319-23525-7_15">a linear approach</a> and <a href="https://arxiv.org/abs/1611.07054">a nonlinear/kernel based approach</a>.</p>
+<hr />
+<h2 id="linear-approach"><a href="linear_svm.html">Linear approach</a></h2>
+<p>The objective function of ranking-based linear survival support vector machine is defined as:
+<script type="math/tex; mode=display">\begin{equation}
+L= \frac{1}{2} || \vec{\omega} ||^2 +  \frac{\gamma}{2} \sum_{i, j \in P} \max\left(0, 1 - \vec{\omega}^T \cdot \left( \vec{x_i}- \vec{x_j} \right)  \right)^2
+\end{equation}</script>
+</p>
+<p>with <script type="math/tex"> P = \{ (i, j) | T_i > T_j \text{ and } \delta_j = 1 \} </script> and <script type="math/tex">p_0=|P|</script>
+</p>
+<p>The objective function, gradient and Hessian can be expressed in matrix form as:
+<script type="math/tex; mode=display">\begin{equation}
+  \begin{split}
+L(\omega) & = \frac{1}{2} \vec{\omega} \cdot \vec{\omega}^T +  \frac{\gamma}{2}\left( p_0 +  \vec{\omega}^T \cdot X^T \left(A \cdot X \cdot \vec{\omega} - 2\vec{a}\right) \right) \\
+\frac{\partial L}{\partial \omega} & = \vec{\omega} + \gamma X^T \cdot \left( A \cdot  X \cdot \vec{\omega} - \vec{a} \right) \\
+\frac{\partial^2 L}{\partial \omega \partial \omega^T} & = I + \gamma X^T \cdot  A \cdot  X  \\
+  \end{split}
+\end{equation}</script>
+</p>
+<p>with: </p>
+<ul>
+<li>
+<script type="math/tex">\gamma</script>, the L2 regularization parameter</li>
+<li>
+<script type="math/tex">I</script>, the identity matrix</li>
+<li>
+<p>
+<script type="math/tex">[ \vec{a} ]_i = l^{-}_{i} - l^{+}_{i} </script>
+</p>
+</li>
+<li>
+<p>
+<script type="math/tex">\left[ A \right]_{i,i} = l^{-}_{i} + l^{+}_{i} </script> if <script type="math/tex">i=j</script>; <script type="math/tex">\left[ A \right]_{i,j} = -1 </script> if <script type="math/tex">i\neq j</script> and <script type="math/tex">j \in \text{SV}_{i}</script>; and <script type="math/tex">\left[ A \right]_{i,j} = 0</script> otherwise. </p>
+<ul>
+<li>
+<script type="math/tex">\text{SV}_{i}^{+} = \{ s | T_s > T_i \text{ and } \omega^T x_s < \omega^T x_i  + 1 \text{ and } \delta_i = 1 \}</script> and <script type="math/tex">l^{+}_{i} = |\text{SV}_{i}^{+}|</script>
+</li>
+<li>
+<script type="math/tex">\text{SV}_{i}^{+} = \{ s | T_s < T_i \text{ and } \omega^T x_s > \omega^T x_i  - 1 \text{ and } \delta_s = 1 \}</script> and <script type="math/tex">l^{-}_{i} = |\text{SV}_{i}^{-}|</script>
+</li>
+<li>
+<script type="math/tex">\text{SV}_{i} = \text{SV}_{i}^{+} \bigcup \text{SV}_{i}^{-}</script>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="kernel-approach"><a href="kernel_svm.html">Kernel approach</a></h2>
+<p>It is possible to model non-linearities and interactions within the covariates by using kernel-based methods.
+<script type="math/tex; mode=display">\begin{equation}
+L = \frac{1}{2}||\phi||^2 + \frac{\gamma}{2}\sum_{i, j \in P} \max\left( 0, 1 - (\phi(x_i)-\phi(x_j) \right)^2
+\end{equation}</script>
+</p>
+<p>The objective function, gradient and Hessian can be expressed in matrix form as:
+<script type="math/tex; mode=display">\begin{equation}
+  \begin{split}
+L(\beta) & = \frac{1}{2}\vec{\beta} \cdot K \cdot \vec{\beta}^T+ \frac{\gamma}{2}\left( p_0 + \vec{\beta}^T \cdot K^T \left(A \cdot K \cdot \vec{\beta}- 2\vec{a}\right) \right) \\
+\frac{\partial L}{\partial \beta} & = K \cdot \vec{\beta} + \gamma K \left( A \cdot  K \cdot \vec{\beta} - \vec{a} \right) \\
+\frac{\partial^2 L}{\partial \beta \partial \beta^T} & = K + \gamma K \cdot A  \cdot K  \\
+  \end{split}
+\end{equation}</script>
+</p>
+<p>with: </p>
+<ul>
+<li>
+<p>
+<script type="math/tex">\gamma</script>, the L2 regularization parameter</p>
+</li>
+<li>
+<p>
+<script type="math/tex">K</script> is the <script type="math/tex">n \times n</script> symmetric positive definite kernel matrix such that <script type="math/tex">\forall (i,j) \in [\![ 1, n ]\!] \times  [\![ 1, n ]\!]</script>, <script type="math/tex">K_{i,j} = k(x_i, x_j)</script>  , with <script type="math/tex">k</script>, a kernel function and <script type="math/tex">n</script>, the number of samples.</p>
+</li>
+<li>
+<p>
+<script type="math/tex">\vec{K_s} = \left[ k(x_s, x_1), k(x_s, x_2), ..., k(x_s, x_n)\right] </script>
+</p>
+</li>
+<li>
+<p>
+<script type="math/tex">[ \vec{a} ]_i = l^{-}_{i} - l^{+}_{i} </script>
+</p>
+</li>
+<li>
+<p>
+<script type="math/tex">\left[ A \right]_{i,i} = l^{-}_{i} + l^{+}_{i} </script> if <script type="math/tex">i=j</script>; <script type="math/tex">\left[ A \right]_{i,j} = -1 </script> if <script type="math/tex">i\neq j</script> and <script type="math/tex">j \in \text{SV}_{i}</script>; and <script type="math/tex">\left[ A \right]_{i,j} = 0</script> otherwise. </p>
+<ul>
+<li>
+<script type="math/tex">\text{SV}_{i}^{+} = \{ s | T_s > T_i \text{ and } \vec{K_s}^T \cdot \vec{\beta} <  \vec{K_i}^T \cdot \vec{\beta}  + 1 \text{ and } \delta_i = 1 \}</script> and <script type="math/tex">l^{+}_{i} = |\text{SV}_{i}^{+}|</script>
+</li>
+<li>
+<script type="math/tex">\text{SV}_{i}^{+} = \{ s | T_s < T_i \text{ and } \vec{K_s}^T \cdot \vec{\beta} >  \vec{K_i}^T \cdot \vec{\beta}  - 1 \text{ and } \delta_s = 1 \}</script> and <script type="math/tex">l^{-}_{i} = |\text{SV}_{i}^{-}|</script>
+</li>
+<li>
+<script type="math/tex">\text{SV}_{i} = \text{SV}_{i}^{+} \bigcup \text{SV}_{i}^{-}</script>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li><a href="ftp://ftp.esat.kuleuven.be/SISTA/vanbelle/reports/07-70.pdf">Van Belle, Vanya, et al. "Support vector machines for survival analysis." Proceedings of the Third International Conference on Computational Intelligence in Medicine and Healthcare (CIMED2007). 2007.</a></li>
+<li><a href="https://link.springer.com/chapter/10.1007/978-3-319-23525-7_15">Pölsterl, Sebastian, et al. "Fast training of support vector machines for survival analysis." Joint European Conference on Machine Learning and Knowledge Discovery in Databases. Springer, Cham, 2015.</a></li>
+<li><a href="https://k-d-w.org/slides/ecml-2015/poelsterl2015ecmlpkdd.slides.pdf">Slides about "Fast training of support vector machines for survival analysis."</a></li>
+<li><a href="https://arxiv.org/abs/1611.07054">Pölsterl, Sebastian, et al. "An Efficient Training Algorithm for Kernel Survival Support Vector Machines." arXiv preprint arXiv:1611.07054 (2016).</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+            </article>
+          </div>
+        </div>
+      </main>
+
+
+<footer class="md-footer">
+
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Square Inc.
+          </div>
+
+
+
+        brought to you by
+        <a href="https://squareup.com/us">
+        <img src="images/Square_logo.png" alt="Square Logo" title="Square Logo" width=20%, height=20% align="center"  /></a>
+
+
+      </div>
+
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+
+      <a href="https://pysurvival.io/" class="md-footer-social__link fa fa-home"></a>
+
+      <a href="https://github.com/square/pysurvival" class="md-footer-social__link fa fa-github"></a>
+
+  </div>
+
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+      <script src="../assets/javascripts/application.d9aa80ab.js"></script>
+
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  </body>
+</html>
