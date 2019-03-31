@@ -1,0 +1,7 @@
+include README.md
+include pysurvival/datasets/*.csv
+include *.txt
+recursive-include docs *.txt *.js *.css *.html *.svg *.png *.yml
+recursive-include pysurvival/datasets *
+graft pysurvival
+global-exclude *.py[co]

@@ -1,0 +1,11 @@
+pysurvival-0.1 (2019-03-28)
+
+    * Finalizing the doc-strings and tutorials.
+    * Rewriting the code so that the parametric models use PyTorch 1.0 (https://pytorch.org/docs/1.0.0/).
+    * All the survival forest models (https://www.pysurvival.io/models/survival_forest.html) were added.
+
+
+pysurvival-0.0.1 (2019-03-20)
+
+    * Initial release
+    

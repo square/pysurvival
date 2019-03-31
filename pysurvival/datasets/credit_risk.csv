@@ -1,0 +1,1001 @@
+checking_account_status,duration,credit_history,purpose,amount,savings_account_status,employment_years,installment_rate,personal_status,other_debtors,present_residence,property,age,other_installment_plans,housing,number_of_credits,job,people_liable,telephone,foreign_worker,full_repaid
+below_0,6,critical_account,radio_TV,1169,unknown,above_7,4,M_single,None,4,real_estate ,67,None,own,2,official,1,1,1,1
+0_to_200,48,existing_credit_paid,radio_TV,5951,below_100,between_1_4,2,F_not_single,None,2,real_estate ,22,None,own,1,official,1,0,1,0
+no_account,12,critical_account,education,2096,below_100,between_4_7,2,M_single,None,3,real_estate ,49,None,own,1,unskilled,2,0,1,1
+below_0,42,existing_credit_paid,furniture_equipment,7882,below_100,between_4_7,2,M_single,guarantor,4,life_insurance  ,45,None,free,1,official,2,0,1,1
+below_0,24,delay_in_paying,car_new,4870,below_100,between_1_4,3,M_single,None,4,no_property,53,None,free,2,official,2,0,1,0
+no_account,36,existing_credit_paid,education,9055,unknown,between_1_4,2,M_single,None,4,no_property,35,None,free,1,unskilled,2,1,1,1
+no_account,24,existing_credit_paid,furniture_equipment,2835,between_500_1000,above_7,3,M_single,None,4,life_insurance  ,53,None,own,1,official,1,0,1,1
+0_to_200,36,existing_credit_paid,car_used,6948,below_100,between_1_4,2,M_single,None,2,other,35,None,rent,1,management,1,1,1,1
+no_account,12,existing_credit_paid,radio_TV,3059,above_1000,between_4_7,2,M_divorced,None,4,real_estate ,61,None,own,1,unskilled,1,0,1,1
+0_to_200,30,critical_account,car_new,5234,below_100,unemployed,4,M_divorced,None,2,other,28,None,own,2,management,1,0,1,0
+0_to_200,12,existing_credit_paid,car_new,1295,below_100,below_1,3,F_not_single,None,1,other,25,None,rent,1,official,1,0,1,0
+below_0,48,existing_credit_paid,business,4308,below_100,below_1,3,F_not_single,None,4,life_insurance  ,24,None,rent,1,official,1,0,1,0
+0_to_200,12,existing_credit_paid,radio_TV,1567,below_100,between_1_4,1,F_not_single,None,1,other,22,None,own,1,official,1,1,1,1
+below_0,24,critical_account,car_new,1199,below_100,above_7,4,M_single,None,4,other,60,None,own,2,unskilled,1,0,1,0
+below_0,15,existing_credit_paid,car_new,1403,below_100,between_1_4,2,F_not_single,None,4,other,28,None,rent,1,official,1,0,1,1
+below_0,24,existing_credit_paid,radio_TV,1282,between_100_500,between_1_4,4,F_not_single,None,2,other,32,None,own,1,unskilled,1,0,1,0
+no_account,24,critical_account,radio_TV,2424,unknown,above_7,4,M_single,None,4,life_insurance  ,53,None,own,2,official,1,0,1,1
+below_0,30,no_credit_taken,business,8072,unknown,below_1,2,M_single,None,3,other,25,bank,own,3,official,1,0,1,1
+0_to_200,24,existing_credit_paid,car_used,12579,below_100,above_7,4,F_not_single,None,2,no_property,44,None,free,1,management,1,1,1,0
+no_account,24,existing_credit_paid,radio_TV,3430,between_500_1000,above_7,3,M_single,None,2,other,31,None,own,1,official,2,1,1,1
+no_account,9,critical_account,car_new,2134,below_100,between_1_4,4,M_single,None,4,other,48,None,own,3,official,1,1,1,1
+below_0,6,existing_credit_paid,radio_TV,2647,between_500_1000,between_1_4,2,M_single,None,3,real_estate ,44,None,rent,1,official,2,0,1,1
+below_0,10,critical_account,car_new,2241,below_100,below_1,1,M_single,None,3,real_estate ,48,None,rent,2,unskilled,2,0,0,1
+0_to_200,12,critical_account,car_used,1804,between_100_500,below_1,3,M_single,None,4,life_insurance  ,44,None,own,1,official,1,0,1,1
+no_account,10,critical_account,furniture_equipment,2069,unknown,between_1_4,2,M_divorced,None,1,other,26,None,own,2,official,1,0,0,1
+below_0,6,existing_credit_paid,furniture_equipment,1374,below_100,between_1_4,1,M_single,None,2,real_estate ,36,bank,own,1,unskilled,1,1,1,1
+no_account,6,no_credit_taken,radio_TV,426,below_100,above_7,4,M_divorced,None,4,other,39,None,own,1,unskilled,1,0,1,1
+above_200,12,all_credit_paid,radio_TV,409,above_1000,between_1_4,3,F_not_single,None,3,real_estate ,42,None,rent,2,official,1,0,1,1
+0_to_200,7,existing_credit_paid,radio_TV,2415,below_100,between_1_4,3,M_single,guarantor,2,real_estate ,34,None,own,1,official,1,0,1,1
+below_0,60,delay_in_paying,business,6836,below_100,above_7,3,M_single,None,4,no_property,63,None,own,2,official,1,1,1,0
+0_to_200,18,existing_credit_paid,business,1913,above_1000,below_1,3,M_divorced,None,3,real_estate ,36,bank,own,1,official,1,1,1,1
+below_0,24,existing_credit_paid,furniture_equipment,4020,below_100,between_1_4,2,M_single,None,2,other,27,stores,own,1,official,1,0,1,1
+0_to_200,18,existing_credit_paid,car_new,5866,between_100_500,between_1_4,2,M_single,None,2,other,30,None,own,2,official,1,1,1,1
+no_account,12,critical_account,business,1264,unknown,above_7,4,M_single,None,4,no_property,57,None,rent,1,unskilled,1,0,1,1
+above_200,12,existing_credit_paid,furniture_equipment,1474,below_100,below_1,4,F_not_single,None,1,life_insurance  ,33,bank,own,1,management,1,1,1,1
+0_to_200,45,critical_account,radio_TV,4746,below_100,below_1,4,M_single,None,2,life_insurance  ,25,None,own,2,unskilled,1,0,1,0
+no_account,48,critical_account,education,6110,below_100,between_1_4,1,M_single,None,3,no_property,31,bank,free,1,official,1,1,1,1
+above_200,18,existing_credit_paid,radio_TV,2100,below_100,between_1_4,4,M_single,co_applicant ,2,real_estate ,37,stores,own,1,official,1,0,1,0
+above_200,10,existing_credit_paid,domestic_appliances,1225,below_100,between_1_4,2,M_single,None,2,other,37,None,own,1,official,1,1,1,1
+0_to_200,9,existing_credit_paid,radio_TV,458,below_100,between_1_4,4,M_single,None,3,real_estate ,24,None,own,1,official,1,0,1,1
+no_account,30,existing_credit_paid,radio_TV,2333,between_500_1000,above_7,4,M_single,None,2,other,30,bank,own,1,management,1,0,1,1
+0_to_200,12,existing_credit_paid,radio_TV,1158,between_500_1000,between_1_4,3,M_divorced,None,1,other,26,None,own,1,official,1,1,1,1
+0_to_200,18,delay_in_paying,repairs,6204,below_100,between_1_4,2,M_single,None,4,real_estate ,44,None,own,1,unskilled,2,1,1,1
+below_0,30,critical_account,car_used,6187,between_100_500,between_4_7,1,M_divorced,None,4,other,24,None,rent,2,official,1,0,1,1
+below_0,48,critical_account,car_used,6143,below_100,above_7,4,F_not_single,None,4,no_property,58,stores,free,2,unskilled,1,0,1,0
+no_account,11,critical_account,car_new,1393,below_100,below_1,4,F_not_single,None,4,other,35,None,own,2,management,1,0,1,1
+no_account,36,existing_credit_paid,radio_TV,2299,between_500_1000,above_7,4,M_single,None,4,other,39,None,own,1,official,1,0,1,1
+below_0,6,existing_credit_paid,car_used,1352,between_500_1000,unemployed,1,F_not_single,None,2,life_insurance  ,23,None,rent,1,unemployed,1,1,1,1
+no_account,11,critical_account,car_new,7228,below_100,between_1_4,1,M_single,None,4,life_insurance  ,39,None,own,2,unskilled,1,0,1,1
+no_account,12,existing_credit_paid,radio_TV,2073,between_100_500,between_1_4,4,F_not_single,co_applicant ,2,real_estate ,28,None,own,1,official,1,0,1,1
+0_to_200,24,delay_in_paying,furniture_equipment,2333,unknown,below_1,4,M_single,None,2,life_insurance  ,29,bank,own,1,unskilled,1,0,1,1
+0_to_200,27,delay_in_paying,car_used,5965,below_100,above_7,1,M_single,None,2,other,30,None,own,2,management,1,1,1,1
+no_account,12,existing_credit_paid,radio_TV,1262,below_100,between_1_4,3,M_single,None,2,other,25,None,own,1,official,1,0,1,1
+no_account,18,existing_credit_paid,car_used,3378,unknown,between_1_4,2,M_single,None,1,life_insurance  ,31,None,own,1,official,1,1,1,1
+0_to_200,36,delay_in_paying,car_new,2225,below_100,above_7,4,M_single,None,4,no_property,57,bank,free,2,official,1,1,1,0
+no_account,6,all_credit_paid,car_new,783,unknown,between_1_4,1,M_single,guarantor,2,real_estate ,26,stores,own,1,unskilled,2,0,1,1
+0_to_200,12,existing_credit_paid,radio_TV,6468,unknown,unemployed,2,M_single,None,1,no_property,52,None,own,1,management,1,1,1,0
+no_account,36,critical_account,radio_TV,9566,below_100,between_1_4,2,F_not_single,None,2,other,31,stores,own,2,official,1,0,1,1
+above_200,18,existing_credit_paid,car_new,1961,below_100,above_7,3,F_not_single,None,2,other,23,None,own,1,management,1,0,1,1
+below_0,36,critical_account,furniture_equipment,6229,below_100,below_1,4,F_not_single,co_applicant ,4,no_property,23,None,rent,2,unskilled,1,1,1,0
+0_to_200,9,existing_credit_paid,business,1391,below_100,between_1_4,2,M_divorced,None,1,real_estate ,27,bank,own,1,official,1,1,1,1
+0_to_200,15,critical_account,radio_TV,1537,unknown,above_7,4,M_single,guarantor,4,real_estate ,50,None,own,2,official,1,1,1,1
+0_to_200,36,no_credit_taken,business,1953,below_100,above_7,4,M_single,None,4,no_property,61,None,free,1,management,1,1,1,0
+0_to_200,48,no_credit_taken,business,14421,below_100,between_1_4,2,M_single,None,2,other,25,None,own,1,official,1,1,1,0
+no_account,24,existing_credit_paid,radio_TV,3181,below_100,below_1,4,F_not_single,None,4,life_insurance  ,26,None,own,1,official,1,1,1,1
+no_account,27,existing_credit_paid,repairs,5190,unknown,above_7,4,M_single,None,4,life_insurance  ,48,None,own,4,official,2,1,1,1
+no_account,12,existing_credit_paid,radio_TV,2171,below_100,below_1,2,F_not_single,None,2,other,29,bank,own,1,official,1,0,1,1
+0_to_200,12,existing_credit_paid,car_new,1007,above_1000,between_1_4,4,M_divorced,None,1,real_estate ,22,None,own,1,official,1,0,1,1
+no_account,36,existing_credit_paid,education,1819,below_100,between_1_4,4,M_single,None,4,no_property,37,stores,free,1,official,1,1,1,0
+no_account,36,existing_credit_paid,radio_TV,2394,unknown,between_1_4,4,F_not_single,None,4,other,25,None,own,1,official,1,0,1,1
+no_account,36,existing_credit_paid,car_used,8133,below_100,between_1_4,1,F_not_single,None,2,life_insurance  ,30,bank,own,1,official,1,0,1,1
+no_account,7,critical_account,radio_TV,730,unknown,above_7,4,M_single,None,2,life_insurance  ,46,None,rent,2,unskilled,1,1,1,1
+below_0,8,critical_account,others,1164,below_100,above_7,3,M_single,None,4,no_property,51,bank,free,2,management,2,1,1,1
+0_to_200,42,critical_account,business,5954,below_100,between_4_7,2,F_not_single,None,1,real_estate ,41,bank,own,2,unskilled,1,0,1,1
+below_0,36,existing_credit_paid,education,1977,unknown,above_7,4,M_single,None,4,no_property,40,None,own,1,management,1,1,1,0
+below_0,12,critical_account,car_used,1526,below_100,above_7,4,M_single,None,4,no_property,66,None,free,2,management,1,0,1,1
+below_0,42,existing_credit_paid,radio_TV,3965,below_100,below_1,4,M_single,None,3,other,34,None,own,1,official,1,0,1,0
+0_to_200,11,delay_in_paying,radio_TV,4771,below_100,between_4_7,2,M_single,None,4,life_insurance  ,51,None,own,1,official,1,0,1,1
+no_account,54,no_credit_taken,car_used,9436,unknown,between_1_4,2,M_single,None,2,life_insurance  ,39,None,own,1,unskilled,2,0,1,1
+0_to_200,30,existing_credit_paid,furniture_equipment,3832,below_100,below_1,2,M_divorced,None,1,life_insurance  ,22,None,own,1,official,1,0,1,1
+no_account,24,existing_credit_paid,radio_TV,5943,unknown,below_1,1,F_not_single,None,1,other,44,None,own,2,official,1,1,1,0
+no_account,15,existing_credit_paid,radio_TV,1213,between_500_1000,above_7,4,M_single,None,3,life_insurance  ,47,stores,own,1,official,1,1,1,1
+no_account,18,existing_credit_paid,business,1568,between_100_500,between_1_4,3,F_not_single,None,4,life_insurance  ,24,None,rent,1,unskilled,1,0,1,1
+below_0,24,existing_credit_paid,others,1755,below_100,above_7,4,F_not_single,guarantor,4,real_estate ,58,None,own,1,unskilled,1,1,1,1
+below_0,10,existing_credit_paid,radio_TV,2315,below_100,above_7,3,M_single,None,4,real_estate ,52,None,own,1,unskilled,1,0,1,1
+no_account,12,critical_account,business,1412,below_100,between_1_4,4,F_not_single,guarantor,2,real_estate ,29,None,own,2,management,1,1,1,1
+0_to_200,18,critical_account,furniture_equipment,1295,below_100,below_1,4,F_not_single,None,1,life_insurance  ,27,None,own,2,official,1,0,1,1
+0_to_200,36,existing_credit_paid,education,12612,between_100_500,between_1_4,1,M_single,None,4,no_property,47,None,free,1,official,2,1,1,0
+below_0,18,existing_credit_paid,car_new,2249,between_100_500,between_4_7,4,M_single,None,3,other,30,None,own,1,management,2,1,1,1
+below_0,12,no_credit_taken,repairs,1108,below_100,between_4_7,4,M_single,None,3,real_estate ,28,None,own,2,official,1,0,1,0
+no_account,12,critical_account,radio_TV,618,below_100,above_7,4,M_single,None,4,real_estate ,56,None,own,1,official,1,0,1,1
+below_0,12,critical_account,car_used,1409,below_100,above_7,4,M_single,None,3,real_estate ,54,None,own,1,official,1,0,1,1
+no_account,12,critical_account,radio_TV,797,unknown,above_7,4,F_not_single,None,3,life_insurance  ,33,bank,own,1,unskilled,2,0,1,0
+above_200,24,critical_account,furniture_equipment,3617,unknown,above_7,4,M_single,co_applicant ,4,no_property,20,None,rent,2,official,1,0,1,1
+0_to_200,12,existing_credit_paid,car_new,1318,above_1000,above_7,4,M_single,None,4,real_estate ,54,None,own,1,official,1,1,1,1
+0_to_200,54,no_credit_taken,business,15945,below_100,below_1,3,M_single,None,4,no_property,58,None,rent,1,official,1,1,1,0
+no_account,12,critical_account,education,2012,unknown,between_4_7,4,F_not_single,None,2,other,61,None,own,1,official,1,0,1,1
+0_to_200,18,existing_credit_paid,business,2622,between_100_500,between_1_4,4,M_single,None,4,other,34,None,own,1,official,1,0,1,1
+0_to_200,36,critical_account,radio_TV,2337,below_100,above_7,4,M_single,None,4,real_estate ,36,None,own,1,official,1,0,1,1
+0_to_200,20,delay_in_paying,car_used,7057,unknown,between_4_7,3,M_single,None,4,life_insurance  ,36,bank,rent,2,management,2,1,1,1
+no_account,24,existing_credit_paid,car_new,1469,between_100_500,above_7,4,M_divorced,None,4,real_estate ,41,None,rent,1,unskilled,1,0,1,1
+0_to_200,36,existing_credit_paid,radio_TV,2323,below_100,between_4_7,4,M_single,None,4,other,24,None,rent,1,official,1,0,1,1
+no_account,6,delay_in_paying,radio_TV,932,below_100,between_1_4,3,F_not_single,None,2,real_estate ,24,None,own,1,official,1,0,1,1
+0_to_200,9,critical_account,furniture_equipment,1919,below_100,between_4_7,4,M_single,None,3,other,35,None,rent,1,official,1,1,1,1
+no_account,12,existing_credit_paid,car_used,2445,unknown,below_1,2,M_divorced,None,4,other,26,None,rent,1,official,1,1,1,1
+0_to_200,24,critical_account,others,11938,below_100,between_1_4,2,M_single,co_applicant ,3,other,39,None,own,2,management,2,1,1,0
+no_account,18,all_credit_paid,car_new,6458,below_100,above_7,2,M_single,None,4,no_property,39,bank,own,2,management,2,1,1,0
+0_to_200,12,existing_credit_paid,car_new,6078,below_100,between_4_7,2,M_single,None,2,other,32,None,own,1,official,1,0,1,1
+below_0,24,existing_credit_paid,furniture_equipment,7721,unknown,below_1,1,F_not_single,None,2,life_insurance  ,30,None,own,1,official,1,1,0,1
+0_to_200,14,existing_credit_paid,business,1410,between_500_1000,above_7,1,M_divorced,None,2,real_estate ,35,None,own,1,official,1,1,1,1
+0_to_200,6,delay_in_paying,business,1449,between_100_500,above_7,1,M_divorced,None,2,other,31,bank,own,2,official,2,0,1,1
+above_200,15,existing_credit_paid,education,392,below_100,below_1,4,F_not_single,None,4,life_insurance  ,23,None,rent,1,official,1,1,1,1
+0_to_200,18,existing_credit_paid,car_new,6260,below_100,between_4_7,3,M_single,None,3,real_estate ,28,None,rent,1,unskilled,1,0,1,1
+no_account,36,critical_account,car_new,7855,below_100,between_1_4,4,F_not_single,None,2,real_estate ,25,stores,own,2,official,1,1,1,0
+below_0,12,existing_credit_paid,radio_TV,1680,between_500_1000,above_7,3,M_divorced,None,1,real_estate ,35,None,own,1,official,1,0,1,1
+no_account,48,critical_account,radio_TV,3578,unknown,above_7,4,M_single,None,1,real_estate ,47,None,own,1,official,1,1,1,1
+below_0,42,existing_credit_paid,radio_TV,7174,unknown,between_4_7,4,F_not_single,None,3,other,30,None,own,1,management,1,1,1,0
+below_0,10,critical_account,furniture_equipment,2132,unknown,below_1,2,F_not_single,co_applicant ,3,real_estate ,27,None,rent,2,official,1,0,0,1
+below_0,33,critical_account,furniture_equipment,4281,between_500_1000,between_1_4,1,F_not_single,None,4,other,23,None,own,2,official,1,0,1,0
+0_to_200,12,critical_account,car_new,2366,between_500_1000,between_4_7,3,M_divorced,None,3,other,36,None,own,1,management,1,1,1,1
+below_0,21,existing_credit_paid,radio_TV,1835,below_100,between_1_4,3,F_not_single,None,2,real_estate ,25,None,own,2,official,1,1,1,0
+no_account,24,critical_account,car_used,3868,below_100,above_7,4,F_not_single,None,2,other,41,None,rent,2,management,1,1,1,1
+no_account,12,existing_credit_paid,furniture_equipment,1768,below_100,between_1_4,3,M_single,None,2,real_estate ,24,None,rent,1,unskilled,1,0,1,1
+above_200,10,critical_account,car_new,781,below_100,above_7,4,M_single,None,4,no_property,63,None,free,2,official,1,1,1,1
+0_to_200,18,existing_credit_paid,furniture_equipment,1924,unknown,below_1,4,F_not_single,None,3,real_estate ,27,None,rent,1,official,1,0,1,0
+below_0,12,critical_account,car_new,2121,below_100,between_1_4,4,M_single,None,2,life_insurance  ,30,None,own,2,official,1,0,1,1
+below_0,12,existing_credit_paid,radio_TV,701,below_100,between_1_4,4,M_divorced,None,2,real_estate ,40,None,own,1,unskilled,1,0,1,1
+0_to_200,12,existing_credit_paid,repairs,639,below_100,between_1_4,4,M_single,None,2,other,30,None,own,1,official,1,0,1,0
+0_to_200,12,critical_account,car_used,1860,below_100,unemployed,4,M_single,None,2,other,34,None,own,2,management,1,1,1,1
+below_0,12,critical_account,car_new,3499,below_100,between_1_4,3,F_not_single,co_applicant ,2,real_estate ,29,None,own,2,official,1,0,1,0
+0_to_200,48,existing_credit_paid,car_new,8487,unknown,between_4_7,1,F_not_single,None,2,other,24,None,own,1,official,1,0,1,1
+below_0,36,delay_in_paying,education,6887,below_100,between_1_4,4,M_single,None,3,life_insurance  ,29,stores,own,1,official,1,1,1,0
+no_account,15,existing_credit_paid,furniture_equipment,2708,below_100,below_1,2,M_single,None,3,life_insurance  ,27,bank,own,2,unskilled,1,0,1,1
+no_account,18,existing_credit_paid,furniture_equipment,1984,below_100,between_1_4,4,M_single,None,4,no_property,47,bank,free,2,official,1,0,1,1
+no_account,60,existing_credit_paid,radio_TV,10144,between_100_500,between_4_7,2,F_not_single,None,4,real_estate ,21,None,own,1,official,1,1,1,1
+no_account,12,critical_account,radio_TV,1240,unknown,above_7,4,F_not_single,None,2,real_estate ,38,None,own,2,official,1,1,1,1
+no_account,27,delay_in_paying,car_used,8613,above_1000,between_1_4,2,M_single,None,2,other,27,None,own,2,official,1,0,1,1
+0_to_200,12,existing_credit_paid,radio_TV,766,between_500_1000,between_1_4,4,M_single,None,3,real_estate ,66,None,own,1,unskilled,1,0,1,0
+0_to_200,15,critical_account,radio_TV,2728,unknown,between_4_7,4,M_single,guarantor,2,real_estate ,35,bank,own,3,official,1,1,1,1
+above_200,12,existing_credit_paid,radio_TV,1881,below_100,between_1_4,2,F_not_single,None,2,other,44,None,rent,1,unskilled,1,1,1,1
+above_200,6,existing_credit_paid,car_new,709,above_1000,below_1,2,M_divorced,None,2,real_estate ,27,None,own,1,unemployed,1,0,0,1
+0_to_200,36,existing_credit_paid,radio_TV,4795,below_100,below_1,4,F_not_single,None,1,no_property,30,None,own,1,management,1,1,1,1
+below_0,27,existing_credit_paid,radio_TV,3416,below_100,between_1_4,3,M_single,None,2,other,27,None,own,1,management,1,0,1,1
+below_0,18,existing_credit_paid,furniture_equipment,2462,below_100,between_1_4,2,M_single,None,2,other,22,None,own,1,official,1,0,1,0
+no_account,21,critical_account,furniture_equipment,2288,below_100,below_1,4,F_not_single,None,4,life_insurance  ,23,None,own,1,official,1,1,1,1
+0_to_200,48,all_credit_paid,business,3566,between_100_500,between_4_7,4,M_single,None,2,other,30,None,own,1,official,1,0,1,1
+below_0,6,critical_account,car_new,860,below_100,above_7,1,F_not_single,None,4,no_property,39,None,own,2,official,1,1,1,1
+no_account,12,critical_account,car_new,682,between_100_500,between_4_7,4,F_not_single,None,3,other,51,None,own,2,official,1,1,1,1
+below_0,36,critical_account,furniture_equipment,5371,below_100,between_1_4,3,M_single,guarantor,2,life_insurance  ,28,None,own,2,official,1,0,1,1
+no_account,18,critical_account,radio_TV,1582,above_1000,above_7,4,M_single,None,4,other,46,None,own,2,official,1,0,1,1
+no_account,6,existing_credit_paid,radio_TV,1346,between_100_500,above_7,2,M_single,None,4,no_property,42,bank,free,1,official,2,1,1,1
+no_account,10,existing_credit_paid,radio_TV,1924,below_100,between_1_4,1,M_single,None,4,life_insurance  ,38,None,own,1,official,1,1,0,1
+above_200,36,existing_credit_paid,radio_TV,5848,below_100,between_1_4,4,M_single,None,1,other,24,None,own,1,official,1,0,1,1
+0_to_200,24,critical_account,car_used,7758,above_1000,above_7,2,F_not_single,None,4,no_property,29,None,rent,1,official,1,0,1,1
+0_to_200,24,delay_in_paying,business,6967,between_100_500,between_4_7,4,M_single,None,4,other,36,None,rent,1,management,1,1,1,1
+below_0,12,existing_credit_paid,furniture_equipment,1282,below_100,between_1_4,2,F_not_single,None,4,other,20,None,rent,1,official,1,0,1,0
+below_0,9,critical_account,repairs,1288,between_100_500,above_7,3,M_single,guarantor,4,real_estate ,48,None,own,2,official,2,0,0,1
+below_0,12,all_credit_paid,retraining,339,below_100,above_7,4,M_divorced,None,1,other,45,bank,own,1,unskilled,1,0,1,1
+0_to_200,24,existing_credit_paid,car_new,3512,between_100_500,between_4_7,2,M_single,None,3,other,38,bank,own,2,official,1,1,1,1
+no_account,6,critical_account,radio_TV,1898,unknown,between_1_4,1,M_single,None,2,real_estate ,34,None,own,2,unskilled,2,0,1,1
+no_account,24,critical_account,radio_TV,2872,between_100_500,above_7,3,M_single,None,4,real_estate ,36,None,own,1,official,2,1,1,1
+no_account,18,critical_account,car_new,1055,below_100,below_1,4,F_not_single,None,1,life_insurance  ,30,None,own,2,official,1,0,1,1
+no_account,15,existing_credit_paid,domestic_appliances,1262,between_500_1000,between_4_7,4,M_single,None,3,life_insurance  ,36,None,own,2,official,1,1,1,1
+0_to_200,10,existing_credit_paid,car_new,7308,below_100,unemployed,2,M_single,None,4,no_property,70,bank,free,1,management,1,1,1,1
+no_account,36,existing_credit_paid,car_new,909,between_500_1000,above_7,4,M_single,None,4,life_insurance  ,36,None,own,1,official,1,0,1,1
+no_account,6,existing_credit_paid,furniture_equipment,2978,between_500_1000,between_1_4,1,M_single,None,2,other,32,None,own,1,official,1,1,1,1
+below_0,18,existing_credit_paid,furniture_equipment,1131,below_100,unemployed,4,F_not_single,None,2,other,33,None,own,1,official,1,0,1,0
+0_to_200,11,existing_credit_paid,furniture_equipment,1577,above_1000,below_1,4,F_not_single,None,1,real_estate ,20,None,own,1,official,1,0,1,1
+no_account,24,existing_credit_paid,furniture_equipment,3972,below_100,between_4_7,2,F_not_single,None,4,life_insurance  ,25,None,rent,1,official,1,1,1,1
+0_to_200,24,critical_account,business,1935,below_100,above_7,4,M_divorced,None,4,real_estate ,31,None,own,2,official,1,1,1,0
+below_0,15,no_credit_taken,car_new,950,below_100,above_7,4,M_single,None,3,other,33,None,rent,2,official,2,0,1,0
+no_account,12,existing_credit_paid,furniture_equipment,763,below_100,between_1_4,4,F_not_single,None,1,real_estate ,26,None,own,1,official,1,1,1,1
+0_to_200,24,delay_in_paying,furniture_equipment,2064,below_100,unemployed,3,F_not_single,None,2,life_insurance  ,34,None,own,1,management,1,1,1,0
+0_to_200,8,existing_credit_paid,radio_TV,1414,below_100,between_1_4,4,M_single,guarantor,2,real_estate ,33,None,own,1,official,1,0,0,1
+below_0,21,delay_in_paying,education,3414,below_100,below_1,2,M_single,None,1,life_insurance  ,26,None,own,2,official,1,0,1,0
+no_account,30,all_credit_paid,car_used,7485,unknown,unemployed,4,F_not_single,None,1,real_estate ,53,bank,own,1,management,1,1,1,0
+below_0,12,existing_credit_paid,furniture_equipment,2577,below_100,between_1_4,2,M_divorced,None,1,other,42,None,own,1,official,1,0,1,1
+below_0,6,critical_account,radio_TV,338,between_500_1000,above_7,4,M_single,None,4,other,52,None,own,2,official,1,0,1,1
+no_account,12,existing_credit_paid,radio_TV,1963,below_100,between_4_7,4,M_single,None,2,other,31,None,rent,2,management,2,1,1,1
+below_0,21,critical_account,car_new,571,below_100,above_7,4,M_single,None,4,real_estate ,65,None,own,2,official,1,0,1,1
+no_account,36,delay_in_paying,business,9572,below_100,below_1,1,M_divorced,None,1,other,28,None,own,2,official,1,0,1,0
+0_to_200,36,delay_in_paying,business,4455,below_100,between_1_4,2,M_divorced,None,2,real_estate ,30,stores,own,2,management,1,1,1,0
+below_0,21,all_credit_paid,car_new,1647,unknown,between_1_4,4,M_single,None,2,life_insurance  ,40,None,own,2,unskilled,2,0,1,0
+no_account,24,critical_account,furniture_equipment,3777,above_1000,between_1_4,4,M_single,None,4,real_estate ,50,None,own,1,official,1,1,1,1
+0_to_200,18,critical_account,car_new,884,below_100,above_7,4,M_single,None,4,other,36,bank,own,1,official,2,1,1,0
+no_account,15,critical_account,radio_TV,1360,below_100,between_1_4,4,M_single,None,2,life_insurance  ,31,None,own,2,official,1,0,1,1
+0_to_200,9,all_credit_paid,car_used,5129,below_100,above_7,2,F_not_single,None,4,no_property,74,bank,free,1,management,2,1,1,0
+0_to_200,16,critical_account,car_new,1175,below_100,unemployed,2,M_single,None,3,other,68,None,free,3,unemployed,1,1,1,1
+below_0,12,existing_credit_paid,radio_TV,674,between_100_500,between_4_7,4,M_divorced,None,1,life_insurance  ,20,None,own,1,official,1,0,1,0
+0_to_200,18,no_credit_taken,furniture_equipment,3244,below_100,between_1_4,1,F_not_single,None,4,other,33,bank,own,2,official,1,1,1,1
+no_account,24,existing_credit_paid,business,4591,above_1000,between_1_4,2,M_single,None,3,life_insurance  ,54,None,own,3,management,1,1,1,0
+0_to_200,48,no_credit_taken,business,3844,between_100_500,between_4_7,4,M_single,None,4,no_property,34,None,free,1,unskilled,2,0,1,0
+0_to_200,27,existing_credit_paid,business,3915,below_100,between_1_4,4,M_single,None,2,other,36,None,own,1,official,2,1,1,0
+no_account,6,existing_credit_paid,radio_TV,2108,below_100,between_4_7,2,M_divorced,None,2,real_estate ,29,None,rent,1,official,1,0,1,1
+0_to_200,45,existing_credit_paid,radio_TV,3031,between_100_500,between_1_4,4,M_single,guarantor,4,life_insurance  ,21,None,rent,1,official,1,0,1,0
+0_to_200,9,critical_account,education,1501,below_100,above_7,2,F_not_single,None,3,other,34,None,own,2,management,1,1,1,0
+no_account,6,critical_account,radio_TV,1382,below_100,between_1_4,1,F_not_single,None,1,other,28,None,own,2,official,1,1,1,1
+0_to_200,12,existing_credit_paid,furniture_equipment,951,between_100_500,below_1,4,F_not_single,None,4,other,27,bank,rent,4,official,1,0,1,0
+0_to_200,24,existing_credit_paid,car_used,2760,unknown,above_7,4,M_single,None,4,no_property,36,bank,free,1,official,1,1,1,1
+0_to_200,18,delay_in_paying,furniture_equipment,4297,below_100,above_7,4,M_divorced,None,3,no_property,40,None,own,1,management,1,1,1,0
+no_account,9,critical_account,education,936,between_500_1000,above_7,4,M_single,None,2,other,52,None,own,2,official,1,1,1,1
+below_0,12,existing_credit_paid,car_new,1168,below_100,between_1_4,4,M_divorced,None,3,real_estate ,27,None,own,1,unskilled,1,0,1,1
+no_account,27,delay_in_paying,business,5117,below_100,between_4_7,3,M_single,None,4,other,26,None,own,2,official,1,0,1,1
+below_0,12,existing_credit_paid,retraining,902,below_100,between_4_7,4,M_divorced,None,4,life_insurance  ,21,None,rent,1,official,1,0,1,0
+no_account,12,critical_account,car_new,1495,below_100,above_7,4,M_single,None,1,real_estate ,38,None,own,2,unskilled,2,0,1,1
+below_0,30,critical_account,car_used,10623,below_100,above_7,3,M_single,None,4,no_property,38,None,free,3,management,2,1,1,1
+no_account,12,critical_account,furniture_equipment,1935,below_100,above_7,4,M_single,None,4,real_estate ,43,None,own,3,official,1,1,1,1
+0_to_200,12,critical_account,domestic_appliances,1424,below_100,between_4_7,4,M_single,None,3,life_insurance  ,26,None,own,1,official,1,0,1,1
+below_0,24,existing_credit_paid,business,6568,below_100,between_1_4,2,M_divorced,None,2,other,21,stores,own,1,unskilled,1,0,1,1
+no_account,12,existing_credit_paid,car_used,1413,above_1000,between_4_7,3,M_single,None,2,life_insurance  ,55,None,own,1,official,1,0,0,1
+no_account,9,critical_account,radio_TV,3074,unknown,between_1_4,1,M_single,None,2,real_estate ,33,None,own,2,official,2,0,1,1
+no_account,36,existing_credit_paid,radio_TV,3835,unknown,above_7,2,F_not_single,None,4,real_estate ,45,None,own,1,unskilled,1,1,1,1
+below_0,27,no_credit_taken,business,5293,below_100,unemployed,2,M_single,None,4,life_insurance  ,50,stores,own,2,official,1,1,1,0
+above_200,30,delay_in_paying,business,1908,below_100,above_7,4,M_single,None,4,real_estate ,66,None,own,1,management,1,1,1,0
+no_account,36,critical_account,radio_TV,3342,unknown,above_7,4,M_single,None,2,other,51,None,own,1,official,1,1,1,1
+0_to_200,6,critical_account,retraining,932,unknown,between_4_7,1,F_not_single,None,3,life_insurance  ,39,None,own,2,unskilled,1,0,1,1
+below_0,18,no_credit_taken,business,3104,below_100,between_4_7,3,M_single,None,1,life_insurance  ,31,bank,own,1,official,1,1,1,1
+above_200,36,existing_credit_paid,radio_TV,3913,below_100,between_1_4,2,M_single,None,2,real_estate ,23,None,own,1,official,1,1,1,1
+below_0,24,existing_credit_paid,furniture_equipment,3021,below_100,between_1_4,2,M_divorced,None,2,real_estate ,24,None,rent,1,unskilled,1,0,1,1
+no_account,10,existing_credit_paid,car_new,1364,below_100,between_1_4,2,F_not_single,None,4,other,64,None,own,1,official,1,1,1,1
+0_to_200,12,existing_credit_paid,radio_TV,625,below_100,below_1,4,M_divorced,guarantor,1,real_estate ,26,bank,own,1,unskilled,1,0,1,1
+below_0,12,existing_credit_paid,education,1200,unknown,between_1_4,4,F_not_single,None,4,life_insurance  ,23,bank,rent,1,official,1,1,1,1
+no_account,12,existing_credit_paid,radio_TV,707,below_100,between_1_4,4,M_single,None,2,real_estate ,30,bank,own,2,official,1,0,1,1
+no_account,24,delay_in_paying,business,2978,unknown,between_1_4,4,M_single,None,4,real_estate ,32,None,own,2,official,2,1,1,1
+no_account,15,existing_credit_paid,car_used,4657,below_100,between_1_4,3,M_single,None,2,other,30,None,own,1,official,1,1,1,1
+no_account,36,no_credit_taken,repairs,2613,below_100,between_1_4,4,M_single,None,2,other,27,None,own,2,official,1,0,1,1
+0_to_200,48,existing_credit_paid,radio_TV,10961,above_1000,between_4_7,1,M_single,co_applicant ,2,no_property,27,bank,own,2,official,1,1,1,0
+below_0,12,existing_credit_paid,furniture_equipment,7865,below_100,above_7,4,M_single,None,4,no_property,53,None,free,1,management,1,1,1,0
+no_account,9,existing_credit_paid,radio_TV,1478,below_100,between_4_7,4,M_single,None,2,other,22,None,own,1,official,1,0,1,0
+below_0,24,existing_credit_paid,furniture_equipment,3149,below_100,below_1,4,M_single,None,1,no_property,22,bank,free,1,official,1,0,1,1
+above_200,36,existing_credit_paid,radio_TV,4210,below_100,between_1_4,4,M_single,None,2,other,26,None,own,1,official,1,0,1,0
+no_account,9,existing_credit_paid,car_new,2507,between_500_1000,above_7,2,M_single,None,4,no_property,51,None,free,1,unskilled,1,0,1,1
+no_account,12,existing_credit_paid,radio_TV,2141,between_100_500,between_4_7,3,M_single,None,1,no_property,35,None,own,1,official,1,0,1,1
+0_to_200,18,existing_credit_paid,radio_TV,866,below_100,between_1_4,4,M_divorced,guarantor,2,real_estate ,25,None,own,1,unskilled,1,0,1,1
+no_account,4,critical_account,radio_TV,1544,below_100,between_4_7,2,M_single,None,1,real_estate ,42,None,own,3,unskilled,2,0,1,1
+below_0,24,existing_credit_paid,radio_TV,1823,below_100,unemployed,4,M_single,None,2,other,30,stores,own,1,management,2,0,1,0
+0_to_200,6,existing_credit_paid,car_new,14555,unknown,unemployed,1,M_single,None,2,life_insurance  ,23,None,own,1,unemployed,1,1,1,0
+0_to_200,21,existing_credit_paid,business,2767,between_100_500,above_7,4,M_divorced,None,2,other,61,bank,rent,2,unskilled,1,0,1,0
+no_account,12,critical_account,radio_TV,1291,below_100,between_1_4,4,F_not_single,None,2,life_insurance  ,35,None,own,2,official,1,0,1,1
+below_0,30,existing_credit_paid,radio_TV,2522,below_100,above_7,1,M_single,guarantor,3,life_insurance  ,39,None,own,1,official,2,0,1,1
+below_0,24,existing_credit_paid,car_new,915,unknown,above_7,4,F_not_single,None,2,other,29,bank,own,1,official,1,0,1,0
+no_account,6,existing_credit_paid,radio_TV,1595,below_100,between_4_7,3,M_single,None,2,life_insurance  ,51,None,own,1,official,2,0,1,1
+below_0,48,no_credit_taken,car_used,4605,below_100,above_7,3,M_single,None,4,no_property,24,None,free,2,official,2,0,1,0
+no_account,12,critical_account,business,1185,below_100,between_1_4,3,F_not_single,None,2,real_estate ,27,None,own,2,official,1,0,1,1
+no_account,12,all_credit_paid,retraining,3447,between_500_1000,between_1_4,4,F_not_single,None,3,real_estate ,35,None,own,1,unskilled,2,0,1,1
+no_account,24,existing_credit_paid,business,1258,below_100,between_4_7,4,M_single,None,1,real_estate ,25,None,own,1,official,1,1,1,1
+no_account,12,critical_account,radio_TV,717,below_100,above_7,4,M_single,None,4,real_estate ,52,None,own,3,official,1,0,1,1
+no_account,6,no_credit_taken,car_new,1204,between_100_500,between_1_4,4,M_single,None,1,no_property,35,bank,rent,1,official,1,0,0,1
+above_200,24,existing_credit_paid,furniture_equipment,1925,below_100,between_1_4,2,M_single,None,2,real_estate ,26,None,own,1,official,1,0,1,1
+no_account,18,existing_credit_paid,radio_TV,433,below_100,unemployed,3,F_not_single,co_applicant ,4,real_estate ,22,None,rent,1,official,1,0,1,0
+below_0,6,critical_account,car_new,666,above_1000,between_4_7,3,F_not_single,None,4,real_estate ,39,None,own,2,unskilled,1,1,1,1
+above_200,12,existing_credit_paid,furniture_equipment,2251,below_100,between_1_4,1,F_not_single,None,2,other,46,None,own,1,unskilled,1,0,1,1
+0_to_200,30,existing_credit_paid,car_new,2150,below_100,between_1_4,4,F_not_single,guarantor,2,no_property,24,bank,own,1,official,1,0,1,0
+no_account,24,delay_in_paying,furniture_equipment,4151,between_100_500,between_1_4,2,M_single,None,3,life_insurance  ,35,None,own,2,official,1,0,1,1
+0_to_200,9,existing_credit_paid,furniture_equipment,2030,unknown,between_4_7,2,M_single,None,1,other,24,None,own,1,official,1,1,1,1
+0_to_200,60,delay_in_paying,radio_TV,7418,unknown,between_1_4,1,M_single,None,1,real_estate ,27,None,own,1,unskilled,1,0,1,1
+no_account,24,critical_account,radio_TV,2684,below_100,between_1_4,4,M_single,None,2,real_estate ,35,None,own,2,unskilled,1,0,1,1
+below_0,12,all_credit_paid,radio_TV,2149,below_100,between_1_4,4,M_divorced,None,1,no_property,29,None,free,1,official,1,0,1,0
+no_account,15,existing_credit_paid,car_used,3812,between_100_500,below_1,1,F_not_single,None,4,other,23,None,own,1,official,1,1,1,1
+no_account,11,critical_account,radio_TV,1154,between_100_500,unemployed,4,F_not_single,None,4,real_estate ,57,None,own,3,unskilled,1,0,1,1
+below_0,12,existing_credit_paid,furniture_equipment,1657,below_100,between_1_4,2,M_single,None,2,real_estate ,27,None,own,1,official,1,0,1,1
+below_0,24,existing_credit_paid,radio_TV,1603,below_100,above_7,4,F_not_single,None,4,other,55,None,own,1,official,1,0,1,1
+below_0,18,critical_account,car_new,5302,below_100,above_7,2,M_single,None,4,no_property,36,None,free,3,management,1,1,1,1
+no_account,12,critical_account,education,2748,below_100,above_7,2,F_not_single,None,4,no_property,57,bank,free,3,unskilled,1,0,1,1
+no_account,10,critical_account,car_new,1231,below_100,above_7,3,M_single,None,4,real_estate ,32,None,own,2,unskilled,2,0,0,1
+0_to_200,15,existing_credit_paid,radio_TV,802,below_100,above_7,4,M_single,None,3,other,37,None,own,1,official,2,0,1,0
+no_account,36,critical_account,business,6304,unknown,above_7,4,M_single,None,4,real_estate ,36,None,own,2,official,1,0,1,1
+no_account,24,existing_credit_paid,radio_TV,1533,below_100,below_1,4,F_not_single,None,3,other,38,stores,own,1,official,1,1,1,1
+below_0,14,existing_credit_paid,car_new,8978,below_100,above_7,1,M_divorced,None,4,life_insurance  ,45,None,own,1,management,1,1,0,0
+no_account,24,existing_credit_paid,radio_TV,999,unknown,above_7,4,M_single,None,2,other,25,None,own,2,official,1,0,1,1
+no_account,18,existing_credit_paid,car_new,2662,unknown,between_4_7,4,M_single,None,3,life_insurance  ,32,None,own,1,official,1,0,0,1
+no_account,12,critical_account,furniture_equipment,1402,between_500_1000,between_4_7,3,F_not_single,None,4,other,37,None,rent,1,official,1,1,1,1
+0_to_200,48,all_credit_paid,car_new,12169,unknown,unemployed,4,M_single,co_applicant ,4,no_property,36,None,free,1,management,1,1,1,1
+0_to_200,48,existing_credit_paid,radio_TV,3060,below_100,between_4_7,4,M_single,None,4,real_estate ,28,None,own,2,official,1,0,1,0
+below_0,30,existing_credit_paid,repairs,11998,below_100,below_1,1,M_divorced,None,1,no_property,34,None,own,1,unskilled,1,1,1,0
+no_account,9,existing_credit_paid,radio_TV,2697,below_100,between_1_4,1,M_single,None,2,real_estate ,32,None,own,1,official,2,0,1,1
+no_account,18,critical_account,radio_TV,2404,below_100,between_1_4,2,F_not_single,None,2,other,26,None,own,2,official,1,0,1,1
+below_0,12,existing_credit_paid,furniture_equipment,1262,unknown,above_7,2,M_divorced,None,4,life_insurance  ,49,None,own,1,unskilled,1,1,1,1
+no_account,6,existing_credit_paid,furniture_equipment,4611,below_100,below_1,1,F_not_single,None,4,life_insurance  ,32,None,own,1,official,1,0,1,0
+no_account,24,existing_credit_paid,radio_TV,1901,between_100_500,between_1_4,4,M_single,None,4,other,29,None,rent,1,management,1,1,1,1
+no_account,15,critical_account,car_used,3368,above_1000,above_7,3,M_single,None,4,no_property,23,None,rent,2,official,1,1,1,1
+no_account,12,existing_credit_paid,furniture_equipment,1574,below_100,between_1_4,4,M_single,None,2,real_estate ,50,None,own,1,official,1,0,1,1
+above_200,18,all_credit_paid,radio_TV,1445,unknown,between_4_7,4,M_single,None,4,other,49,bank,own,1,unskilled,1,0,1,1
+no_account,15,critical_account,furniture_equipment,1520,unknown,above_7,4,M_single,None,4,life_insurance  ,63,None,own,1,official,1,0,1,1
+0_to_200,24,critical_account,car_new,3878,between_100_500,below_1,4,M_divorced,None,2,other,37,None,own,1,official,1,1,1,1
+below_0,47,existing_credit_paid,car_new,10722,below_100,below_1,1,F_not_single,None,1,real_estate ,35,None,own,1,unskilled,1,1,1,1
+below_0,48,existing_credit_paid,car_used,4788,below_100,between_4_7,4,M_single,None,3,life_insurance  ,26,None,own,1,official,2,0,1,1
+0_to_200,48,delay_in_paying,others,7582,between_100_500,unemployed,2,M_single,None,4,no_property,31,None,free,1,management,1,1,1,1
+0_to_200,12,existing_credit_paid,radio_TV,1092,below_100,between_1_4,4,F_not_single,guarantor,4,real_estate ,49,None,own,2,official,1,1,1,1
+below_0,24,delay_in_paying,radio_TV,1024,below_100,below_1,4,M_divorced,None,4,real_estate ,48,stores,own,1,official,1,0,1,0
+no_account,12,existing_credit_paid,business,1076,below_100,between_1_4,2,M_divorced,None,2,real_estate ,26,None,own,1,official,1,1,0,1
+0_to_200,36,existing_credit_paid,car_used,9398,below_100,below_1,1,M_divorced,None,4,other,28,None,rent,1,management,1,1,1,0
+below_0,24,critical_account,car_used,6419,below_100,above_7,2,F_not_single,None,4,no_property,44,None,free,2,management,2,1,1,1
+above_200,42,critical_account,car_used,4796,below_100,above_7,4,M_single,None,4,no_property,56,None,free,1,official,1,0,1,1
+no_account,48,critical_account,business,7629,unknown,above_7,4,M_divorced,None,2,other,46,bank,own,2,management,2,0,1,1
+0_to_200,48,existing_credit_paid,furniture_equipment,9960,below_100,below_1,1,F_not_single,None,2,other,26,None,own,1,official,1,1,1,0
+no_account,12,existing_credit_paid,car_used,4675,unknown,below_1,1,F_not_single,None,4,other,20,None,rent,1,official,1,0,1,1
+no_account,10,existing_credit_paid,car_new,1287,unknown,above_7,4,M_single,co_applicant ,2,life_insurance  ,45,None,own,1,unskilled,1,0,0,1
+no_account,18,existing_credit_paid,furniture_equipment,2515,below_100,between_1_4,3,M_single,None,4,real_estate ,43,None,own,1,official,1,1,1,1
+0_to_200,21,critical_account,furniture_equipment,2745,above_1000,between_4_7,3,M_single,None,2,other,32,None,own,2,official,1,1,1,1
+no_account,6,existing_credit_paid,car_new,672,below_100,unemployed,1,F_not_single,None,4,real_estate ,54,None,own,1,unemployed,1,1,1,1
+0_to_200,36,no_credit_taken,radio_TV,3804,below_100,between_1_4,4,F_not_single,None,1,other,42,None,own,1,official,1,1,1,0
+above_200,24,critical_account,car_new,1344,unknown,between_4_7,4,M_single,None,2,real_estate ,37,bank,own,2,unskilled,2,0,1,0
+below_0,10,critical_account,car_new,1038,below_100,between_4_7,4,M_single,co_applicant ,3,life_insurance  ,49,None,own,2,official,1,1,1,1
+no_account,48,critical_account,car_new,10127,between_500_1000,between_1_4,2,M_single,None,2,no_property,44,bank,free,1,official,1,0,1,0
+no_account,6,existing_credit_paid,furniture_equipment,1543,above_1000,between_1_4,4,M_divorced,None,2,real_estate ,33,None,own,1,official,1,0,1,1
+no_account,30,existing_credit_paid,car_used,4811,unknown,between_4_7,2,F_not_single,None,4,life_insurance  ,24,stores,rent,1,unskilled,1,0,1,1
+below_0,12,existing_credit_paid,radio_TV,727,between_100_500,below_1,4,M_divorced,None,3,no_property,33,None,own,1,unskilled,1,1,1,0
+0_to_200,8,existing_credit_paid,furniture_equipment,1237,below_100,between_1_4,3,F_not_single,None,4,real_estate ,24,None,own,1,official,1,0,1,0
+0_to_200,9,existing_credit_paid,car_new,276,below_100,between_1_4,4,M_divorced,None,4,real_estate ,22,None,rent,1,unskilled,1,0,1,1
+0_to_200,48,existing_credit_paid,others,5381,unknown,unemployed,3,M_single,None,4,no_property,40,bank,free,1,unemployed,1,1,1,1
+no_account,24,existing_credit_paid,furniture_equipment,5511,between_100_500,between_1_4,4,M_single,None,1,other,25,stores,own,1,official,1,0,1,1
+above_200,24,existing_credit_paid,furniture_equipment,3749,below_100,below_1,2,F_not_single,None,4,other,26,None,own,1,official,1,0,1,1
+0_to_200,12,existing_credit_paid,car_new,685,below_100,between_4_7,2,M_divorced,None,3,other,25,bank,own,1,unskilled,1,0,1,0
+above_200,4,existing_credit_paid,car_new,1494,unknown,below_1,1,M_single,None,2,real_estate ,29,None,own,1,unskilled,2,0,0,1
+below_0,36,all_credit_paid,furniture_equipment,2746,below_100,above_7,4,M_single,None,4,other,31,bank,own,1,official,1,0,1,0
+below_0,12,existing_credit_paid,furniture_equipment,708,below_100,between_1_4,2,M_single,guarantor,3,life_insurance  ,38,None,own,1,unskilled,2,0,1,1
+0_to_200,24,existing_credit_paid,furniture_equipment,4351,unknown,between_1_4,1,F_not_single,None,4,life_insurance  ,48,None,own,1,unskilled,1,1,1,1
+no_account,12,critical_account,education,701,below_100,between_1_4,4,M_single,None,2,other,32,None,own,2,official,1,0,1,1
+below_0,15,delay_in_paying,furniture_equipment,3643,below_100,above_7,1,F_not_single,None,4,life_insurance  ,27,None,own,2,unskilled,1,0,1,1
+0_to_200,30,critical_account,car_new,4249,below_100,unemployed,4,M_divorced,None,2,other,28,None,own,2,management,1,0,1,0
+below_0,24,existing_credit_paid,radio_TV,1938,below_100,below_1,4,M_divorced,None,3,life_insurance  ,32,None,own,1,official,1,0,1,0
+below_0,24,existing_credit_paid,car_used,2910,below_100,between_4_7,2,M_single,None,1,no_property,34,None,free,1,management,1,1,1,1
+below_0,18,existing_credit_paid,furniture_equipment,2659,above_1000,between_1_4,4,M_single,None,2,other,28,None,own,1,official,1,0,1,1
+no_account,18,critical_account,car_new,1028,below_100,between_1_4,4,F_not_single,None,3,real_estate ,36,None,own,2,official,1,0,1,1
+below_0,8,critical_account,car_new,3398,below_100,between_4_7,1,M_single,None,4,real_estate ,39,None,own,2,unskilled,1,0,0,1
+no_account,12,critical_account,furniture_equipment,5801,unknown,above_7,2,M_single,None,4,life_insurance  ,49,None,rent,1,official,1,1,1,1
+no_account,24,existing_credit_paid,car_new,1525,above_1000,between_4_7,4,F_not_single,None,3,other,34,None,own,1,official,2,1,1,1
+above_200,36,existing_credit_paid,radio_TV,4473,below_100,above_7,4,M_single,None,2,other,31,None,own,1,official,1,0,1,1
+0_to_200,6,existing_credit_paid,radio_TV,1068,below_100,above_7,4,M_single,None,4,other,28,None,own,1,official,2,0,1,1
+below_0,24,critical_account,car_used,6615,below_100,unemployed,2,M_single,None,4,no_property,75,None,free,2,management,1,1,1,1
+no_account,18,critical_account,education,1864,between_100_500,between_1_4,4,F_not_single,None,2,real_estate ,30,None,own,2,official,1,0,1,0
+0_to_200,60,existing_credit_paid,car_new,7408,between_100_500,below_1,4,F_not_single,None,2,life_insurance  ,24,None,own,1,management,1,0,1,0
+no_account,48,critical_account,car_used,11590,between_100_500,between_1_4,2,F_not_single,None,4,other,24,bank,rent,2,unskilled,1,0,1,0
+below_0,24,no_credit_taken,furniture_equipment,4110,below_100,above_7,3,M_single,None,4,no_property,23,bank,rent,2,official,2,0,1,0
+below_0,6,critical_account,furniture_equipment,3384,below_100,between_1_4,1,M_divorced,None,4,real_estate ,44,None,rent,1,management,1,1,1,0
+0_to_200,13,existing_credit_paid,radio_TV,2101,below_100,below_1,2,F_not_single,guarantor,4,life_insurance  ,23,None,own,1,unskilled,1,0,1,1
+below_0,15,existing_credit_paid,domestic_appliances,1275,unknown,between_1_4,4,F_not_single,None,2,other,24,None,rent,1,official,1,0,1,0
+below_0,24,existing_credit_paid,furniture_equipment,4169,below_100,between_1_4,4,M_single,None,4,life_insurance  ,28,None,own,1,official,1,0,1,1
+0_to_200,10,existing_credit_paid,furniture_equipment,1521,below_100,between_1_4,4,M_divorced,None,2,other,31,None,own,1,unskilled,1,0,1,1
+0_to_200,24,critical_account,education,5743,below_100,below_1,2,F_not_single,None,4,no_property,24,None,free,2,official,1,1,1,1
+below_0,21,existing_credit_paid,furniture_equipment,3599,below_100,between_4_7,1,F_not_single,None,4,other,26,None,rent,1,unskilled,1,0,1,1
+0_to_200,18,existing_credit_paid,radio_TV,3213,between_500_1000,below_1,1,M_divorced,None,3,real_estate ,25,None,rent,1,official,1,0,1,1
+0_to_200,18,existing_credit_paid,business,4439,below_100,above_7,1,M_single,co_applicant ,1,real_estate ,33,bank,own,1,management,1,1,1,1
+above_200,10,existing_credit_paid,car_new,3949,below_100,below_1,1,M_single,guarantor,1,life_insurance  ,37,None,own,1,unskilled,2,0,1,1
+no_account,15,critical_account,radio_TV,1459,below_100,between_1_4,4,F_not_single,None,2,other,43,None,own,1,unskilled,1,0,1,1
+0_to_200,13,critical_account,radio_TV,882,below_100,below_1,4,M_single,guarantor,4,real_estate ,23,None,own,2,official,1,0,1,1
+0_to_200,24,existing_credit_paid,radio_TV,3758,between_500_1000,unemployed,1,F_not_single,None,4,no_property,23,None,rent,1,unemployed,1,0,1,1
+no_account,6,delay_in_paying,business,1743,between_100_500,between_1_4,1,M_single,None,2,real_estate ,34,None,own,2,unskilled,1,0,1,1
+0_to_200,9,critical_account,education,1136,above_1000,above_7,4,M_single,None,3,no_property,32,None,free,2,official,2,0,1,0
+no_account,9,existing_credit_paid,domestic_appliances,1236,below_100,below_1,1,F_not_single,None,4,real_estate ,23,None,rent,1,official,1,1,1,1
+0_to_200,9,existing_credit_paid,furniture_equipment,959,below_100,between_1_4,1,F_not_single,None,2,other,29,None,own,1,official,1,0,0,0
+no_account,18,critical_account,car_used,3229,unknown,unemployed,2,M_single,None,4,no_property,38,None,own,1,management,1,1,1,1
+below_0,12,no_credit_taken,radio_TV,6199,below_100,between_1_4,4,M_single,None,2,life_insurance  ,28,None,rent,2,official,1,1,1,0
+no_account,10,existing_credit_paid,education,727,between_500_1000,above_7,4,M_single,None,4,no_property,46,None,free,1,official,1,1,1,1
+0_to_200,24,existing_credit_paid,car_new,1246,below_100,below_1,4,M_single,None,2,real_estate ,23,stores,own,1,unskilled,1,0,1,0
+no_account,12,critical_account,radio_TV,2331,unknown,above_7,1,M_single,co_applicant ,4,real_estate ,49,None,own,1,official,1,1,1,1
+no_account,36,delay_in_paying,radio_TV,4463,below_100,between_1_4,4,M_single,None,2,other,26,None,own,2,management,1,1,1,0
+no_account,12,existing_credit_paid,radio_TV,776,below_100,between_1_4,4,M_divorced,None,2,real_estate ,28,None,own,1,official,1,0,1,1
+below_0,30,existing_credit_paid,furniture_equipment,2406,below_100,between_4_7,4,F_not_single,None,4,real_estate ,23,None,rent,1,official,1,0,1,0
+0_to_200,18,existing_credit_paid,education,1239,unknown,between_1_4,4,M_single,None,4,no_property,61,None,free,1,official,1,0,1,1
+above_200,12,existing_credit_paid,radio_TV,3399,unknown,above_7,2,M_single,None,3,other,37,None,own,1,management,1,0,1,1
+above_200,12,delay_in_paying,car_new,2247,below_100,between_1_4,2,F_not_single,None,2,other,36,stores,own,2,official,1,1,1,1
+no_account,6,existing_credit_paid,furniture_equipment,1766,below_100,between_1_4,1,M_divorced,None,2,life_insurance  ,21,None,rent,1,official,1,0,1,1
+below_0,18,existing_credit_paid,furniture_equipment,2473,below_100,unemployed,4,M_single,None,1,other,25,None,own,1,unemployed,1,0,1,0
+no_account,12,existing_credit_paid,business,1542,below_100,between_4_7,2,M_single,None,4,other,36,None,own,1,official,1,1,1,1
+no_account,18,critical_account,car_used,3850,below_100,between_4_7,3,M_single,None,1,other,27,None,own,2,official,1,0,1,1
+below_0,18,existing_credit_paid,furniture_equipment,3650,below_100,below_1,1,F_not_single,None,4,other,22,None,rent,1,official,1,0,1,1
+below_0,36,existing_credit_paid,furniture_equipment,3446,below_100,above_7,4,M_single,None,2,other,42,None,own,1,official,2,0,1,0
+0_to_200,18,existing_credit_paid,furniture_equipment,3001,below_100,between_4_7,2,F_not_single,None,4,real_estate ,40,None,rent,1,official,1,0,1,1
+no_account,36,existing_credit_paid,car_new,3079,unknown,between_1_4,4,M_single,None,4,real_estate ,36,None,own,1,official,1,0,1,1
+no_account,18,critical_account,radio_TV,6070,below_100,above_7,3,M_single,None,4,other,33,None,own,2,official,1,1,1,1
+no_account,10,critical_account,furniture_equipment,2146,below_100,below_1,1,F_not_single,None,3,real_estate ,23,None,rent,2,official,1,0,1,1
+no_account,60,critical_account,car_new,13756,unknown,above_7,2,M_single,None,4,no_property,63,bank,free,1,management,1,1,1,1
+0_to_200,60,all_credit_paid,others,14782,between_100_500,above_7,3,F_not_single,None,4,no_property,60,bank,free,2,management,1,1,1,0
+below_0,48,all_credit_paid,business,7685,below_100,between_4_7,2,F_not_single,guarantor,4,other,37,None,rent,1,official,1,0,1,0
+no_account,18,delay_in_paying,radio_TV,2320,below_100,unemployed,2,M_divorced,None,3,real_estate ,34,None,own,2,official,1,0,1,1
+no_account,7,delay_in_paying,radio_TV,846,unknown,above_7,3,M_single,None,4,no_property,36,None,free,1,official,1,0,1,1
+0_to_200,36,existing_credit_paid,car_new,14318,below_100,above_7,4,M_single,None,2,no_property,57,None,free,1,management,1,1,1,0
+no_account,6,critical_account,car_new,362,between_100_500,between_1_4,4,F_not_single,None,4,other,52,None,own,2,unskilled,1,0,1,1
+below_0,20,existing_credit_paid,furniture_equipment,2212,unknown,between_4_7,4,M_single,None,4,other,39,None,own,1,official,1,1,1,1
+0_to_200,18,existing_credit_paid,car_used,12976,below_100,unemployed,3,F_not_single,None,4,no_property,38,None,free,1,management,1,1,1,0
+no_account,22,existing_credit_paid,car_new,1283,unknown,between_4_7,4,F_not_single,None,4,life_insurance  ,25,None,rent,1,official,1,0,1,1
+above_200,12,existing_credit_paid,car_new,1330,below_100,below_1,4,M_single,None,1,real_estate ,26,None,own,1,official,1,0,1,1
+no_account,30,delay_in_paying,business,4272,between_100_500,between_1_4,2,M_single,None,2,life_insurance  ,26,None,own,2,unskilled,1,0,1,1
+no_account,18,critical_account,radio_TV,2238,below_100,between_1_4,2,F_not_single,None,1,other,25,None,own,2,official,1,0,1,1
+no_account,18,existing_credit_paid,radio_TV,1126,unknown,below_1,4,F_not_single,None,2,real_estate ,21,None,rent,1,official,1,1,1,1
+0_to_200,18,critical_account,furniture_equipment,7374,below_100,unemployed,4,M_single,None,4,life_insurance  ,40,stores,own,2,management,1,1,1,1
+0_to_200,15,critical_account,business,2326,between_500_1000,between_1_4,2,M_single,None,4,other,27,bank,own,1,official,1,0,1,1
+no_account,9,existing_credit_paid,business,1449,below_100,between_4_7,3,F_not_single,None,2,other,27,None,own,2,official,1,0,1,1
+no_account,18,existing_credit_paid,car_new,1820,below_100,between_1_4,2,M_divorced,None,2,life_insurance  ,30,None,own,1,management,1,1,1,1
+0_to_200,12,existing_credit_paid,furniture_equipment,983,above_1000,below_1,1,F_not_single,None,4,real_estate ,19,None,rent,1,unskilled,1,0,1,1
+below_0,36,existing_credit_paid,car_new,3249,below_100,between_4_7,2,M_single,None,4,no_property,39,bank,free,1,management,2,1,1,1
+below_0,6,critical_account,radio_TV,1957,below_100,between_4_7,1,F_not_single,None,4,other,31,None,own,1,official,1,0,1,1
+no_account,9,critical_account,furniture_equipment,2406,below_100,unemployed,2,M_single,None,3,other,31,None,own,1,management,1,0,1,1
+0_to_200,39,delay_in_paying,education,11760,between_100_500,between_4_7,2,M_single,None,3,no_property,32,None,rent,1,official,1,1,1,1
+below_0,12,existing_credit_paid,furniture_equipment,2578,below_100,unemployed,3,F_not_single,None,4,no_property,55,None,free,1,management,1,0,1,1
+below_0,36,critical_account,furniture_equipment,2348,below_100,between_1_4,3,M_divorced,None,2,life_insurance  ,46,None,own,2,official,1,1,1,1
+0_to_200,12,existing_credit_paid,car_new,1223,below_100,above_7,1,M_divorced,None,1,real_estate ,46,None,rent,2,official,1,0,1,0
+no_account,24,critical_account,radio_TV,1516,above_1000,between_1_4,4,F_not_single,None,1,real_estate ,43,None,own,2,unskilled,1,0,1,1
+no_account,18,existing_credit_paid,radio_TV,1473,below_100,below_1,3,M_divorced,None,4,real_estate ,39,None,own,1,official,1,1,1,1
+0_to_200,18,critical_account,business,1887,unknown,between_1_4,4,M_divorced,None,4,real_estate ,28,bank,own,2,official,1,0,1,1
+no_account,24,delay_in_paying,business,8648,below_100,below_1,2,M_single,None,2,other,27,bank,own,2,official,1,1,1,0
+no_account,14,delay_in_paying,car_new,802,below_100,between_1_4,4,M_single,None,2,other,27,None,own,2,unskilled,1,0,1,1
+0_to_200,18,delay_in_paying,car_new,2899,unknown,above_7,4,M_single,None,4,other,43,None,own,1,official,2,0,1,1
+0_to_200,24,existing_credit_paid,radio_TV,2039,below_100,below_1,1,M_divorced,None,1,life_insurance  ,22,None,own,1,official,1,1,1,0
+no_account,24,critical_account,car_used,2197,unknown,between_4_7,4,M_single,None,4,other,43,None,own,2,official,2,1,1,1
+below_0,15,existing_credit_paid,radio_TV,1053,below_100,below_1,4,M_divorced,None,2,real_estate ,27,None,own,1,official,1,0,0,1
+no_account,24,existing_credit_paid,radio_TV,3235,between_500_1000,above_7,3,M_divorced,None,2,other,26,None,own,1,management,1,1,1,1
+above_200,12,critical_account,car_new,939,between_500_1000,between_4_7,4,M_divorced,None,2,real_estate ,28,None,own,3,official,1,1,1,0
+0_to_200,24,existing_credit_paid,radio_TV,1967,below_100,above_7,4,F_not_single,None,4,other,20,None,own,1,official,1,1,1,1
+no_account,33,critical_account,car_used,7253,below_100,between_4_7,3,M_single,None,2,other,35,None,own,2,management,1,1,1,1
+no_account,12,critical_account,business,2292,below_100,unemployed,4,M_single,None,2,other,42,stores,own,2,management,1,1,1,0
+no_account,10,existing_credit_paid,car_new,1597,between_500_1000,between_1_4,3,M_single,None,2,no_property,40,None,rent,1,unskilled,2,0,0,1
+below_0,24,existing_credit_paid,car_new,1381,unknown,between_1_4,4,F_not_single,None,2,life_insurance  ,35,None,own,1,official,1,0,1,0
+no_account,36,critical_account,car_used,5842,below_100,above_7,2,M_single,None,2,life_insurance  ,35,None,own,2,official,2,1,1,1
+below_0,12,existing_credit_paid,car_new,2579,below_100,below_1,4,M_single,None,1,real_estate ,33,None,own,1,unskilled,2,0,1,0
+below_0,18,delay_in_paying,education,8471,unknown,between_1_4,1,F_not_single,None,2,other,23,None,rent,2,official,1,1,1,1
+no_account,21,existing_credit_paid,car_new,2782,between_500_1000,between_4_7,1,F_not_single,None,2,other,31,bank,own,1,management,1,0,1,1
+0_to_200,18,existing_credit_paid,car_new,1042,unknown,between_1_4,4,F_not_single,None,2,life_insurance  ,33,None,own,1,official,1,0,1,0
+no_account,15,existing_credit_paid,car_new,3186,above_1000,between_4_7,2,F_not_single,None,3,other,20,None,rent,1,official,1,0,1,1
+0_to_200,12,existing_credit_paid,car_used,2028,unknown,between_1_4,4,M_single,None,2,other,30,None,own,1,official,1,0,1,1
+0_to_200,12,critical_account,car_new,958,below_100,between_4_7,2,M_single,None,3,real_estate ,47,None,own,2,unskilled,2,0,1,1
+no_account,21,delay_in_paying,furniture_equipment,1591,between_100_500,between_4_7,4,M_single,None,3,real_estate ,34,None,own,2,management,1,0,1,1
+0_to_200,12,existing_credit_paid,furniture_equipment,2762,unknown,above_7,1,F_not_single,None,2,life_insurance  ,25,bank,own,1,official,1,1,1,0
+0_to_200,18,existing_credit_paid,car_used,2779,below_100,between_1_4,1,M_divorced,None,3,other,21,None,rent,1,official,1,1,1,1
+no_account,28,critical_account,radio_TV,2743,below_100,above_7,4,M_single,None,2,other,29,None,own,2,official,1,0,1,1
+no_account,18,critical_account,radio_TV,1149,above_1000,between_1_4,4,M_single,None,3,real_estate ,46,None,own,2,official,1,0,1,1
+no_account,9,existing_credit_paid,furniture_equipment,1313,below_100,above_7,1,M_single,None,4,other,20,None,own,1,official,1,0,1,1
+below_0,18,critical_account,repairs,1190,below_100,unemployed,2,F_not_single,None,4,no_property,55,None,free,3,unemployed,2,0,1,0
+no_account,5,existing_credit_paid,business,3448,below_100,between_4_7,1,M_single,None,4,real_estate ,74,None,own,1,unskilled,1,0,1,1
+0_to_200,24,existing_credit_paid,others,11328,below_100,between_1_4,2,M_single,co_applicant ,3,other,29,bank,own,2,management,1,1,1,0
+below_0,6,critical_account,furniture_equipment,1872,below_100,unemployed,4,M_single,None,4,no_property,36,None,free,3,management,1,1,1,1
+no_account,24,critical_account,repairs,2058,below_100,between_1_4,4,M_divorced,None,2,real_estate ,33,None,own,2,official,1,1,1,1
+below_0,9,existing_credit_paid,furniture_equipment,2136,below_100,between_1_4,3,M_single,None,2,real_estate ,25,None,own,1,official,1,0,1,1
+0_to_200,12,existing_credit_paid,radio_TV,1484,unknown,between_1_4,2,M_divorced,None,1,real_estate ,25,None,own,1,official,1,1,1,0
+no_account,6,existing_credit_paid,repairs,660,between_500_1000,between_4_7,2,M_divorced,None,4,real_estate ,23,None,rent,1,unskilled,1,0,1,1
+no_account,24,critical_account,car_new,1287,above_1000,above_7,4,F_not_single,None,4,real_estate ,37,None,own,2,official,1,1,1,1
+below_0,42,critical_account,repairs,3394,below_100,unemployed,4,M_single,co_applicant ,4,other,65,None,own,2,unemployed,1,0,1,1
+above_200,12,all_credit_paid,business,609,below_100,below_1,4,F_not_single,None,1,real_estate ,26,None,own,1,unemployed,1,0,1,0
+no_account,12,existing_credit_paid,car_new,1884,below_100,above_7,4,M_single,None,4,other,39,None,own,1,management,1,1,1,1
+below_0,12,existing_credit_paid,furniture_equipment,1620,below_100,between_1_4,2,F_not_single,co_applicant ,3,life_insurance  ,30,None,own,1,official,1,0,1,1
+0_to_200,20,delay_in_paying,others,2629,below_100,between_1_4,2,M_single,None,3,other,29,bank,own,2,official,1,1,1,1
+no_account,12,existing_credit_paid,education,719,below_100,above_7,4,M_single,None,4,other,41,bank,own,1,unskilled,2,0,1,0
+0_to_200,48,critical_account,furniture_equipment,5096,below_100,between_1_4,2,F_not_single,None,3,other,30,None,own,1,management,1,1,1,0
+no_account,9,critical_account,education,1244,unknown,above_7,4,F_not_single,None,4,life_insurance  ,41,None,rent,2,unskilled,1,0,1,1
+below_0,36,existing_credit_paid,car_new,1842,below_100,below_1,4,F_not_single,None,4,other,34,None,own,1,official,1,1,1,0
+0_to_200,7,existing_credit_paid,radio_TV,2576,below_100,between_1_4,2,M_single,guarantor,2,real_estate ,35,None,own,1,official,1,0,1,1
+above_200,12,existing_credit_paid,furniture_equipment,1424,unknown,above_7,3,F_not_single,None,4,real_estate ,55,None,own,1,management,1,1,1,1
+0_to_200,15,delay_in_paying,repairs,1512,above_1000,between_1_4,3,M_divorced,None,3,life_insurance  ,61,stores,own,2,official,1,0,1,0
+no_account,36,critical_account,car_used,11054,unknown,between_1_4,4,M_single,None,2,other,30,None,own,1,management,1,1,1,1
+no_account,6,existing_credit_paid,radio_TV,518,below_100,between_1_4,3,F_not_single,None,1,real_estate ,29,None,own,1,official,1,0,1,1
+no_account,12,no_credit_taken,furniture_equipment,2759,below_100,above_7,2,M_single,None,4,life_insurance  ,34,None,own,2,official,1,0,1,1
+no_account,24,existing_credit_paid,car_used,2670,below_100,above_7,4,M_single,None,4,other,35,None,own,1,management,1,1,1,1
+below_0,24,existing_credit_paid,car_new,4817,below_100,between_4_7,2,M_single,co_applicant ,3,life_insurance  ,31,None,own,1,official,1,1,1,0
+no_account,24,existing_credit_paid,car_used,2679,below_100,below_1,4,F_not_single,None,1,no_property,29,None,own,1,management,1,1,1,1
+below_0,11,critical_account,car_new,3905,below_100,between_1_4,2,M_single,None,2,real_estate ,36,None,rent,2,official,2,0,1,1
+below_0,12,existing_credit_paid,car_used,3386,below_100,above_7,3,M_single,None,4,no_property,35,None,free,1,official,1,1,1,0
+below_0,6,existing_credit_paid,domestic_appliances,343,below_100,below_1,4,F_not_single,None,1,real_estate ,27,None,own,1,official,1,0,1,1
+no_account,18,existing_credit_paid,radio_TV,4594,below_100,below_1,3,M_single,None,2,other,32,None,own,1,official,1,1,1,1
+below_0,36,existing_credit_paid,furniture_equipment,3620,below_100,between_1_4,1,M_single,guarantor,2,life_insurance  ,37,None,own,1,official,2,0,1,1
+below_0,15,existing_credit_paid,car_new,1721,below_100,below_1,2,M_single,None,3,real_estate ,36,None,own,1,official,1,0,1,1
+0_to_200,12,existing_credit_paid,furniture_equipment,3017,below_100,below_1,3,F_not_single,None,1,real_estate ,34,None,rent,1,management,1,0,1,1
+0_to_200,12,existing_credit_paid,retraining,754,unknown,above_7,4,M_single,None,4,life_insurance  ,38,None,own,2,official,1,0,1,1
+no_account,18,existing_credit_paid,business,1950,below_100,between_4_7,4,M_single,None,1,other,34,stores,own,2,official,1,1,1,1
+below_0,24,existing_credit_paid,car_used,2924,below_100,between_1_4,3,M_single,guarantor,4,no_property,63,bank,own,1,official,2,1,1,1
+below_0,24,delay_in_paying,radio_TV,1659,below_100,below_1,4,F_not_single,None,2,other,29,None,rent,1,unskilled,1,1,1,0
+no_account,48,delay_in_paying,radio_TV,7238,unknown,above_7,3,M_single,None,3,other,32,bank,own,2,official,2,0,1,1
+no_account,33,delay_in_paying,business,2764,below_100,between_1_4,2,F_not_single,None,2,other,26,None,own,2,official,1,1,1,1
+no_account,24,delay_in_paying,car_used,4679,below_100,between_4_7,3,M_single,None,3,other,35,None,own,2,unskilled,1,1,1,1
+0_to_200,24,existing_credit_paid,radio_TV,3092,between_100_500,below_1,3,M_divorced,None,2,other,22,None,rent,1,official,1,1,1,0
+below_0,6,existing_credit_paid,education,448,below_100,below_1,4,F_not_single,None,4,life_insurance  ,23,None,own,1,official,1,0,1,0
+below_0,9,existing_credit_paid,car_new,654,below_100,between_1_4,4,M_single,None,3,other,28,None,own,1,unskilled,1,0,1,0
+no_account,6,existing_credit_paid,retraining,1238,unknown,unemployed,4,M_single,None,4,life_insurance  ,36,None,own,1,management,2,1,1,1
+0_to_200,18,critical_account,radio_TV,1245,below_100,between_1_4,4,M_divorced,None,2,other,33,None,own,1,official,1,0,1,0
+below_0,18,no_credit_taken,furniture_equipment,3114,below_100,below_1,1,F_not_single,None,4,life_insurance  ,26,None,rent,1,official,1,0,1,0
+no_account,39,existing_credit_paid,car_used,2569,between_500_1000,between_1_4,4,M_single,None,4,other,24,None,own,1,official,1,0,1,1
+above_200,24,existing_credit_paid,radio_TV,5152,below_100,between_4_7,4,M_single,None,2,other,25,bank,own,1,official,1,0,1,1
+0_to_200,12,existing_credit_paid,business,1037,between_100_500,between_4_7,3,M_single,None,4,real_estate ,39,None,own,1,unskilled,1,0,1,1
+below_0,15,critical_account,furniture_equipment,1478,below_100,above_7,4,M_single,None,4,other,44,None,own,2,official,2,1,1,1
+0_to_200,12,critical_account,radio_TV,3573,below_100,between_1_4,1,F_not_single,None,1,real_estate ,23,None,own,1,unskilled,1,0,1,1
+0_to_200,24,existing_credit_paid,car_new,1201,below_100,below_1,4,M_single,None,1,life_insurance  ,26,None,own,1,official,1,0,1,1
+below_0,30,existing_credit_paid,furniture_equipment,3622,above_1000,above_7,4,F_not_single,None,4,life_insurance  ,57,None,rent,2,official,1,1,1,1
+no_account,15,delay_in_paying,furniture_equipment,960,above_1000,between_4_7,3,F_not_single,None,2,life_insurance  ,30,None,own,2,official,1,0,1,1
+no_account,12,critical_account,car_new,1163,between_500_1000,between_1_4,4,M_single,None,4,real_estate ,44,None,own,1,official,1,1,1,1
+0_to_200,6,delay_in_paying,car_new,1209,below_100,unemployed,4,M_single,None,4,life_insurance  ,47,None,own,1,management,1,1,1,0
+no_account,12,existing_credit_paid,radio_TV,3077,below_100,between_1_4,2,M_single,None,4,other,52,None,own,1,official,1,1,1,1
+no_account,24,existing_credit_paid,car_new,3757,below_100,above_7,4,F_not_single,co_applicant ,4,no_property,62,None,free,1,official,1,1,1,1
+no_account,10,existing_credit_paid,car_new,1418,between_100_500,between_1_4,3,M_single,None,2,real_estate ,35,None,rent,1,unskilled,1,0,0,1
+no_account,6,existing_credit_paid,car_new,3518,below_100,between_1_4,2,M_single,guarantor,3,life_insurance  ,26,None,rent,1,official,1,0,1,1
+no_account,12,critical_account,radio_TV,1934,below_100,above_7,2,M_single,None,2,no_property,26,None,own,2,official,1,0,1,1
+0_to_200,27,no_credit_taken,business,8318,below_100,above_7,2,F_not_single,None,4,no_property,42,None,free,2,management,1,1,1,0
+no_account,6,critical_account,radio_TV,1237,between_100_500,between_1_4,1,F_not_single,None,1,life_insurance  ,27,None,own,2,official,1,0,1,1
+0_to_200,6,existing_credit_paid,radio_TV,368,unknown,above_7,4,M_single,None,4,life_insurance  ,38,None,own,1,official,1,0,1,1
+below_0,12,critical_account,car_new,2122,below_100,between_1_4,3,M_single,None,2,real_estate ,39,None,rent,2,unskilled,2,0,0,1
+below_0,24,existing_credit_paid,furniture_equipment,2996,unknown,between_1_4,2,M_divorced,None,4,other,20,None,own,1,official,1,0,1,0
+0_to_200,36,existing_credit_paid,furniture_equipment,9034,between_100_500,below_1,4,M_single,co_applicant ,1,no_property,29,None,rent,1,management,1,1,1,0
+no_account,24,critical_account,furniture_equipment,1585,below_100,between_4_7,4,M_single,None,3,life_insurance  ,40,None,own,2,official,1,0,1,1
+0_to_200,18,existing_credit_paid,radio_TV,1301,below_100,above_7,4,M_divorced,guarantor,2,real_estate ,32,None,own,1,unskilled,1,0,1,1
+above_200,6,critical_account,car_new,1323,between_100_500,above_7,2,M_divorced,None,4,other,28,None,own,2,official,2,1,1,1
+below_0,24,existing_credit_paid,car_new,3123,below_100,below_1,4,F_not_single,None,1,life_insurance  ,27,None,own,1,official,1,0,1,0
+below_0,36,existing_credit_paid,car_used,5493,below_100,above_7,2,M_single,None,4,no_property,42,None,free,1,official,2,0,1,1
+above_200,9,existing_credit_paid,radio_TV,1126,between_100_500,above_7,2,M_divorced,None,4,real_estate ,49,None,own,1,official,1,0,1,1
+0_to_200,24,critical_account,radio_TV,1216,between_100_500,below_1,4,M_single,None,4,no_property,38,bank,own,2,official,2,0,1,0
+below_0,24,existing_credit_paid,car_new,1207,below_100,below_1,4,F_not_single,None,4,life_insurance  ,24,None,rent,1,official,1,0,1,0
+no_account,10,existing_credit_paid,car_new,1309,unknown,between_1_4,4,M_single,guarantor,4,life_insurance  ,27,None,own,1,unskilled,1,0,1,0
+above_200,15,critical_account,car_used,2360,between_500_1000,between_1_4,2,M_single,None,2,other,36,None,own,1,official,1,1,1,1
+0_to_200,15,all_credit_paid,car_new,6850,between_100_500,unemployed,1,M_single,None,2,life_insurance  ,34,None,own,1,management,2,1,1,0
+no_account,24,existing_credit_paid,radio_TV,1413,below_100,between_1_4,4,M_divorced,None,2,life_insurance  ,28,None,own,1,official,1,0,1,1
+no_account,39,existing_credit_paid,car_used,8588,between_100_500,above_7,4,M_single,None,2,other,45,None,own,1,management,1,1,1,1
+below_0,12,existing_credit_paid,car_new,759,below_100,between_4_7,4,M_single,None,2,real_estate ,26,None,own,1,official,1,0,1,0
+no_account,36,existing_credit_paid,car_used,4686,below_100,between_1_4,2,M_single,None,2,no_property,32,None,free,1,management,1,1,1,1
+above_200,15,existing_credit_paid,business,2687,below_100,between_4_7,2,M_single,None,4,life_insurance  ,26,None,rent,1,official,1,1,1,1
+0_to_200,12,delay_in_paying,radio_TV,585,below_100,between_1_4,4,M_divorced,co_applicant ,4,real_estate ,20,None,rent,2,official,1,0,1,1
+no_account,24,existing_credit_paid,car_new,2255,unknown,below_1,4,M_single,None,1,life_insurance  ,54,None,own,1,official,1,0,1,1
+below_0,6,critical_account,car_new,609,below_100,between_4_7,4,F_not_single,None,3,life_insurance  ,37,None,own,2,official,1,0,0,1
+below_0,6,critical_account,car_new,1361,below_100,below_1,2,M_single,None,4,real_estate ,40,None,own,1,unskilled,2,0,0,1
+no_account,36,critical_account,furniture_equipment,7127,below_100,below_1,2,F_not_single,None,4,life_insurance  ,23,None,rent,2,official,1,1,1,0
+below_0,6,existing_credit_paid,car_new,1203,between_100_500,above_7,3,M_single,None,2,life_insurance  ,43,None,own,1,official,1,1,1,1
+no_account,6,critical_account,radio_TV,700,unknown,above_7,4,M_single,None,4,no_property,36,None,free,2,official,1,0,1,1
+no_account,24,critical_account,repairs,5507,below_100,above_7,3,M_single,None,4,no_property,44,None,free,2,official,1,0,1,1
+below_0,18,existing_credit_paid,radio_TV,3190,below_100,between_1_4,2,F_not_single,None,2,real_estate ,24,None,own,1,official,1,0,1,0
+below_0,48,no_credit_taken,furniture_equipment,7119,below_100,between_1_4,3,M_single,None,4,no_property,53,None,free,2,official,2,0,1,0
+no_account,24,existing_credit_paid,car_used,3488,between_100_500,between_4_7,3,F_not_single,None,4,other,23,None,own,1,official,1,0,1,1
+0_to_200,18,existing_credit_paid,radio_TV,1113,below_100,between_1_4,4,F_not_single,guarantor,4,real_estate ,26,None,own,1,unskilled,2,0,1,1
+0_to_200,26,existing_credit_paid,car_used,7966,below_100,below_1,2,M_single,None,3,other,30,None,own,2,official,1,0,1,1
+no_account,15,critical_account,education,1532,between_100_500,between_1_4,4,F_not_single,None,3,other,31,None,own,1,official,1,0,1,1
+no_account,4,critical_account,radio_TV,1503,below_100,between_4_7,2,M_single,None,1,real_estate ,42,None,own,2,unskilled,2,0,1,1
+below_0,36,existing_credit_paid,radio_TV,2302,below_100,between_1_4,4,M_divorced,None,4,other,31,None,rent,1,official,1,0,1,0
+below_0,6,existing_credit_paid,car_new,662,below_100,below_1,3,M_single,None,4,real_estate ,41,None,own,1,unskilled,2,1,1,1
+0_to_200,36,existing_credit_paid,education,2273,below_100,between_4_7,3,M_single,None,1,other,32,None,own,2,official,2,0,1,1
+0_to_200,15,existing_credit_paid,car_new,2631,between_100_500,between_1_4,2,F_not_single,None,4,other,28,None,rent,2,official,1,1,1,0
+no_account,12,delay_in_paying,car_used,1503,below_100,between_1_4,4,M_divorced,None,4,real_estate ,41,None,rent,1,official,1,0,1,1
+no_account,24,existing_credit_paid,radio_TV,1311,between_100_500,between_4_7,4,M_divorced,None,3,life_insurance  ,26,None,own,1,official,1,1,1,1
+no_account,24,existing_credit_paid,radio_TV,3105,unknown,below_1,4,M_single,None,2,other,25,None,own,2,official,1,0,1,1
+above_200,21,critical_account,education,2319,below_100,below_1,2,M_divorced,None,1,other,33,None,rent,1,official,1,0,1,0
+below_0,6,existing_credit_paid,car_new,1374,unknown,unemployed,4,F_not_single,None,3,life_insurance  ,75,None,own,1,management,1,1,1,1
+0_to_200,18,critical_account,furniture_equipment,3612,below_100,above_7,3,F_not_single,None,4,life_insurance  ,37,None,own,1,official,1,1,1,1
+below_0,48,existing_credit_paid,car_new,7763,below_100,above_7,4,M_single,None,4,no_property,42,bank,free,1,management,1,0,1,0
+above_200,18,existing_credit_paid,furniture_equipment,3049,below_100,below_1,1,F_not_single,None,1,life_insurance  ,45,stores,own,1,unskilled,1,0,1,1
+0_to_200,12,existing_credit_paid,radio_TV,1534,below_100,below_1,1,M_divorced,None,1,real_estate ,23,None,rent,1,official,1,0,1,0
+no_account,24,delay_in_paying,car_new,2032,below_100,above_7,4,M_single,None,4,no_property,60,None,free,2,official,1,1,1,1
+below_0,30,existing_credit_paid,furniture_equipment,6350,unknown,above_7,4,M_single,None,4,life_insurance  ,31,None,own,1,official,1,0,1,0
+above_200,18,existing_credit_paid,furniture_equipment,2864,below_100,between_1_4,2,M_single,None,1,real_estate ,34,None,own,1,unskilled,2,0,1,0
+no_account,12,critical_account,car_new,1255,below_100,above_7,4,M_single,None,4,real_estate ,61,None,own,2,unskilled,1,0,1,1
+below_0,24,delay_in_paying,car_new,1333,below_100,unemployed,4,M_single,None,2,real_estate ,43,None,free,2,official,2,0,1,0
+no_account,24,critical_account,car_new,2022,below_100,between_1_4,4,F_not_single,None,4,other,37,None,own,1,official,1,1,1,1
+no_account,24,existing_credit_paid,radio_TV,1552,below_100,between_4_7,3,M_single,None,1,other,32,bank,own,1,official,2,0,1,1
+below_0,12,all_credit_paid,radio_TV,626,below_100,between_1_4,4,F_not_single,None,4,real_estate ,24,bank,own,1,unskilled,1,0,1,0
+no_account,48,critical_account,car_used,8858,unknown,between_4_7,2,M_single,None,1,no_property,35,None,free,2,official,1,1,1,1
+no_account,12,critical_account,repairs,996,unknown,between_4_7,4,F_not_single,None,4,real_estate ,23,None,own,2,official,1,0,1,1
+no_account,6,all_credit_paid,radio_TV,1750,between_500_1000,above_7,2,M_single,None,4,life_insurance  ,45,bank,own,1,unskilled,2,0,1,1
+below_0,48,existing_credit_paid,radio_TV,6999,below_100,between_4_7,1,M_divorced,guarantor,1,real_estate ,34,None,own,2,official,1,1,1,0
+0_to_200,12,critical_account,car_new,1995,between_100_500,below_1,4,M_single,None,1,other,27,None,own,1,official,1,0,1,1
+0_to_200,9,existing_credit_paid,education,1199,below_100,between_4_7,4,F_not_single,None,4,life_insurance  ,67,None,own,2,management,1,1,1,1
+0_to_200,12,existing_credit_paid,radio_TV,1331,below_100,below_1,2,M_single,None,1,other,22,stores,own,1,official,1,0,1,0
+0_to_200,18,no_credit_taken,car_new,2278,between_100_500,below_1,3,F_not_single,None,3,other,28,None,own,2,official,1,0,1,0
+no_account,21,no_credit_taken,car_new,5003,unknown,between_1_4,1,F_not_single,None,4,life_insurance  ,29,bank,own,2,official,1,1,1,0
+below_0,24,all_credit_paid,furniture_equipment,3552,below_100,between_4_7,3,M_single,None,4,other,27,bank,own,1,official,1,0,1,0
+0_to_200,18,critical_account,furniture_equipment,1928,below_100,below_1,2,M_single,None,2,real_estate ,31,None,own,2,unskilled,1,0,1,0
+below_0,24,existing_credit_paid,car_used,2964,unknown,above_7,4,M_single,None,4,no_property,49,bank,free,1,official,2,1,1,1
+below_0,24,all_credit_paid,radio_TV,1546,below_100,between_4_7,4,M_single,guarantor,4,other,24,bank,rent,1,unskilled,1,0,1,0
+above_200,6,delay_in_paying,radio_TV,683,below_100,below_1,2,F_not_single,None,1,life_insurance  ,29,bank,own,1,official,1,0,1,1
+0_to_200,36,existing_credit_paid,car_new,12389,unknown,between_1_4,1,M_single,None,4,no_property,37,None,free,1,official,1,1,1,0
+0_to_200,24,delay_in_paying,business,4712,unknown,between_1_4,4,M_single,None,2,life_insurance  ,37,bank,own,2,management,1,1,1,1
+0_to_200,24,delay_in_paying,radio_TV,1553,between_100_500,between_4_7,3,F_not_single,None,2,life_insurance  ,23,None,rent,2,official,1,1,1,1
+below_0,12,existing_credit_paid,car_new,1372,below_100,between_4_7,2,M_divorced,None,3,other,36,None,own,1,official,1,0,1,0
+no_account,24,critical_account,radio_TV,2578,above_1000,above_7,2,M_single,None,2,other,34,None,own,1,official,1,0,1,1
+0_to_200,48,existing_credit_paid,radio_TV,3979,unknown,between_4_7,4,M_single,None,1,other,41,None,own,2,official,2,1,1,1
+below_0,48,existing_credit_paid,radio_TV,6758,below_100,between_1_4,3,F_not_single,None,2,other,31,None,own,1,official,1,1,1,0
+below_0,24,existing_credit_paid,furniture_equipment,3234,below_100,below_1,4,F_not_single,None,4,real_estate ,23,None,rent,1,unskilled,1,1,1,0
+no_account,30,critical_account,radio_TV,5954,below_100,between_4_7,3,M_single,co_applicant ,2,other,38,None,own,1,official,1,0,1,1
+no_account,24,existing_credit_paid,car_used,5433,unknown,unemployed,2,F_not_single,None,4,life_insurance  ,26,None,rent,1,management,1,1,1,1
+below_0,15,existing_credit_paid,business,806,below_100,between_1_4,4,F_not_single,None,4,life_insurance  ,22,None,own,1,unskilled,1,0,1,1
+0_to_200,9,existing_credit_paid,radio_TV,1082,below_100,above_7,4,M_single,None,4,other,27,None,own,2,unskilled,1,0,1,1
+no_account,15,critical_account,furniture_equipment,2788,below_100,between_4_7,2,F_not_single,co_applicant ,3,other,24,bank,own,2,official,1,0,1,1
+0_to_200,12,existing_credit_paid,radio_TV,2930,below_100,between_4_7,2,F_not_single,None,1,real_estate ,27,None,own,1,official,1,0,1,1
+no_account,24,critical_account,education,1927,unknown,between_1_4,3,F_not_single,None,2,other,33,None,own,2,official,1,1,1,1
+0_to_200,36,critical_account,car_new,2820,below_100,below_1,4,M_divorced,None,4,other,27,None,own,2,official,1,0,1,0
+no_account,24,existing_credit_paid,retraining,937,below_100,below_1,4,M_divorced,None,3,other,27,None,own,2,unskilled,1,0,1,1
+0_to_200,18,critical_account,car_new,1056,below_100,above_7,3,M_single,guarantor,3,real_estate ,30,bank,own,2,official,1,0,1,0
+0_to_200,12,critical_account,car_new,3124,below_100,below_1,1,M_single,None,3,real_estate ,49,bank,own,2,unskilled,2,0,1,1
+no_account,9,existing_credit_paid,furniture_equipment,1388,below_100,between_1_4,4,F_not_single,None,2,real_estate ,26,None,rent,1,official,1,0,1,1
+0_to_200,36,existing_credit_paid,repairs,2384,below_100,below_1,4,M_single,None,1,no_property,33,None,rent,1,unskilled,1,0,1,0
+no_account,12,existing_credit_paid,car_new,2133,unknown,above_7,4,F_not_single,None,4,no_property,52,None,free,1,management,1,1,1,1
+below_0,18,existing_credit_paid,furniture_equipment,2039,below_100,between_1_4,1,F_not_single,None,4,real_estate ,20,bank,rent,1,official,1,0,1,0
+below_0,9,critical_account,car_new,2799,below_100,between_1_4,2,M_single,None,2,real_estate ,36,None,rent,2,official,2,0,1,1
+below_0,12,existing_credit_paid,furniture_equipment,1289,below_100,between_1_4,4,M_single,guarantor,1,life_insurance  ,21,None,own,1,unskilled,1,0,1,1
+below_0,18,existing_credit_paid,domestic_appliances,1217,below_100,between_1_4,4,M_divorced,None,3,real_estate ,47,None,own,1,unskilled,1,1,1,0
+below_0,12,critical_account,furniture_equipment,2246,below_100,above_7,3,M_single,None,3,life_insurance  ,60,None,own,2,official,1,0,1,0
+below_0,12,critical_account,radio_TV,385,below_100,between_4_7,4,F_not_single,None,3,real_estate ,58,None,own,4,unskilled,1,1,1,1
+0_to_200,24,delay_in_paying,car_new,1965,unknown,between_1_4,4,F_not_single,None,4,other,42,None,rent,2,official,1,1,1,1
+no_account,21,existing_credit_paid,business,1572,above_1000,above_7,4,F_not_single,None,4,real_estate ,36,bank,own,1,unskilled,1,0,1,1
+0_to_200,24,existing_credit_paid,car_new,2718,below_100,between_1_4,3,F_not_single,None,4,life_insurance  ,20,None,rent,1,unskilled,1,1,1,0
+below_0,24,all_credit_paid,others,1358,unknown,above_7,4,M_single,None,3,other,40,stores,own,1,management,1,1,1,0
+0_to_200,6,all_credit_paid,car_new,931,between_100_500,below_1,1,F_not_single,None,1,life_insurance  ,32,stores,own,1,unskilled,1,0,1,0
+below_0,24,existing_credit_paid,car_new,1442,below_100,between_4_7,4,F_not_single,None,4,other,23,None,rent,2,official,1,0,1,0
+0_to_200,24,no_credit_taken,business,4241,below_100,between_1_4,1,M_single,None,4,real_estate ,36,None,own,3,unskilled,1,1,1,0
+no_account,18,critical_account,car_new,2775,below_100,between_4_7,2,M_single,None,2,life_insurance  ,31,bank,own,2,official,1,0,1,0
+no_account,24,delay_in_paying,business,3863,below_100,between_1_4,1,M_single,None,2,no_property,32,None,free,1,official,1,0,1,1
+0_to_200,7,existing_credit_paid,radio_TV,2329,below_100,below_1,1,F_not_single,guarantor,1,real_estate ,45,None,own,1,official,1,0,1,1
+0_to_200,9,existing_credit_paid,furniture_equipment,918,below_100,between_1_4,4,F_not_single,None,1,life_insurance  ,30,None,own,1,official,1,0,1,0
+0_to_200,24,all_credit_paid,education,1837,below_100,between_4_7,4,F_not_single,None,4,no_property,34,bank,free,1,unskilled,1,0,1,0
+no_account,36,existing_credit_paid,furniture_equipment,3349,below_100,between_1_4,4,F_not_single,None,2,other,28,None,own,1,management,1,1,1,0
+above_200,10,existing_credit_paid,furniture_equipment,1275,below_100,below_1,4,F_not_single,None,2,life_insurance  ,23,None,own,1,official,1,0,1,1
+below_0,24,all_credit_paid,furniture_equipment,2828,between_500_1000,between_1_4,4,M_single,None,4,real_estate ,22,stores,own,1,official,1,1,1,1
+no_account,24,critical_account,business,4526,below_100,between_1_4,3,M_single,None,2,real_estate ,74,None,own,1,management,1,1,1,1
+0_to_200,36,existing_credit_paid,radio_TV,2671,between_100_500,between_1_4,4,F_not_single,co_applicant ,4,no_property,50,None,free,1,official,1,0,1,0
+no_account,18,existing_credit_paid,radio_TV,2051,below_100,below_1,4,M_single,None,1,real_estate ,33,None,own,1,official,1,0,1,1
+no_account,15,existing_credit_paid,car_used,1300,unknown,above_7,4,M_single,None,4,no_property,45,bank,free,1,official,2,0,1,1
+below_0,12,existing_credit_paid,domestic_appliances,741,between_100_500,unemployed,4,F_not_single,None,3,life_insurance  ,22,None,own,1,official,1,0,1,0
+above_200,10,existing_credit_paid,car_new,1240,between_100_500,above_7,1,F_not_single,None,4,no_property,48,None,free,1,unskilled,2,0,1,0
+below_0,21,existing_credit_paid,radio_TV,3357,above_1000,below_1,4,F_not_single,None,2,other,29,bank,own,1,official,1,0,1,1
+below_0,24,all_credit_paid,car_used,3632,below_100,between_1_4,1,F_not_single,guarantor,4,other,22,bank,rent,1,official,1,0,0,1
+no_account,18,delay_in_paying,furniture_equipment,1808,below_100,between_4_7,4,F_not_single,None,1,real_estate ,22,None,own,1,official,1,0,1,0
+0_to_200,48,no_credit_taken,business,12204,unknown,between_1_4,2,M_single,None,2,other,48,bank,own,1,management,1,1,1,1
+0_to_200,60,delay_in_paying,radio_TV,9157,unknown,between_1_4,2,M_single,None,2,no_property,27,None,free,1,management,1,0,1,1
+below_0,6,critical_account,car_new,3676,below_100,between_1_4,1,M_single,None,3,real_estate ,37,None,rent,3,official,2,0,1,1
+0_to_200,30,existing_credit_paid,furniture_equipment,3441,between_100_500,between_1_4,2,F_not_single,co_applicant ,4,other,21,None,rent,1,official,1,0,1,0
+no_account,12,existing_credit_paid,car_new,640,below_100,between_1_4,4,M_divorced,None,2,real_estate ,49,None,own,1,unskilled,1,0,1,1
+0_to_200,21,critical_account,business,3652,below_100,between_4_7,2,M_single,None,3,life_insurance  ,27,None,own,2,official,1,0,1,1
+no_account,18,critical_account,car_new,1530,below_100,between_1_4,3,M_single,None,2,life_insurance  ,32,bank,own,2,official,1,0,1,0
+no_account,48,existing_credit_paid,business,3914,unknown,between_1_4,4,M_divorced,None,2,real_estate ,38,bank,own,1,official,1,0,1,0
+below_0,12,existing_credit_paid,furniture_equipment,1858,below_100,below_1,4,F_not_single,None,1,other,22,None,rent,1,official,1,0,1,1
+below_0,18,existing_credit_paid,radio_TV,2600,below_100,between_1_4,4,M_single,None,4,no_property,65,None,free,2,official,1,0,1,0
+no_account,15,existing_credit_paid,radio_TV,1979,unknown,above_7,4,M_single,None,2,other,35,None,own,1,official,1,0,1,1
+above_200,6,existing_credit_paid,furniture_equipment,2116,below_100,between_1_4,2,M_single,None,2,real_estate ,41,None,own,1,official,1,1,1,1
+0_to_200,9,all_credit_paid,car_new,1437,between_100_500,between_4_7,2,M_single,None,3,no_property,29,None,own,1,official,1,0,1,0
+no_account,42,critical_account,furniture_equipment,4042,between_500_1000,between_1_4,4,M_single,None,4,real_estate ,36,None,own,2,official,1,1,1,1
+no_account,9,existing_credit_paid,education,3832,unknown,above_7,1,M_single,None,4,real_estate ,64,None,own,1,unskilled,1,0,1,1
+below_0,24,existing_credit_paid,radio_TV,3660,below_100,between_1_4,2,F_not_single,None,4,other,28,None,own,1,official,1,0,1,1
+below_0,18,all_credit_paid,furniture_equipment,1553,below_100,between_1_4,4,M_single,None,3,other,44,bank,own,1,official,1,0,1,0
+0_to_200,15,existing_credit_paid,radio_TV,1444,unknown,below_1,4,M_single,None,1,life_insurance  ,23,None,own,1,official,1,0,1,1
+no_account,9,existing_credit_paid,furniture_equipment,1980,below_100,below_1,2,F_not_single,co_applicant ,2,other,19,None,rent,2,official,1,0,1,0
+0_to_200,24,existing_credit_paid,car_new,1355,below_100,below_1,3,F_not_single,None,4,other,25,None,own,1,unskilled,1,1,1,0
+no_account,12,existing_credit_paid,education,1393,below_100,above_7,4,M_single,None,4,life_insurance  ,47,bank,own,3,official,2,1,1,1
+no_account,24,existing_credit_paid,radio_TV,1376,between_500_1000,between_4_7,4,F_not_single,None,1,other,28,None,own,1,official,1,0,1,1
+no_account,60,delay_in_paying,radio_TV,15653,below_100,between_4_7,2,M_single,None,4,other,21,None,own,2,official,1,1,1,1
+no_account,12,existing_credit_paid,radio_TV,1493,below_100,below_1,4,F_not_single,None,3,other,34,None,own,1,official,2,0,1,1
+below_0,42,delay_in_paying,radio_TV,4370,below_100,between_4_7,3,M_single,None,2,life_insurance  ,26,bank,own,2,official,2,1,1,0
+below_0,18,existing_credit_paid,education,750,below_100,unemployed,4,F_not_single,None,1,real_estate ,27,None,own,1,unemployed,1,0,1,0
+0_to_200,15,existing_credit_paid,repairs,1308,below_100,above_7,4,M_single,None,4,other,38,None,own,2,unskilled,1,0,1,1
+no_account,15,existing_credit_paid,education,4623,between_100_500,between_1_4,3,M_single,None,2,life_insurance  ,40,None,own,1,management,1,1,1,0
+no_account,24,critical_account,radio_TV,1851,below_100,between_4_7,4,M_divorced,guarantor,2,other,33,None,own,2,official,1,1,1,1
+below_0,18,critical_account,radio_TV,1880,below_100,between_4_7,4,M_divorced,None,1,life_insurance  ,32,None,own,2,management,1,1,1,1
+no_account,36,delay_in_paying,business,7980,unknown,below_1,4,M_single,None,4,other,27,None,rent,2,official,1,1,1,0
+below_0,30,no_credit_taken,furniture_equipment,4583,below_100,between_1_4,2,M_divorced,guarantor,2,real_estate ,32,None,own,2,official,1,0,1,1
+no_account,12,existing_credit_paid,car_new,1386,between_500_1000,between_1_4,2,F_not_single,None,2,life_insurance  ,26,None,own,1,official,1,0,1,0
+above_200,24,existing_credit_paid,car_new,947,below_100,between_4_7,4,M_single,None,3,no_property,38,bank,free,1,official,2,0,1,0
+below_0,12,existing_credit_paid,education,684,below_100,between_1_4,4,M_single,None,4,other,40,None,rent,1,unskilled,2,0,1,0
+below_0,48,existing_credit_paid,education,7476,below_100,between_4_7,4,M_single,None,1,no_property,50,None,free,1,management,1,1,1,1
+0_to_200,12,existing_credit_paid,furniture_equipment,1922,below_100,between_1_4,4,M_single,None,2,life_insurance  ,37,None,own,1,unskilled,1,0,1,0
+below_0,24,existing_credit_paid,car_new,2303,below_100,above_7,4,M_single,co_applicant ,1,real_estate ,45,None,own,1,official,1,0,1,0
+0_to_200,36,delay_in_paying,car_new,8086,between_100_500,above_7,2,M_single,None,4,other,42,None,own,4,management,1,1,1,0
+no_account,24,critical_account,car_used,2346,below_100,between_4_7,4,M_single,None,3,other,35,None,own,2,official,1,1,1,1
+below_0,14,existing_credit_paid,car_new,3973,below_100,unemployed,1,M_single,None,4,no_property,22,None,free,1,official,1,0,1,1
+0_to_200,12,existing_credit_paid,car_new,888,below_100,above_7,4,M_single,None,4,other,41,bank,own,1,unskilled,2,0,1,0
+no_account,48,existing_credit_paid,radio_TV,10222,unknown,between_4_7,4,M_single,None,3,other,37,stores,own,1,official,1,1,1,1
+0_to_200,30,no_credit_taken,business,4221,below_100,between_1_4,2,F_not_single,None,1,other,28,None,own,2,official,1,0,1,1
+0_to_200,18,critical_account,furniture_equipment,6361,below_100,above_7,2,M_single,None,1,no_property,41,None,own,1,official,1,1,1,1
+above_200,12,existing_credit_paid,radio_TV,1297,below_100,between_1_4,3,M_divorced,None,4,real_estate ,23,None,rent,1,official,1,0,1,1
+below_0,12,existing_credit_paid,car_new,900,unknown,between_1_4,4,M_divorced,None,2,other,23,None,own,1,official,1,0,1,0
+no_account,21,existing_credit_paid,furniture_equipment,2241,below_100,above_7,4,M_single,None,2,real_estate ,50,None,own,2,official,1,0,1,1
+0_to_200,6,delay_in_paying,furniture_equipment,1050,below_100,unemployed,4,M_single,None,1,life_insurance  ,35,stores,own,2,management,1,1,1,1
+above_200,6,critical_account,education,1047,below_100,between_1_4,2,F_not_single,None,4,life_insurance  ,50,None,own,1,unskilled,1,0,1,1
+no_account,24,critical_account,others,6314,below_100,unemployed,4,M_single,co_applicant ,2,no_property,27,bank,own,2,management,1,1,1,1
+0_to_200,30,all_credit_paid,furniture_equipment,3496,above_1000,between_1_4,4,M_single,None,2,other,34,stores,own,1,official,2,1,1,1
+no_account,48,all_credit_paid,business,3609,below_100,between_1_4,1,F_not_single,None,1,real_estate ,27,stores,own,1,official,1,0,1,1
+below_0,12,critical_account,car_new,4843,below_100,above_7,3,M_single,co_applicant ,4,life_insurance  ,43,None,rent,2,official,1,1,1,0
+above_200,30,critical_account,radio_TV,3017,below_100,above_7,4,M_single,None,4,life_insurance  ,47,None,own,1,official,1,0,1,1
+no_account,24,critical_account,business,4139,between_100_500,between_1_4,3,M_single,None,3,life_insurance  ,27,None,own,2,unskilled,1,1,1,1
+no_account,36,existing_credit_paid,business,5742,between_100_500,between_4_7,2,M_single,None,2,other,31,None,own,2,official,1,1,1,1
+no_account,60,existing_credit_paid,car_new,10366,below_100,above_7,2,M_single,None,4,life_insurance  ,42,None,own,1,management,1,1,1,1
+no_account,6,critical_account,car_new,2080,between_500_1000,between_1_4,1,M_divorced,None,2,other,24,None,own,1,official,1,0,1,1
+no_account,21,delay_in_paying,business,2580,between_500_1000,below_1,4,M_single,None,2,real_estate ,41,bank,own,1,unskilled,2,0,1,0
+no_account,30,critical_account,radio_TV,4530,below_100,between_4_7,4,F_not_single,None,4,other,26,None,rent,1,management,1,1,1,1
+no_account,24,critical_account,furniture_equipment,5150,below_100,above_7,4,M_single,None,4,other,33,None,own,1,official,1,1,1,1
+0_to_200,72,existing_credit_paid,radio_TV,5595,between_100_500,between_1_4,2,M_divorced,None,2,other,24,None,own,1,official,1,0,1,0
+below_0,24,existing_credit_paid,radio_TV,2384,below_100,above_7,4,M_single,None,4,real_estate ,64,bank,rent,1,unskilled,1,0,1,1
+no_account,18,existing_credit_paid,radio_TV,1453,below_100,below_1,3,F_not_single,None,1,real_estate ,26,None,own,1,official,1,0,1,1
+no_account,6,existing_credit_paid,education,1538,below_100,below_1,1,F_not_single,None,2,no_property,56,None,own,1,official,1,0,1,1
+no_account,12,existing_credit_paid,radio_TV,2279,unknown,between_1_4,4,M_single,None,4,no_property,37,None,free,1,official,1,1,1,1
+no_account,15,delay_in_paying,radio_TV,1478,below_100,between_1_4,4,M_divorced,None,3,real_estate ,33,bank,own,2,official,1,0,1,1
+no_account,24,critical_account,radio_TV,5103,below_100,below_1,3,M_divorced,None,3,no_property,47,None,free,3,official,1,1,1,1
+0_to_200,36,delay_in_paying,business,9857,between_100_500,between_4_7,1,M_single,None,3,life_insurance  ,31,None,own,2,unskilled,2,1,1,1
+no_account,60,existing_credit_paid,car_new,6527,unknown,between_1_4,4,M_single,None,4,no_property,34,None,free,1,official,2,1,1,1
+above_200,10,critical_account,radio_TV,1347,unknown,between_4_7,4,M_single,None,2,life_insurance  ,27,None,own,2,official,1,1,1,1
+0_to_200,36,delay_in_paying,car_new,2862,between_100_500,above_7,4,M_single,None,3,no_property,30,None,free,1,official,1,0,1,1
+no_account,9,existing_credit_paid,radio_TV,2753,between_100_500,above_7,3,M_single,co_applicant ,4,other,35,None,own,1,official,1,1,1,1
+below_0,12,existing_credit_paid,car_new,3651,above_1000,between_1_4,1,M_single,None,3,life_insurance  ,31,None,own,1,official,2,0,1,1
+below_0,15,critical_account,furniture_equipment,975,below_100,between_1_4,2,M_divorced,None,3,life_insurance  ,25,None,own,2,official,1,0,1,1
+0_to_200,15,existing_credit_paid,repairs,2631,between_100_500,between_1_4,3,F_not_single,None,2,real_estate ,25,None,own,1,unskilled,1,0,1,1
+0_to_200,24,existing_credit_paid,radio_TV,2896,between_100_500,below_1,2,M_single,None,1,other,29,None,own,1,official,1,0,1,1
+below_0,6,critical_account,car_new,4716,unknown,below_1,1,M_single,None,3,real_estate ,44,None,own,2,unskilled,2,0,1,1
+no_account,24,existing_credit_paid,radio_TV,2284,below_100,between_4_7,4,M_single,None,2,other,28,None,own,1,official,1,1,1,1
+no_account,6,existing_credit_paid,car_used,1236,between_500_1000,between_1_4,2,M_single,None,4,life_insurance  ,50,None,rent,1,official,1,0,1,1
+0_to_200,12,existing_credit_paid,radio_TV,1103,below_100,between_4_7,4,M_single,guarantor,3,real_estate ,29,None,own,2,official,1,0,0,1
+no_account,12,critical_account,car_new,926,below_100,unemployed,1,F_not_single,None,2,life_insurance  ,38,None,own,1,unemployed,1,0,1,1
+no_account,18,critical_account,radio_TV,1800,below_100,between_1_4,4,M_single,None,2,other,24,None,own,2,official,1,0,1,1
+above_200,15,existing_credit_paid,education,1905,below_100,above_7,4,M_single,None,4,other,40,None,rent,1,management,1,1,1,1
+no_account,12,existing_credit_paid,furniture_equipment,1123,between_500_1000,between_1_4,4,F_not_single,None,4,other,29,None,rent,1,unskilled,1,0,1,0
+below_0,48,critical_account,car_used,6331,below_100,above_7,4,M_single,None,4,no_property,46,None,free,2,official,1,1,1,0
+above_200,24,existing_credit_paid,radio_TV,1377,between_100_500,above_7,4,F_not_single,None,2,no_property,47,None,free,1,official,1,1,1,1
+0_to_200,30,delay_in_paying,business,2503,between_100_500,above_7,4,M_single,None,2,life_insurance  ,41,stores,own,2,official,1,0,1,1
+0_to_200,27,existing_credit_paid,business,2528,below_100,below_1,4,F_not_single,None,1,life_insurance  ,32,None,own,1,official,2,1,1,1
+no_account,15,existing_credit_paid,car_new,5324,between_500_1000,above_7,1,F_not_single,None,4,no_property,35,None,free,1,official,1,0,1,1
+0_to_200,48,existing_credit_paid,car_new,6560,between_100_500,between_4_7,3,M_single,None,2,life_insurance  ,24,None,own,1,official,1,0,1,0
+0_to_200,12,no_credit_taken,furniture_equipment,2969,below_100,below_1,4,F_not_single,None,3,life_insurance  ,25,None,rent,2,official,1,0,1,0
+0_to_200,9,existing_credit_paid,radio_TV,1206,below_100,above_7,4,F_not_single,None,4,real_estate ,25,None,own,1,official,1,0,1,1
+0_to_200,9,existing_credit_paid,radio_TV,2118,below_100,between_1_4,2,M_single,None,2,real_estate ,37,None,own,1,unskilled,2,0,1,1
+no_account,18,critical_account,radio_TV,629,between_500_1000,above_7,4,M_single,None,3,life_insurance  ,32,bank,own,2,management,1,1,1,1
+below_0,6,all_credit_paid,education,1198,below_100,above_7,4,F_not_single,None,4,no_property,35,None,free,1,official,1,0,1,0
+no_account,21,existing_credit_paid,car_used,2476,unknown,above_7,4,M_single,None,4,real_estate ,46,None,own,1,management,1,1,1,1
+below_0,9,critical_account,radio_TV,1138,below_100,between_1_4,4,M_single,None,4,real_estate ,25,None,own,2,unskilled,1,0,1,1
+0_to_200,60,existing_credit_paid,car_new,14027,below_100,between_4_7,4,M_single,None,2,no_property,27,None,own,1,management,1,1,1,0
+no_account,30,critical_account,car_used,7596,unknown,above_7,1,M_single,None,4,other,63,None,own,2,official,1,0,1,1
+no_account,30,critical_account,radio_TV,3077,unknown,above_7,3,M_single,None,2,other,40,None,own,2,official,2,1,1,1
+no_account,18,existing_credit_paid,radio_TV,1505,below_100,between_1_4,4,M_single,None,2,no_property,32,None,free,1,management,1,1,1,1
+above_200,24,critical_account,radio_TV,3148,unknown,between_1_4,3,M_single,None,2,other,31,None,own,2,official,1,1,1,1
+0_to_200,20,no_credit_taken,car_used,6148,between_100_500,above_7,3,M_divorced,None,4,other,31,bank,own,2,official,1,1,1,1
+above_200,9,no_credit_taken,radio_TV,1337,below_100,below_1,4,M_single,None,2,other,34,None,own,2,management,1,1,1,0
+0_to_200,6,all_credit_paid,education,433,above_1000,below_1,4,F_not_single,None,2,life_insurance  ,24,bank,rent,1,official,2,0,1,0
+below_0,12,existing_credit_paid,car_new,1228,below_100,between_1_4,4,F_not_single,None,2,real_estate ,24,None,own,1,unskilled,1,0,1,0
+0_to_200,9,existing_credit_paid,radio_TV,790,between_500_1000,between_1_4,4,F_not_single,None,3,real_estate ,66,None,own,1,unskilled,1,0,1,1
+no_account,27,existing_credit_paid,car_new,2570,below_100,between_1_4,3,F_not_single,None,3,real_estate ,21,None,rent,1,official,1,0,1,0
+no_account,6,critical_account,car_new,250,above_1000,between_1_4,2,F_not_single,None,2,real_estate ,41,bank,own,2,unskilled,1,0,1,1
+no_account,15,critical_account,radio_TV,1316,between_500_1000,between_1_4,2,M_divorced,None,2,life_insurance  ,47,None,own,2,unskilled,1,0,1,1
+below_0,18,existing_credit_paid,radio_TV,1882,below_100,between_1_4,4,F_not_single,None,4,other,25,bank,rent,2,official,1,0,1,0
+0_to_200,48,all_credit_paid,business,6416,below_100,above_7,4,F_not_single,None,3,no_property,59,None,rent,1,official,1,0,1,0
+above_200,24,critical_account,business,1275,above_1000,between_1_4,2,M_divorced,None,4,real_estate ,36,None,own,2,official,1,1,1,1
+0_to_200,24,delay_in_paying,radio_TV,6403,below_100,below_1,1,M_single,None,2,other,33,None,own,1,official,1,0,1,1
+below_0,24,existing_credit_paid,radio_TV,1987,below_100,between_1_4,2,M_single,None,4,real_estate ,21,None,rent,1,unskilled,2,0,1,0
+0_to_200,8,existing_credit_paid,radio_TV,760,below_100,between_4_7,4,F_not_single,guarantor,2,real_estate ,44,None,own,1,unskilled,1,0,1,1
+no_account,24,existing_credit_paid,car_used,2603,above_1000,between_1_4,2,F_not_single,None,4,other,28,None,rent,1,official,1,1,1,1
+no_account,4,critical_account,car_new,3380,below_100,between_4_7,1,F_not_single,None,1,real_estate ,37,None,own,1,official,2,0,1,1
+0_to_200,36,all_credit_paid,domestic_appliances,3990,unknown,below_1,3,F_not_single,None,2,no_property,29,bank,own,1,unemployed,1,0,1,1
+0_to_200,24,existing_credit_paid,car_used,11560,below_100,between_1_4,1,F_not_single,None,4,other,23,None,rent,2,management,1,0,1,0
+below_0,18,existing_credit_paid,car_new,4380,between_100_500,between_1_4,3,M_single,None,4,other,35,None,own,1,unskilled,2,1,1,1
+no_account,6,critical_account,car_new,6761,below_100,between_4_7,1,M_single,None,3,no_property,45,None,own,2,management,2,1,1,1
+0_to_200,30,no_credit_taken,business,4280,between_100_500,between_1_4,4,F_not_single,None,4,other,26,None,rent,2,unskilled,1,0,1,0
+below_0,24,all_credit_paid,car_new,2325,between_100_500,between_4_7,2,M_single,None,3,other,32,bank,own,1,official,1,0,1,1
+0_to_200,10,all_credit_paid,radio_TV,1048,below_100,between_1_4,4,M_single,None,4,real_estate ,23,stores,own,1,unskilled,1,0,1,1
+no_account,21,existing_credit_paid,radio_TV,3160,unknown,above_7,4,M_single,None,3,life_insurance  ,41,None,own,1,official,1,1,1,1
+below_0,24,all_credit_paid,furniture_equipment,2483,between_500_1000,between_1_4,4,M_single,None,4,real_estate ,22,stores,own,1,official,1,1,1,1
+below_0,39,critical_account,furniture_equipment,14179,unknown,between_4_7,4,M_single,None,4,life_insurance  ,30,None,own,2,management,1,1,1,1
+below_0,13,critical_account,business,1797,below_100,below_1,3,M_single,None,1,life_insurance  ,28,bank,own,2,unskilled,1,0,1,1
+below_0,15,existing_credit_paid,car_new,2511,below_100,unemployed,1,F_not_single,None,4,other,23,None,rent,1,official,1,0,1,1
+below_0,12,existing_credit_paid,car_new,1274,below_100,below_1,3,F_not_single,None,1,real_estate ,37,None,own,1,unskilled,1,0,1,0
+no_account,21,existing_credit_paid,car_used,5248,unknown,between_1_4,1,M_single,None,3,other,26,None,own,1,official,1,0,1,1
+no_account,15,existing_credit_paid,car_used,3029,below_100,between_4_7,2,M_single,None,2,other,33,None,own,1,official,1,0,1,1
+below_0,6,existing_credit_paid,furniture_equipment,428,below_100,above_7,2,F_not_single,None,1,life_insurance  ,49,bank,own,1,official,1,1,1,1
+below_0,18,existing_credit_paid,car_new,976,below_100,below_1,1,F_not_single,None,2,other,23,None,own,1,unskilled,1,0,1,0
+0_to_200,12,existing_credit_paid,business,841,between_100_500,between_4_7,2,F_not_single,None,4,real_estate ,23,None,rent,1,unskilled,1,0,1,1
+no_account,30,critical_account,radio_TV,5771,below_100,between_4_7,4,F_not_single,None,2,other,25,None,own,2,official,1,0,1,1
+no_account,12,delay_in_paying,repairs,1555,above_1000,above_7,4,M_single,None,4,no_property,55,None,free,2,official,2,0,1,0
+below_0,24,existing_credit_paid,car_new,1285,unknown,between_4_7,4,F_not_single,None,4,no_property,32,None,rent,1,official,1,0,1,0
+above_200,6,critical_account,car_new,1299,below_100,between_1_4,1,M_single,None,1,real_estate ,74,None,own,3,unemployed,2,0,0,1
+above_200,15,critical_account,radio_TV,1271,unknown,between_1_4,3,M_single,None,4,no_property,39,None,free,2,official,1,1,1,0
+no_account,24,existing_credit_paid,car_new,1393,below_100,between_1_4,2,M_single,guarantor,2,real_estate ,31,None,own,1,official,1,1,1,1
+below_0,12,critical_account,car_new,691,below_100,above_7,4,M_single,None,3,life_insurance  ,35,None,own,2,official,1,0,1,0
+no_account,15,critical_account,car_new,5045,unknown,above_7,1,F_not_single,None,4,other,59,None,own,1,official,1,1,1,1
+below_0,18,critical_account,furniture_equipment,2124,below_100,between_1_4,4,F_not_single,None,4,real_estate ,24,None,rent,2,official,1,0,1,0
+below_0,12,existing_credit_paid,radio_TV,2214,below_100,between_1_4,4,M_single,None,3,life_insurance  ,24,None,own,1,unskilled,1,0,1,1
+no_account,21,critical_account,car_new,12680,unknown,above_7,4,M_single,None,4,no_property,30,None,free,1,management,1,1,1,0
+no_account,24,critical_account,car_new,2463,between_100_500,between_4_7,4,M_divorced,None,3,life_insurance  ,27,None,own,2,official,1,1,1,1
+0_to_200,12,existing_credit_paid,radio_TV,1155,below_100,above_7,3,M_divorced,guarantor,3,real_estate ,40,bank,own,2,unskilled,1,0,1,1
+below_0,30,existing_credit_paid,furniture_equipment,3108,below_100,below_1,2,M_divorced,None,4,life_insurance  ,31,None,own,1,unskilled,1,0,1,0
+no_account,10,existing_credit_paid,car_used,2901,unknown,below_1,1,F_not_single,None,4,real_estate ,31,None,rent,1,official,1,0,1,1
+0_to_200,12,critical_account,furniture_equipment,3617,below_100,above_7,1,M_single,None,4,other,28,None,rent,3,official,1,1,1,1
+no_account,12,critical_account,radio_TV,1655,below_100,above_7,2,M_single,None,4,real_estate ,63,None,own,2,unskilled,1,1,1,1
+below_0,24,existing_credit_paid,car_used,2812,unknown,above_7,2,F_not_single,None,4,real_estate ,26,None,rent,1,official,1,0,1,1
+below_0,36,critical_account,education,8065,below_100,between_1_4,3,F_not_single,None,2,no_property,25,None,own,2,management,1,1,1,0
+no_account,21,critical_account,car_used,3275,below_100,above_7,1,M_single,None,4,other,36,None,own,1,management,1,1,1,1
+no_account,24,critical_account,radio_TV,2223,between_100_500,above_7,4,M_single,None,4,life_insurance  ,52,bank,own,2,official,1,0,1,1
+above_200,12,critical_account,car_new,1480,between_500_1000,unemployed,2,M_single,None,4,no_property,66,bank,free,3,unemployed,1,0,1,1
+below_0,24,existing_credit_paid,car_new,1371,unknown,between_1_4,4,F_not_single,None,4,real_estate ,25,None,rent,1,official,1,0,1,0
+no_account,36,critical_account,car_new,3535,below_100,between_4_7,4,M_single,None,4,other,37,None,own,2,official,1,1,1,1
+below_0,18,existing_credit_paid,radio_TV,3509,below_100,between_4_7,4,F_not_single,guarantor,1,real_estate ,25,None,own,1,official,1,0,1,1
+no_account,36,critical_account,car_used,5711,above_1000,above_7,4,M_single,None,2,other,38,None,own,2,management,1,1,1,1
+0_to_200,18,existing_credit_paid,repairs,3872,below_100,unemployed,2,F_not_single,None,4,other,67,None,own,1,official,1,1,1,1
+0_to_200,39,critical_account,radio_TV,4933,below_100,between_4_7,2,M_single,guarantor,2,real_estate ,25,None,own,2,official,1,0,1,0
+no_account,24,critical_account,car_new,1940,above_1000,above_7,4,M_single,None,4,real_estate ,60,None,own,1,official,1,1,1,1
+0_to_200,12,no_credit_taken,retraining,1410,below_100,between_1_4,2,M_single,None,2,real_estate ,31,None,own,1,unskilled,1,1,1,1
+0_to_200,12,existing_credit_paid,car_new,836,between_100_500,below_1,4,F_not_single,None,2,life_insurance  ,23,bank,own,1,unskilled,1,0,1,0
+0_to_200,20,existing_credit_paid,car_used,6468,unknown,unemployed,1,M_divorced,None,4,real_estate ,60,None,own,1,management,1,1,1,1
+0_to_200,18,existing_credit_paid,business,1941,above_1000,between_1_4,4,M_single,None,2,life_insurance  ,35,None,own,1,unskilled,1,1,1,1
+no_account,22,existing_credit_paid,radio_TV,2675,between_500_1000,above_7,3,M_single,None,4,other,40,None,own,1,official,1,0,1,1
+no_account,48,critical_account,car_used,2751,unknown,above_7,4,M_single,None,3,other,38,None,own,2,official,2,1,1,1
+0_to_200,48,delay_in_paying,education,6224,below_100,above_7,4,M_single,None,4,no_property,50,None,free,1,official,1,0,1,0
+below_0,40,critical_account,education,5998,below_100,between_1_4,4,M_single,None,3,no_property,27,bank,own,1,official,1,1,1,0
+0_to_200,21,existing_credit_paid,business,1188,below_100,above_7,2,F_not_single,None,4,life_insurance  ,39,None,own,1,official,2,0,1,0
+no_account,24,existing_credit_paid,car_used,6313,unknown,above_7,3,M_single,None,4,other,41,None,own,1,management,2,1,1,1
+no_account,6,critical_account,furniture_equipment,1221,unknown,between_1_4,1,M_divorced,None,2,life_insurance  ,27,None,own,2,official,1,0,1,1
+above_200,24,existing_credit_paid,furniture_equipment,2892,below_100,above_7,3,M_divorced,None,4,no_property,51,None,free,1,official,1,0,1,1
+no_account,24,existing_credit_paid,furniture_equipment,3062,between_500_1000,above_7,4,M_single,None,3,no_property,32,None,rent,1,official,1,1,1,1
+no_account,9,existing_credit_paid,furniture_equipment,2301,between_100_500,below_1,2,F_not_single,None,4,life_insurance  ,22,None,rent,1,official,1,0,1,1
+below_0,18,existing_credit_paid,car_used,7511,unknown,above_7,1,M_single,None,4,life_insurance  ,51,None,free,1,official,2,1,1,0
+no_account,12,critical_account,furniture_equipment,1258,below_100,below_1,2,F_not_single,None,4,life_insurance  ,22,None,rent,2,unskilled,1,0,1,1
+no_account,24,delay_in_paying,car_new,717,unknown,above_7,4,M_divorced,None,4,other,54,None,own,2,official,1,1,1,1
+0_to_200,9,existing_credit_paid,car_new,1549,unknown,below_1,4,M_single,None,2,real_estate ,35,None,own,1,unemployed,1,0,1,1
+no_account,24,critical_account,education,1597,below_100,above_7,4,M_single,None,4,no_property,54,None,free,2,official,2,0,1,1
+0_to_200,18,critical_account,radio_TV,1795,below_100,above_7,3,F_not_single,guarantor,4,real_estate ,48,bank,rent,2,unskilled,1,1,1,1
+below_0,20,critical_account,furniture_equipment,4272,below_100,above_7,1,F_not_single,None,4,life_insurance  ,24,None,own,2,official,1,0,1,1
+no_account,12,critical_account,radio_TV,976,unknown,above_7,4,M_single,None,4,other,35,None,own,2,official,1,0,1,1
+0_to_200,12,existing_credit_paid,car_new,7472,unknown,unemployed,1,F_not_single,None,2,real_estate ,24,None,rent,1,unemployed,1,0,1,1
+below_0,36,existing_credit_paid,car_new,9271,below_100,between_4_7,2,M_single,None,1,other,24,None,own,1,official,1,1,1,0
+0_to_200,6,existing_credit_paid,radio_TV,590,below_100,below_1,3,M_divorced,None,3,real_estate ,26,None,own,1,unskilled,1,0,0,1
+no_account,12,critical_account,radio_TV,930,unknown,above_7,4,M_single,None,4,real_estate ,65,None,own,4,official,1,0,1,1
+0_to_200,42,all_credit_paid,car_used,9283,below_100,unemployed,1,M_single,None,2,no_property,55,bank,free,1,management,1,1,1,1
+0_to_200,15,no_credit_taken,car_new,1778,below_100,below_1,2,F_not_single,None,1,real_estate ,26,None,rent,2,unemployed,1,0,1,0
+0_to_200,8,existing_credit_paid,business,907,below_100,below_1,3,M_divorced,None,2,real_estate ,26,None,own,1,official,1,1,1,1
+0_to_200,6,existing_credit_paid,radio_TV,484,below_100,between_4_7,3,M_divorced,guarantor,3,real_estate ,28,bank,own,1,unskilled,1,0,1,1
+below_0,36,critical_account,car_used,9629,below_100,between_4_7,4,M_single,None,4,other,24,None,own,2,official,1,1,1,0
+below_0,48,existing_credit_paid,domestic_appliances,3051,below_100,between_1_4,3,M_single,None,4,other,54,None,own,1,official,1,0,1,0
+below_0,48,existing_credit_paid,car_new,3931,below_100,between_4_7,4,M_single,None,4,no_property,46,None,free,1,official,2,0,1,0
+0_to_200,36,delay_in_paying,car_new,7432,below_100,between_1_4,2,F_not_single,None,2,life_insurance  ,54,None,rent,1,official,1,0,1,1
+no_account,6,existing_credit_paid,domestic_appliances,1338,between_500_1000,between_1_4,1,M_divorced,None,4,real_estate ,62,None,own,1,official,1,0,1,1
+no_account,6,critical_account,radio_TV,1554,below_100,between_4_7,1,F_not_single,None,2,other,24,None,rent,2,official,1,1,1,1
+below_0,36,existing_credit_paid,others,15857,below_100,unemployed,2,M_divorced,co_applicant ,3,other,43,None,own,1,management,1,0,1,1
+below_0,18,existing_credit_paid,radio_TV,1345,below_100,between_1_4,4,M_divorced,None,3,real_estate ,26,bank,own,1,official,1,0,1,0
+no_account,12,existing_credit_paid,car_new,1101,below_100,between_1_4,3,M_divorced,None,2,real_estate ,27,None,own,2,official,1,1,1,1
+above_200,12,existing_credit_paid,radio_TV,3016,below_100,between_1_4,3,M_divorced,None,1,other,24,None,own,1,official,1,0,1,1
+below_0,36,existing_credit_paid,furniture_equipment,2712,below_100,above_7,2,M_single,None,2,life_insurance  ,41,bank,own,1,official,2,0,1,0
+below_0,8,critical_account,car_new,731,below_100,above_7,4,M_single,None,4,real_estate ,47,None,own,2,unskilled,1,0,1,1
+no_account,18,critical_account,furniture_equipment,3780,below_100,below_1,3,M_divorced,None,2,other,35,None,own,2,management,1,1,1,1
+below_0,21,critical_account,car_new,1602,below_100,above_7,4,M_divorced,None,3,other,30,None,own,2,official,1,1,1,1
+below_0,18,critical_account,car_new,3966,below_100,above_7,1,F_not_single,None,4,real_estate ,33,bank,rent,3,official,1,1,1,0
+no_account,18,no_credit_taken,business,4165,below_100,between_1_4,2,M_single,None,2,other,36,stores,own,2,official,2,0,1,0
+below_0,36,existing_credit_paid,car_used,8335,unknown,above_7,3,M_single,None,4,no_property,47,None,free,1,official,1,0,1,0
+0_to_200,48,delay_in_paying,business,6681,unknown,between_1_4,4,M_single,None,4,no_property,38,None,free,1,official,2,1,1,1
+no_account,24,delay_in_paying,business,2375,between_500_1000,between_1_4,4,M_single,None,2,other,44,None,own,2,official,2,1,1,1
+below_0,18,existing_credit_paid,car_new,1216,below_100,below_1,4,F_not_single,None,3,other,23,None,rent,1,official,1,1,1,0
+below_0,45,no_credit_taken,business,11816,below_100,above_7,2,M_single,None,4,other,29,None,rent,2,official,1,0,1,0
+0_to_200,24,existing_credit_paid,radio_TV,5084,unknown,above_7,2,F_not_single,None,4,other,42,None,own,1,official,1,1,1,1
+above_200,15,existing_credit_paid,radio_TV,2327,below_100,below_1,2,F_not_single,None,3,real_estate ,25,None,own,1,unskilled,1,0,1,0
+below_0,12,no_credit_taken,car_new,1082,below_100,between_1_4,4,M_single,None,4,other,48,bank,own,2,official,1,0,1,0
+no_account,12,existing_credit_paid,radio_TV,886,unknown,between_1_4,4,F_not_single,None,2,other,21,None,own,1,official,1,0,1,1
+no_account,4,existing_credit_paid,furniture_equipment,601,below_100,below_1,1,F_not_single,None,3,real_estate ,23,None,rent,1,unskilled,2,0,1,1
+below_0,24,critical_account,car_used,2957,below_100,above_7,4,M_single,None,4,life_insurance  ,63,None,own,2,official,1,1,1,1
+no_account,24,critical_account,radio_TV,2611,below_100,above_7,4,M_divorced,co_applicant ,3,real_estate ,46,None,own,2,official,1,0,1,1
+below_0,36,existing_credit_paid,furniture_equipment,5179,below_100,between_4_7,4,M_single,None,2,life_insurance  ,29,None,own,1,official,1,0,1,0
+no_account,21,delay_in_paying,car_used,2993,below_100,between_1_4,3,M_single,None,2,real_estate ,28,stores,own,2,unskilled,1,0,1,1
+no_account,18,existing_credit_paid,repairs,1943,below_100,below_1,4,F_not_single,None,4,real_estate ,23,None,own,1,official,1,0,1,0
+no_account,24,all_credit_paid,business,1559,below_100,between_4_7,4,M_single,None,4,other,50,bank,own,1,official,1,1,1,1
+no_account,18,existing_credit_paid,furniture_equipment,3422,below_100,above_7,4,M_single,None,4,life_insurance  ,47,bank,own,3,official,2,1,1,1
+0_to_200,21,existing_credit_paid,furniture_equipment,3976,unknown,between_4_7,2,M_single,None,3,other,35,None,own,1,official,1,1,1,1
+no_account,18,existing_credit_paid,car_new,6761,unknown,between_1_4,2,M_single,None,4,other,68,None,rent,2,official,1,0,1,0
+no_account,24,existing_credit_paid,car_new,1249,below_100,below_1,4,M_divorced,None,2,real_estate ,28,None,own,1,official,1,0,1,1
+below_0,9,existing_credit_paid,radio_TV,1364,below_100,between_4_7,3,M_single,None,4,real_estate ,59,None,own,1,official,1,0,1,1
+below_0,12,existing_credit_paid,radio_TV,709,below_100,above_7,4,M_single,None,4,real_estate ,57,stores,own,1,unskilled,1,0,1,0
+below_0,20,critical_account,car_new,2235,below_100,between_1_4,4,M_divorced,guarantor,2,life_insurance  ,33,bank,rent,2,official,1,0,0,0
+no_account,24,critical_account,car_used,4042,unknown,between_4_7,3,M_single,None,4,life_insurance  ,43,None,own,2,official,1,1,1,1
+no_account,15,critical_account,radio_TV,1471,below_100,between_1_4,4,M_single,None,4,no_property,35,None,free,2,official,1,1,1,1
+below_0,18,all_credit_paid,car_new,1442,below_100,between_4_7,4,M_single,None,4,no_property,32,None,free,2,unskilled,2,0,1,0
+no_account,36,delay_in_paying,car_new,10875,below_100,above_7,2,M_single,None,2,other,45,None,own,2,official,2,1,1,1
+no_account,24,existing_credit_paid,car_new,1474,between_100_500,below_1,4,M_divorced,None,3,real_estate ,33,None,own,1,official,1,1,1,1
+no_account,10,existing_credit_paid,retraining,894,unknown,between_4_7,4,F_not_single,None,3,life_insurance  ,40,None,own,1,official,1,1,1,1
+no_account,15,critical_account,furniture_equipment,3343,below_100,between_1_4,4,M_single,None,2,no_property,28,None,free,1,official,1,1,1,1
+below_0,15,existing_credit_paid,car_new,3959,below_100,between_1_4,3,F_not_single,None,2,life_insurance  ,29,None,own,1,official,1,1,1,0
+no_account,9,existing_credit_paid,car_new,3577,between_100_500,between_1_4,1,M_single,guarantor,2,real_estate ,26,None,rent,1,official,2,0,0,1
+no_account,24,critical_account,car_used,5804,above_1000,between_1_4,4,M_single,None,2,real_estate ,27,None,own,2,official,1,0,1,1
+no_account,18,delay_in_paying,business,2169,below_100,between_1_4,4,M_divorced,None,2,other,28,None,own,1,official,1,1,1,0
+below_0,24,existing_credit_paid,radio_TV,2439,below_100,below_1,4,F_not_single,None,4,real_estate ,35,None,own,1,official,1,1,1,0
+no_account,27,critical_account,furniture_equipment,4526,above_1000,below_1,4,M_single,None,2,real_estate ,32,stores,own,2,unskilled,2,1,1,1
+no_account,10,existing_credit_paid,furniture_equipment,2210,below_100,between_1_4,2,M_single,None,2,real_estate ,25,bank,rent,1,unskilled,1,0,1,0
+no_account,15,existing_credit_paid,furniture_equipment,2221,between_500_1000,between_1_4,2,F_not_single,None,4,other,20,None,rent,1,official,1,0,1,1
+below_0,18,existing_credit_paid,radio_TV,2389,below_100,below_1,4,F_not_single,None,1,other,27,stores,own,1,official,1,0,1,1
+no_account,12,critical_account,furniture_equipment,3331,below_100,above_7,2,M_single,None,4,life_insurance  ,42,stores,own,1,official,1,0,1,1
+no_account,36,existing_credit_paid,business,7409,unknown,above_7,3,M_single,None,2,life_insurance  ,37,None,own,2,official,1,0,1,1
+below_0,12,existing_credit_paid,furniture_equipment,652,below_100,above_7,4,F_not_single,None,4,life_insurance  ,24,None,rent,1,official,1,0,1,1
+no_account,36,delay_in_paying,furniture_equipment,7678,between_500_1000,between_4_7,2,F_not_single,None,4,other,40,None,own,2,official,1,1,1,1
+above_200,6,critical_account,car_new,1343,below_100,above_7,1,M_single,None,4,real_estate ,46,None,own,2,official,2,0,0,1
+below_0,24,critical_account,business,1382,between_100_500,between_4_7,4,M_single,None,1,real_estate ,26,None,own,2,official,1,1,1,1
+no_account,15,existing_credit_paid,domestic_appliances,874,unknown,below_1,4,F_not_single,None,1,real_estate ,24,None,own,1,official,1,0,1,1
+below_0,12,existing_credit_paid,furniture_equipment,3590,below_100,between_1_4,2,M_single,co_applicant ,2,life_insurance  ,29,None,own,1,unskilled,2,0,1,1
+0_to_200,11,critical_account,car_new,1322,above_1000,between_1_4,4,F_not_single,None,4,other,40,None,own,2,official,1,0,1,1
+below_0,18,all_credit_paid,radio_TV,1940,below_100,below_1,3,M_single,co_applicant ,4,no_property,36,bank,free,1,management,1,1,1,1
+no_account,36,existing_credit_paid,radio_TV,3595,below_100,above_7,4,M_single,None,2,other,28,None,own,1,official,1,0,1,1
+below_0,9,existing_credit_paid,car_new,1422,below_100,below_1,3,M_single,None,2,no_property,27,None,free,1,management,1,1,1,0
+no_account,30,critical_account,radio_TV,6742,unknown,between_4_7,2,M_single,None,3,life_insurance  ,36,None,own,2,official,1,0,1,1
+no_account,24,existing_credit_paid,car_used,7814,below_100,between_4_7,3,M_single,None,3,other,38,None,own,1,management,1,1,1,1
+no_account,24,existing_credit_paid,car_used,9277,unknown,between_1_4,2,M_divorced,None,4,no_property,48,None,free,1,official,1,1,1,1
+0_to_200,30,critical_account,car_new,2181,unknown,above_7,4,M_single,None,4,real_estate ,36,None,own,2,official,1,0,1,1
+no_account,18,critical_account,radio_TV,1098,below_100,unemployed,4,F_not_single,None,4,other,65,None,own,2,unemployed,1,0,1,1
+0_to_200,24,existing_credit_paid,furniture_equipment,4057,below_100,between_4_7,3,M_divorced,None,3,other,43,None,own,1,official,1,1,1,0
+below_0,12,existing_credit_paid,education,795,below_100,below_1,4,F_not_single,None,4,life_insurance  ,53,None,own,1,official,1,0,1,0
+0_to_200,24,critical_account,business,2825,unknown,between_4_7,4,M_single,None,3,no_property,34,None,own,2,official,2,1,1,1
+0_to_200,48,existing_credit_paid,business,15672,below_100,between_1_4,2,M_single,None,2,other,23,None,own,1,official,1,1,1,0
+no_account,36,critical_account,car_new,6614,below_100,above_7,4,M_single,None,4,other,34,None,own,2,management,1,1,1,1
+no_account,28,all_credit_paid,car_used,7824,unknown,below_1,3,M_single,guarantor,4,real_estate ,40,bank,rent,2,official,2,1,1,1
+below_0,27,critical_account,business,2442,below_100,above_7,4,M_single,None,4,other,43,stores,own,4,management,2,1,1,1
+no_account,15,critical_account,radio_TV,1829,below_100,above_7,4,M_single,None,4,other,46,None,own,2,official,1,1,1,1
+below_0,12,critical_account,car_new,2171,below_100,between_1_4,4,M_single,None,4,life_insurance  ,38,bank,own,2,unskilled,1,0,0,1
+0_to_200,36,critical_account,car_used,5800,below_100,between_1_4,3,M_single,None,4,other,34,None,own,2,official,1,1,1,1
+no_account,18,critical_account,radio_TV,1169,unknown,between_1_4,4,M_single,None,3,life_insurance  ,29,None,own,2,official,1,1,1,1
+no_account,36,delay_in_paying,car_used,8947,unknown,between_4_7,3,M_single,None,2,other,31,stores,own,1,management,2,1,1,1
+below_0,21,existing_credit_paid,radio_TV,2606,below_100,below_1,4,F_not_single,None,4,life_insurance  ,28,None,rent,1,management,1,1,1,1
+no_account,12,critical_account,furniture_equipment,1592,above_1000,between_4_7,3,F_not_single,None,2,life_insurance  ,35,None,own,1,official,1,0,0,1
+no_account,15,existing_credit_paid,furniture_equipment,2186,unknown,between_4_7,1,F_not_single,None,4,real_estate ,33,bank,rent,1,unskilled,1,0,1,1
+below_0,18,existing_credit_paid,furniture_equipment,4153,below_100,between_1_4,2,M_single,co_applicant ,3,other,42,None,own,1,official,1,0,1,0
+below_0,16,critical_account,car_new,2625,below_100,above_7,2,M_single,guarantor,4,life_insurance  ,43,bank,rent,1,official,1,1,1,0
+no_account,20,critical_account,car_new,3485,unknown,below_1,2,M_divorced,None,4,real_estate ,44,None,own,2,official,1,1,1,1
+no_account,36,critical_account,car_used,10477,unknown,above_7,2,M_single,None,4,no_property,42,None,free,2,official,1,0,1,1
+no_account,15,existing_credit_paid,radio_TV,1386,unknown,between_1_4,4,M_divorced,None,2,real_estate ,40,None,rent,1,official,1,1,1,1
+no_account,24,existing_credit_paid,radio_TV,1278,below_100,above_7,4,M_single,None,1,real_estate ,36,None,own,1,management,1,1,1,1
+below_0,12,existing_credit_paid,radio_TV,1107,below_100,between_1_4,2,M_single,None,2,real_estate ,20,None,rent,1,management,2,1,1,1
+below_0,21,existing_credit_paid,car_new,3763,unknown,between_4_7,2,M_single,co_applicant ,2,real_estate ,24,None,own,1,unskilled,1,0,0,1
+0_to_200,36,existing_credit_paid,education,3711,unknown,between_1_4,2,M_divorced,None,2,other,27,None,own,1,official,1,0,1,1
+no_account,15,delay_in_paying,car_used,3594,below_100,below_1,1,F_not_single,None,2,life_insurance  ,46,None,own,2,unskilled,1,0,1,1
+0_to_200,9,existing_credit_paid,car_new,3195,unknown,between_1_4,1,F_not_single,None,2,real_estate ,33,None,own,1,unskilled,1,0,1,1
+no_account,36,delay_in_paying,radio_TV,4454,below_100,between_1_4,4,F_not_single,None,4,real_estate ,34,None,own,2,official,1,0,1,1
+0_to_200,24,critical_account,furniture_equipment,4736,below_100,below_1,2,F_not_single,None,4,other,25,bank,own,1,unskilled,1,0,1,0
+0_to_200,30,existing_credit_paid,radio_TV,2991,unknown,above_7,2,F_not_single,None,4,other,25,None,own,1,official,1,0,1,1
+no_account,11,existing_credit_paid,business,2142,above_1000,above_7,1,M_divorced,None,2,real_estate ,28,None,own,1,official,1,1,1,1
+below_0,24,all_credit_paid,business,3161,below_100,between_1_4,4,M_single,None,2,life_insurance  ,31,None,rent,1,official,1,1,1,0
+0_to_200,48,no_credit_taken,others,18424,below_100,between_1_4,1,F_not_single,None,2,life_insurance  ,32,bank,own,1,management,1,1,0,0
+no_account,10,existing_credit_paid,car_used,2848,between_100_500,between_1_4,1,M_single,co_applicant ,2,real_estate ,32,None,own,1,official,2,0,1,1
+below_0,6,existing_credit_paid,car_new,14896,below_100,above_7,1,M_single,None,4,no_property,68,bank,own,1,management,1,1,1,0
+below_0,24,existing_credit_paid,furniture_equipment,2359,between_100_500,unemployed,1,M_divorced,None,1,life_insurance  ,33,None,own,1,official,1,0,1,0
+below_0,24,existing_credit_paid,furniture_equipment,3345,below_100,above_7,4,M_single,None,2,life_insurance  ,39,None,rent,1,management,1,1,1,0
+no_account,18,critical_account,furniture_equipment,1817,below_100,between_1_4,4,F_not_single,None,2,no_property,28,None,own,2,official,1,0,1,1
+no_account,48,delay_in_paying,radio_TV,12749,between_500_1000,between_4_7,4,M_single,None,1,other,37,None,own,1,management,1,1,1,1
+below_0,9,existing_credit_paid,radio_TV,1366,below_100,below_1,3,F_not_single,None,4,life_insurance  ,22,None,rent,1,official,1,0,1,0
+0_to_200,12,existing_credit_paid,car_new,2002,below_100,between_4_7,3,M_single,None,4,life_insurance  ,30,None,rent,1,official,2,1,1,1
+below_0,24,all_credit_paid,furniture_equipment,6872,below_100,below_1,2,M_divorced,None,1,life_insurance  ,55,bank,own,1,official,1,1,1,0
+below_0,12,all_credit_paid,car_new,697,below_100,below_1,4,M_single,None,2,other,46,bank,own,2,official,1,1,1,0
+below_0,18,critical_account,furniture_equipment,1049,below_100,below_1,4,F_not_single,None,4,life_insurance  ,21,None,rent,1,official,1,0,1,1
+below_0,48,existing_credit_paid,car_used,10297,below_100,between_4_7,4,M_single,None,4,no_property,39,stores,free,3,official,2,1,1,0
+no_account,30,existing_credit_paid,radio_TV,1867,unknown,above_7,4,M_single,None,4,other,58,None,own,1,official,1,1,1,1
+below_0,12,delay_in_paying,car_new,1344,below_100,between_1_4,4,M_single,None,2,real_estate ,43,None,own,2,unskilled,2,0,1,1
+below_0,24,existing_credit_paid,furniture_equipment,1747,below_100,below_1,4,M_single,co_applicant ,1,life_insurance  ,24,None,own,1,unskilled,1,0,0,1
+0_to_200,9,existing_credit_paid,radio_TV,1670,below_100,below_1,4,F_not_single,None,2,other,22,None,own,1,official,1,1,1,0
+no_account,9,critical_account,car_new,1224,below_100,between_1_4,3,M_single,None,1,real_estate ,30,None,own,2,official,1,0,1,1
+no_account,12,critical_account,radio_TV,522,between_500_1000,above_7,4,M_single,None,4,life_insurance  ,42,None,own,2,official,2,1,1,1
+below_0,12,existing_credit_paid,radio_TV,1498,below_100,between_1_4,4,F_not_single,None,1,other,23,bank,own,1,official,1,0,1,1
+0_to_200,30,delay_in_paying,radio_TV,1919,between_100_500,below_1,4,M_single,None,3,no_property,30,stores,own,2,management,1,0,1,0
+above_200,9,existing_credit_paid,radio_TV,745,below_100,between_1_4,3,F_not_single,None,2,real_estate ,28,None,own,1,unskilled,1,0,1,0
+0_to_200,6,existing_credit_paid,radio_TV,2063,below_100,below_1,4,M_divorced,None,3,other,30,None,rent,1,management,1,1,1,1
+0_to_200,60,existing_credit_paid,education,6288,below_100,between_1_4,4,M_single,None,4,no_property,42,None,free,1,official,1,0,1,0
+no_account,24,critical_account,car_used,6842,unknown,between_1_4,2,M_single,None,4,life_insurance  ,46,None,own,2,management,2,1,1,1
+no_account,12,existing_credit_paid,car_new,3527,unknown,below_1,2,M_single,None,3,life_insurance  ,45,None,own,1,management,2,1,1,1
+no_account,10,existing_credit_paid,car_new,1546,below_100,between_1_4,3,M_single,None,2,real_estate ,31,None,own,1,unskilled,2,0,0,1
+no_account,24,existing_credit_paid,furniture_equipment,929,unknown,between_4_7,4,M_single,None,2,other,31,stores,own,1,official,1,1,1,1
+no_account,4,critical_account,car_new,1455,below_100,between_4_7,2,M_single,None,1,real_estate ,42,None,own,3,unskilled,2,0,1,1
+below_0,15,existing_credit_paid,furniture_equipment,1845,below_100,below_1,4,F_not_single,guarantor,1,life_insurance  ,46,None,rent,1,official,1,0,1,1
+0_to_200,48,no_credit_taken,car_new,8358,between_500_1000,below_1,1,F_not_single,None,1,other,30,None,own,2,official,1,0,1,1
+below_0,24,all_credit_paid,furniture_equipment,3349,between_500_1000,below_1,4,M_single,None,4,no_property,30,None,free,1,official,2,1,1,0
+no_account,12,existing_credit_paid,car_new,2859,unknown,unemployed,4,M_single,None,4,no_property,38,None,own,1,management,1,1,1,1
+no_account,18,existing_credit_paid,furniture_equipment,1533,below_100,below_1,4,M_divorced,co_applicant ,1,life_insurance  ,43,None,own,1,unskilled,2,0,1,0
+no_account,24,existing_credit_paid,radio_TV,3621,between_100_500,above_7,2,M_single,None,4,other,31,None,own,2,official,1,0,1,0
+0_to_200,18,critical_account,business,3590,below_100,unemployed,3,M_divorced,None,3,other,40,None,own,3,unemployed,2,1,1,1
+below_0,36,delay_in_paying,business,2145,below_100,between_4_7,2,M_single,None,1,other,24,None,own,2,official,1,1,1,0
+0_to_200,24,existing_credit_paid,car_used,4113,between_500_1000,below_1,3,F_not_single,None,4,other,28,None,rent,1,official,1,0,1,0
+no_account,36,existing_credit_paid,furniture_equipment,10974,below_100,unemployed,4,F_not_single,None,2,other,26,None,own,2,management,1,1,1,0
+below_0,12,existing_credit_paid,car_new,1893,below_100,between_1_4,4,F_not_single,guarantor,4,life_insurance  ,29,None,own,1,official,1,1,1,1
+below_0,24,critical_account,radio_TV,1231,above_1000,above_7,4,F_not_single,None,4,life_insurance  ,57,None,rent,2,management,1,1,1,1
+above_200,30,critical_account,radio_TV,3656,unknown,above_7,4,M_single,None,4,life_insurance  ,49,stores,own,2,unskilled,1,0,1,1
+0_to_200,9,critical_account,radio_TV,1154,below_100,above_7,2,M_single,None,4,real_estate ,37,None,own,3,unskilled,1,0,1,1
+below_0,28,existing_credit_paid,car_new,4006,below_100,between_1_4,3,M_single,None,2,other,45,None,own,1,unskilled,1,0,1,0
+0_to_200,24,existing_credit_paid,furniture_equipment,3069,between_100_500,above_7,4,M_single,None,4,no_property,30,None,free,1,official,1,0,1,1
+no_account,6,critical_account,radio_TV,1740,below_100,above_7,2,M_divorced,None,2,real_estate ,30,None,rent,2,official,1,0,1,1
+0_to_200,21,delay_in_paying,car_new,2353,below_100,between_1_4,1,M_divorced,None,4,life_insurance  ,47,None,own,2,official,1,0,1,1
+no_account,15,existing_credit_paid,car_new,3556,unknown,between_1_4,3,M_single,None,2,no_property,29,None,own,1,official,1,0,1,1
+no_account,24,existing_credit_paid,radio_TV,2397,between_500_1000,above_7,3,M_single,None,2,other,35,bank,own,2,official,1,1,1,0
+0_to_200,6,existing_credit_paid,repairs,454,below_100,below_1,3,M_divorced,None,1,life_insurance  ,22,None,own,1,unskilled,1,0,1,1
+0_to_200,30,existing_credit_paid,radio_TV,1715,unknown,between_1_4,4,F_not_single,None,1,other,26,None,own,1,official,1,0,1,1
+0_to_200,27,critical_account,radio_TV,2520,between_500_1000,between_1_4,4,M_single,None,2,life_insurance  ,23,None,own,2,unskilled,1,0,1,0
+no_account,15,existing_credit_paid,radio_TV,3568,below_100,above_7,4,F_not_single,None,2,other,54,bank,rent,1,management,1,1,1,1
+no_account,42,existing_credit_paid,radio_TV,7166,unknown,between_4_7,2,M_divorced,None,4,life_insurance  ,29,None,rent,1,official,1,1,1,1
+below_0,11,critical_account,car_new,3939,below_100,between_1_4,1,M_single,None,2,real_estate ,40,None,own,2,unskilled,2,0,1,1
+0_to_200,15,existing_credit_paid,repairs,1514,between_100_500,between_1_4,4,M_single,guarantor,2,real_estate ,22,None,own,1,official,1,0,1,1
+no_account,24,existing_credit_paid,car_new,7393,below_100,between_1_4,1,M_single,None,4,life_insurance  ,43,None,own,1,unskilled,2,0,1,1
+below_0,24,all_credit_paid,car_new,1193,below_100,unemployed,1,F_not_single,co_applicant ,4,no_property,29,None,rent,2,unemployed,1,0,1,0
+below_0,60,existing_credit_paid,business,7297,below_100,above_7,4,M_single,co_applicant ,4,no_property,36,None,rent,1,official,1,0,1,0
+no_account,30,critical_account,radio_TV,2831,below_100,between_1_4,4,F_not_single,None,2,other,33,None,own,1,official,1,1,1,1
+above_200,24,existing_credit_paid,radio_TV,1258,between_500_1000,between_1_4,3,F_not_single,None,3,other,57,None,own,1,unskilled,1,0,1,1
+0_to_200,6,existing_credit_paid,radio_TV,753,below_100,between_1_4,2,F_not_single,guarantor,3,real_estate ,64,None,own,1,official,1,0,1,1
+0_to_200,18,delay_in_paying,business,2427,unknown,above_7,4,M_single,None,2,life_insurance  ,42,None,own,2,official,1,0,1,1
+no_account,24,delay_in_paying,car_new,2538,below_100,above_7,4,M_single,None,4,other,47,None,own,2,unskilled,2,0,1,0
+0_to_200,15,all_credit_paid,car_new,1264,between_100_500,between_1_4,2,M_divorced,None,2,life_insurance  ,25,None,rent,1,official,1,0,1,0
+0_to_200,30,critical_account,furniture_equipment,8386,below_100,between_4_7,2,M_single,None,2,life_insurance  ,49,None,own,1,official,1,0,1,0
+no_account,48,existing_credit_paid,business,4844,below_100,unemployed,3,M_single,None,2,other,33,bank,rent,1,management,1,1,1,0
+above_200,21,existing_credit_paid,car_new,2923,between_100_500,between_1_4,1,F_not_single,None,1,other,28,bank,own,1,management,1,1,1,1
+below_0,36,existing_credit_paid,car_used,8229,below_100,between_1_4,2,M_single,None,2,life_insurance  ,26,None,own,1,official,2,0,1,0
+no_account,24,critical_account,furniture_equipment,2028,below_100,between_4_7,2,M_single,None,2,life_insurance  ,30,None,own,2,unskilled,1,0,1,1
+below_0,15,critical_account,furniture_equipment,1433,below_100,between_1_4,4,F_not_single,None,3,life_insurance  ,25,None,rent,2,official,1,0,1,1
+above_200,42,no_credit_taken,business,6289,below_100,below_1,2,M_divorced,None,1,life_insurance  ,33,None,own,2,official,1,0,1,1
+no_account,13,existing_credit_paid,radio_TV,1409,between_100_500,unemployed,2,F_not_single,None,4,real_estate ,64,None,own,1,official,1,0,1,1
+below_0,24,existing_credit_paid,car_used,6579,below_100,unemployed,4,M_single,None,2,no_property,29,None,free,1,management,1,1,1,1
+0_to_200,24,critical_account,radio_TV,1743,below_100,above_7,4,M_single,None,2,life_insurance  ,48,None,own,2,unskilled,1,0,1,1
+no_account,12,critical_account,education,3565,unknown,below_1,2,M_single,None,1,life_insurance  ,37,None,own,2,unskilled,2,0,1,1
+no_account,15,all_credit_paid,radio_TV,1569,between_100_500,above_7,4,M_single,None,4,other,34,bank,own,1,unskilled,2,0,1,1
+below_0,18,existing_credit_paid,radio_TV,1936,unknown,between_4_7,2,M_divorced,None,4,other,23,None,rent,2,unskilled,1,0,1,1
+below_0,36,existing_credit_paid,furniture_equipment,3959,below_100,unemployed,4,M_single,None,3,life_insurance  ,30,None,own,1,management,1,1,1,1
+no_account,12,existing_credit_paid,car_new,2390,unknown,above_7,4,M_single,None,3,other,50,None,own,1,official,1,1,1,1
+no_account,12,existing_credit_paid,furniture_equipment,1736,below_100,between_4_7,3,F_not_single,None,4,real_estate ,31,None,own,1,unskilled,1,0,1,1
+below_0,30,existing_credit_paid,car_used,3857,below_100,between_1_4,4,M_divorced,None,4,life_insurance  ,40,None,own,1,management,1,1,1,1
+no_account,12,existing_credit_paid,radio_TV,804,below_100,above_7,4,M_single,None,4,other,38,None,own,1,official,1,0,1,1
+below_0,45,existing_credit_paid,radio_TV,1845,below_100,between_1_4,4,M_single,None,4,no_property,23,None,free,1,official,1,1,1,0
+0_to_200,45,critical_account,car_used,4576,between_100_500,unemployed,3,M_single,None,4,other,27,None,own,1,official,1,0,1,1

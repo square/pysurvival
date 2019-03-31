@@ -1,0 +1,122 @@
+site_name: PySurvival
+site_author: The PySurvival Team
+site_description: 'Open source package for Survival Analysis modeling'
+site_url: https://www.pysurvival.io/
+docs_dir: pages
+dev_addr: '127.0.0.1:8000'
+use_directory_urls: false
+search_index_only: true
+repo_name: 'square/pysurvival'
+repo_url: 'https://github.com/square/pysurvival'
+copyright: 'Copyright &copy; 2019 Square Inc.'
+google_analytics_tracking_id: UA-136790579-1
+
+theme:
+  name: 'material'
+  favicon: 'images/favicon.ico'
+  logo: 'images/logo.ico'
+  font: 'Montserrat'
+  language: 'en'
+  show_sidebar: true
+  include_sidebar: true
+  palette:
+    primary: 'blue'
+    accent: 'purple'
+  highlightjs: True
+
+company:
+  name: 'Square'
+  link: 'https://squareup.com/us'
+  logo: 'images/Square_logo.png'
+  image_size: '20%'
+
+extra:
+  social:
+    - type: home
+      link: https://pysurvival.io/
+    - type: 'github'
+      link: 'https://github.com/square/pysurvival'
+
+nav:
+  - Home: index.md
+
+  - Installation: installation.md
+
+  - Introduction to Survival Analysis: intro.md
+
+  - The math of Survival Analysis: math.md
+
+  - Tutorials:
+    - Churn Prediction: tutorials/churn.md
+    - Credit Risk: tutorials/credit_risk.md
+    - Employee Retention: tutorials/employee_retention.md
+    - Predictive Maintenance: tutorials/maintenance.md
+
+  - Models:
+
+    - Cox Proportional Hazard:
+      - Standard CoxPH  (API): models/coxph.md
+      - DeepSurv/Nonlinear CoxPH (API): models/nonlinear_coxph.md
+      - Theory: models/semi_parametric.md
+
+    - Multi-Task Logistic Regression (MTLR):
+      - Linear MTLR (API): models/linear_mtlr.md
+      - Neural MTLR (API): models/neural_mtlr.md
+      - Theory: models/mtlr_theory.md
+
+    - Non-Parametric :
+      - Kaplan Meier (API): models/kaplan_meier.md
+      - Smoothed Kaplan Meier (API): models/smooth_kaplan_meier.md
+      - Theory: models/non_parametric.md
+
+    - Parametric:
+      - Parametric models (API): models/parametric.md
+      - Theory: models/parametric_theory.md
+
+    - Simulation:
+      - Simulation models (API): models/simulations.md
+      - Theory: models/simulations_theory.md
+
+    - Survival Forest:
+      - Conditional Survival Forest (API) : models/conditional_survival_forest.md
+      - Extra Survival Trees (API): models/extra_survival_trees.md
+      - Random Survival Forest (API): models/random_survival_forest.md
+      - Theory: models/survival_forest.md
+
+    - Survival SVM:
+      - Linear Survival SVM (API): models/linear_svm.md
+      - Kernel Survival SVM (API): models/kernel_svm.md
+      - Theory: models/survival_svm.md
+
+  - Performance metrics:
+      - C-index: metrics/c_index.md
+      - Brier Score: metrics/brier_score.md
+
+  - Miscellaneous:
+    - Activation Functions: miscellaneous/activation_functions.md
+    - Saving/Loading models: miscellaneous/save_load.md
+    - Tips for fitting models: miscellaneous/tips.md
+
+extra_javascript:
+  - 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+  - 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js'
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      use_pygments: True
+      noclasses: True
+      # pygments_style: manni
+  - mdx_math:
+      enable_dollar_delimiter: True #for use of inline $..$
+  - fenced_code
+  - footnotes
+  - meta
+  - pymdownx.superfences

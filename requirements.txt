@@ -1,0 +1,10 @@
+matplotlib
+numpy
+pandas
+pip
+progressbar
+pyarrow
+scikit-learn 
+scipy
+sklearn
+torch
