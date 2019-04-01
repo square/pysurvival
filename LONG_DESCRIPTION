@@ -1,0 +1,21 @@
+Pysurvival:
+-----------
+
+PySurvival is an open source python package for Survival Analysis modeling - the modeling concept used to analyze or predict when an event is likely to happen. It is built upon the most commonly used machine learning packages such NumPy, SciPy and PyTorch.
+
+Check out the documentation at https://www.pysurvival.io
+
+---
+
+PySurvival provides a very easy way to navigate between theoretical knowledge on Survival Analysis and detailed tutorials on how to conduct a full analysis, build and use a model. Indeed, the package contains:
+
+  - 10+ models ranging from the Cox Proportional Hazard model, the Neural Multi-Task Logistic Regression to Random Survival Forest
+  - Summaries of the theory behind each model as well as API descriptions and examples.
+  - Tutorials displaying in great details how to perform exploratory data analysis, survival modeling, cross-validation and prediction, for churn modeling and credit risk to name a few.
+  - Performance metrics to assess the models' abilities like c-index or brier score
+  - Simple ways to load and save models
+  - ... and more !
+
+---
+
+PySurvival is compatible with Python 2.7-3.7.

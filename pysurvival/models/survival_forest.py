@@ -12,7 +12,7 @@ from pysurvival import PYTHON_VERSION
 
 
 # Available Splitting
-SPLITTING_RULES = { 'Logrank': 1, 'Maxstat': 4, 'ExtraTrees':5}
+SPLITTING_RULES = { 'logrank': 1, 'maxstat': 4, 'extratrees':5}
 
 class BaseSurvivalForest(BaseModel):
     """
@@ -46,7 +46,7 @@ class BaseSurvivalForest(BaseModel):
         self.num_trees = num_trees
 
         # Checking the format of splitrule
-        if SPLITTING_RULES.get(splitrule) is None:
+        if SPLITTING_RULES.get(splitrule.lower()) is None:
             error = '{} is not a valid splitrule method. Choose between '
             error += '"' + '", "'.join(SPLITTING_RULES) + '"'
             error = error.format(splitrule)

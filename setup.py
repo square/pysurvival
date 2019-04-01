@@ -7,6 +7,8 @@
 # http://www.apache.org/licenses/
 
 import os
+import codecs
+import re
 import glob
 from setuptools import setup, Extension, find_packages
 
@@ -23,9 +25,14 @@ except:
 NAME = 'pysurvival'
 DESCRIPTION = 'Open source package for Survival Analysis modeling'
 URL = 'https://www.pysurvival.io'
-EMAIL = 'stephane at squareup.com'
+EMAIL = 'stephane@squareup.com'
 AUTHOR = 'steph-likes-git'
-VERSION = pysurvival.__version__
+LICENSE = """
+Copyright 2019 Square Inc.
+Apache License
+Version 2.0, January 2004
+http://www.apache.org/licenses/
+"""
 
 # Current Directory
 try:
@@ -34,8 +41,8 @@ except:
     CURRENT_DIR = os.path.dirname(os.path.realpath('__file__')) + '/'
 
 # Utility functions
-def readme():
-    with open(CURRENT_DIR + 'README.md') as f:
+def read_long_description():
+    with open(CURRENT_DIR + 'LONG_DESCRIPTION') as f:
         return f.read()
 
 def install_requires():
@@ -43,10 +50,15 @@ def install_requires():
 	    requirements = requirements_file.readlines()
 	return requirements
 
-def read_license():
-  with open(CURRENT_DIR + 'LICENSE') as license_file:
-      license = license_file.readlines()
-  return license
+def read_version(*file_paths):
+    with codecs.open(os.path.join(CURRENT_DIR, *file_paths), 'r') as fp:
+        version_file = fp.read()
+
+    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
+                              version_file, re.M)
+    if version_match:
+        return version_match.group(1)
+    raise RuntimeError("Unable to find version string.")
 
 # Extensions Compilation arguments #
 extra_compile_args = ['-std=c++11', "-O3"] 
@@ -118,13 +130,13 @@ ext_modules = [
 
 # Setup 
 setup(name=NAME,
-      version=VERSION,
+      version=read_version("pysurvival", "__init__.py"),
       description=DESCRIPTION,
-      long_description=readme(),
+      long_description=read_long_description(),
       author=AUTHOR,
       author_email=EMAIL,
       url=URL,
-      license=read_license(),
+      license=LICENSE,
       install_requires=install_requires(),
       include_package_data=True,
       package_data={ '': ['*.csv'], },
