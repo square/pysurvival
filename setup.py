@@ -27,12 +27,7 @@ DESCRIPTION = 'Open source package for Survival Analysis modeling'
 URL = 'https://www.pysurvival.io'
 EMAIL = 'stephane@squareup.com'
 AUTHOR = 'steph-likes-git'
-LICENSE = """
-Copyright 2019 Square Inc.
-Apache License
-Version 2.0, January 2004
-http://www.apache.org/licenses/
-"""
+LICENSE = "Apache Software License (Apache 2.0)"
 
 # Current Directory
 try:
@@ -42,11 +37,11 @@ except:
 
 # Utility functions
 def read_long_description():
-    with open(CURRENT_DIR + 'LONG_DESCRIPTION') as f:
+    with open(CURRENT_DIR + 'LONG_DESCRIPTION.txt', 'r') as f:
         return f.read()
 
 def install_requires():
-	with open(CURRENT_DIR + 'requirements.txt') as requirements_file:
+	with open(CURRENT_DIR + 'requirements.txt', 'r') as requirements_file:
 	    requirements = requirements_file.readlines()
 	return requirements
 

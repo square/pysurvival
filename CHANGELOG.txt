@@ -1,3 +1,13 @@
+pysurvival-0.1.2 (2019-04-01)
+
+    * Correcting typo in setup.py
+
+
+pysurvival-0.1.1 (2019-04-01)
+
+    * Fixing Survival Forest models splitrule
+
+
 pysurvival-0.1 (2019-03-28)
 
     * Finalizing the doc-strings and tutorials.
