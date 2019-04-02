@@ -79,8 +79,7 @@ If you use Pysurvival in your research and we would greatly appreciate if you co
   author =    {Stephane Fotso and others},
   title =     {PySurvival: Open source package for Survival Analysis modeling},
   year =      {2019--},
-  url = "https://www.pysurvival.io/",
-  note = {[Online; accessed <today>]}
+  url = "https://www.pysurvival.io/"
 }
 ```
 
