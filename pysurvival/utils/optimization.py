@@ -182,6 +182,8 @@ def optimize(loss_function, model, optimizer_str, lr=1e-4, nb_epochs=1000,
             loss = loss_function(model, **kargs)
             loss.backward()
             return loss
+        
+        torch.nn.utils.clip_grad_norm_(W, 0.3)
 
         if 'lbfgs' in optimizer_str.lower() :
             optimizer.step(closure)
