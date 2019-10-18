@@ -6,6 +6,9 @@
 #include <functional> // bind
 #include <iostream>   // cout
 #include <ctime>      //clock
+#if defined(_WIN32) || defined(_WIN64) || defined(__CYGWIN__) || defined(__MINGW32__)
+#define _USE_MATH_DEFINES
+#endif
 #include <math.h>       /* exp */
 #include <map>
 #include <stdexcept>
