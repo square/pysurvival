@@ -57,7 +57,7 @@ def read_version(*file_paths):
     raise RuntimeError("Unable to find version string.")
 
 # Extensions Compilation arguments #
-if "win" in sys.platform.lower():
+if sys.platform.lower().startswith("win"):
     extra_compile_args = ["/O2"]
 else:
     extra_compile_args = ['-std=c++11', "-O3"]
