@@ -37,37 +37,33 @@ class NonParametricModel(BaseModel):
 
         # Delete the CPP object before saving
         del self.model
-        
+
         # Saving the model
         super(NonParametricModel, self).save(path_file)
 
         # Re-introduce the C++ object
-        if 'smooth' in self.name.lower() :
+        if 'smooth' in self.name.lower():
             self.model = _KernelModel(self.bandwidth, self.kernel_type)
         else:
             self.model = _KaplanMeierModel()
         self.load_properties()
-        
 
     def load(self, path_file):
         """ Load the model paremeters from a zip file into a C++ external
             model 
-        """        
+        """
 
         # Loading the model
         super(NonParametricModel, self).load(path_file)
 
         # Re-introduce the C++ object
-        if 'smooth' in self.name.lower() :
+        if 'smooth' in self.name.lower():
             self.model = _KernelModel(self.bandwidth, self.kernel_type)
         else:
             self.model = _KaplanMeierModel()
         self.load_properties()
 
-
-
-
-    def fit(self, T,  E, weights = None, alpha=0.95):
+    def fit(self, T, E, weights=None, alpha=0.95):
         """ Fitting the model according to the provided data.
 
         Parameters:
@@ -131,14 +127,14 @@ class NonParametricModel(BaseModel):
 
         # weighting
         if weights is None:
-            weights = [1.]*T.shape[0]
+            weights = [1.] * T.shape[0]
 
         # Confidence Intervals
         z = stats.norm.ppf((1. - alpha) / 2.)
 
         # Building the Kaplan-Meier model
         survival = self.model.fit(T, E, weights, z)
-        if sum(survival) <= 0. :
+        if sum(survival) <= 0.:
             mem_error = "The kernel matrix cannot fit in memory."
             mem_error += "You should use a bigger bandwidth b"
             raise MemoryError(mem_error)
@@ -147,84 +143,81 @@ class NonParametricModel(BaseModel):
         self.save_properties()
 
         # Generating the Survival table
-        if 'smooth' not in self.name.lower() :
+        if 'smooth' not in self.name.lower():
             self.get_survival_table()
 
-
     def predict_cumulative_hazard(self, *args, **kargs):
-        raise NotImplementedError(self.not_implemented_error)
+        raise NotImplementedError()
 
     def predict_risk(self, *args, **kargs):
-        raise NotImplementedError(self.not_implemented_error)
+        raise NotImplementedError()
 
-
-    def predict_survival(self, t, is_lagged = False):
+    def predict_survival(self, x, t=None, **kwargs):
         """ Extracting the predicted survival probabilities at the individual 
             event times that have been used for fitting the model.
         """
+        is_lagged = kwargs.pop("is_lagged", False)
         return self.model.predict_survival(t, is_lagged)
-        
 
-    def predict_survival_upper(self, t, is_lagged = False):
+    def predict_survival_upper(self, x, t=None, **kwargs):
         """ Extracting the predicted survival CI upper probabilities at the 
             individual event times that have been used for fitting the model.
         """
+        is_lagged = kwargs.pop("is_lagged", False)
         return self.model.predict_survival_upper(t, is_lagged)
-        
 
-    def predict_survival_lower(self, t, is_lagged = False):
+    def predict_survival_lower(self, x, t=None, **kwargs):
         """ Extracting the predicted survival CI lower probabilities at the 
             individual event times that have been used for fitting the model.
         """
+        is_lagged = kwargs.pop("is_lagged", False)
         return self.model.predict_survival_lower(t, is_lagged)
-        
 
-    def predict_density(self, t, is_lagged = False):
+    def predict_density(self, x, t=None, **kwargs):
         """ Extracting the predicted density probabilities at the individual 
             event times that have been used for fitting the model.
         """
-        return self.model.predict_density( t, is_lagged)
+        is_lagged = kwargs.pop("is_lagged", False)
+        return self.model.predict_density(t, is_lagged)
 
-
-    def predict_hazard(self, t, is_lagged = False):
+    def predict_hazard(self, x, t=None, **kwargs):
         """ Extracting the hazard function values at the individual 
             event times that have been used for fitting the model.
         """
-        return self.model.predict_hazard( t, is_lagged)
+        is_lagged = kwargs.pop("is_lagged", False)
+        return self.model.predict_hazard(t, is_lagged)
 
-
-    def save_properties(self): 
+    def save_properties(self):
         """ Saving the C++ attributes in the Python object """
-        self.times  = np.array( self.model.times )
-        self.time_buckets  = self.model.time_buckets
-        self.survival  = np.array( self.model.survival )
-        self.hazard = np.array( self.model.hazard )
-        self.cumulative_hazard = np.array( self.model.cumulative_hazard )
+        self.times = np.array(self.model.times)
+        self.time_buckets = self.model.time_buckets
+        self.survival = np.array(self.model.survival)
+        self.hazard = np.array(self.model.hazard)
+        self.cumulative_hazard = np.array(self.model.cumulative_hazard)
 
-        if 'smooth' in self.name.lower() :
-            self.km_survival = np.array( self.model.km_survival )
-            self.km_times = np.array( self.model.km_times )
+        if 'smooth' in self.name.lower():
+            self.km_survival = np.array(self.model.km_survival)
+            self.km_times = np.array(self.model.km_times)
             self.kernel_type = self.model.kernel_type
             self.bandwidth = self.model.b
-            self.kernel_matrix = np.array( self.model.kernel_matrix )
+            self.kernel_matrix = np.array(self.model.kernel_matrix)
 
         else:
-            self.std_error = np.array( self.model.std_error )
-            self.survival_ci_upper = np.array( self.model.survival_ci_upper )
-            self.survival_ci_lower = np.array( self.model.survival_ci_lower )
-            self.at_risk = np.array( self.model.at_risk )
-            self.events = np.array( self.model.events )
+            self.std_error = np.array(self.model.std_error)
+            self.survival_ci_upper = np.array(self.model.survival_ci_upper)
+            self.survival_ci_lower = np.array(self.model.survival_ci_lower)
+            self.at_risk = np.array(self.model.at_risk)
+            self.events = np.array(self.model.events)
 
-
-    def load_properties(self): 
+    def load_properties(self):
         """ Loading Python object attributes into the C++  """
-        self.model.times  = self.times
-        self.model.time_buckets  = self.time_buckets
-        self.model.survival  = self.survival
+        self.model.times = self.times
+        self.model.time_buckets = self.time_buckets
+        self.model.survival = self.survival
         self.model.hazard = self.hazard
         self.model.cumulative_hazard = self.cumulative_hazard
 
-        if 'smooth' in self.name.lower() :
+        if 'smooth' in self.name.lower():
             self.model.kernel_type = self.kernel_type
             self.model.b = self.bandwidth
             self.model.kernel_matrix = self.kernel_matrix
@@ -237,33 +230,27 @@ class NonParametricModel(BaseModel):
             self.model.survival_ci_lower = self.survival_ci_lower
             self.model.at_risk = self.at_risk
             self.model.events = self.events
-            
 
     def get_survival_table(self):
         """ Computing the survival table"""
 
         data = {'Time': self.times,
-                'Number at risk':self.at_risk,
-                'Number of events':self.events,
+                'Number at risk': self.at_risk,
+                'Number of events': self.events,
                 'Survival': self.survival,
                 'Survival - CI Lower': self.survival_ci_lower,
-                'Survival - CI Upper': self.survival_ci_upper, 
+                'Survival - CI Upper': self.survival_ci_upper,
                 }
         survival_df = pd.DataFrame(data,
-                                   columns = ['Time', 'Number at risk', 
-                                              'Number of events', 'Survival',
-                                              'Survival - CI Lower',
-                                              'Survival - CI Upper'] )
+                                   columns=['Time', 'Number at risk',
+                                            'Number of events', 'Survival',
+                                            'Survival - CI Lower',
+                                            'Survival - CI Upper'])
         self.survival_table = survival_df
         return survival_df
 
 
-
-
-
-
 class KaplanMeierModel(NonParametricModel):
-
     """ Kaplan-Meier Model
         ------------------
         
@@ -290,12 +277,11 @@ class KaplanMeierModel(NonParametricModel):
 
         # Saving the attributes
         self.__repr__()
-        self.not_implemented_error = "{} does not have this method."\
+        self.not_implemented_error = "{} does not have this method." \
             .format(self.name)
 
 
 class SmoothKaplanMeierModel(NonParametricModel):
-    
     """ SmoothKaplanMeierModel
         ------------------------
         Because the standard Kaplan-Meier estimator is a step function with jumps 
@@ -336,36 +322,36 @@ class SmoothKaplanMeierModel(NonParametricModel):
                 * Cosine:  f(x) = 0 if |x|<=1 else  f(x)=(pi/4.)*cos( pi*x/2. )  
     """
 
-    def __init__(self,  bandwidth = 0.1, kernel = 'normal' ):
+    def __init__(self, bandwidth=0.1, kernel='normal'):
 
         # Kernel function
-        if kernel.lower() == 'uniform' : 
-            kernel_type = 0 # Uniform kernel 
+        if kernel.lower() == 'uniform':
+            kernel_type = 0  # Uniform kernel
             kernel = 'Uniform'
-            
+
         elif kernel.lower().startswith("epa"):
-            kernel_type = 1 # Epanechnikov kernel 
+            kernel_type = 1  # Epanechnikov kernel
             kernel = 'Epanechnikov'
-            
-        elif kernel.lower() == "normal" : 
-            kernel_type = 2 # Normal kernel 
+
+        elif kernel.lower() == "normal":
+            kernel_type = 2  # Normal kernel
             kernel = 'Normal'
-            
-        elif kernel.lower().startswith("bi"): 
-            kernel_type = 3 # Biweight kernel 
+
+        elif kernel.lower().startswith("bi"):
+            kernel_type = 3  # Biweight kernel
             kernel = 'Biweight'
-            
-        elif kernel.lower().startswith("tri"): 
-            kernel_type = 4 # Triweight kernel 
+
+        elif kernel.lower().startswith("tri"):
+            kernel_type = 4  # Triweight kernel
             kernel = 'Triweight'
-            
-        elif kernel.lower().startswith("cos"): 
-            kernel_type = 5 # Cosine kernel 
+
+        elif kernel.lower().startswith("cos"):
+            kernel_type = 5  # Cosine kernel
             kernel = 'Cosine'
 
         else:
             raise NotImplementedError('{} is not a valid kernel function.'
-                .format(kernel))
+                                      .format(kernel))
 
         # bandwidth
         if bandwidth <= 0.:
@@ -381,15 +367,12 @@ class SmoothKaplanMeierModel(NonParametricModel):
 
         # Creating the representation of the object
         self.__repr__()
-        self.not_implemented_error = "{} does not have this method."\
+        self.not_implemented_error = "{} does not have this method." \
             .format(self.name)
-
 
     def __repr__(self):
         """ Creates the representation of the Object """
         self.name = "{}(bandwith={:.2f}, kernel='{}')"
-        self.name = self.name.format(self.__class__.__name__, 
-            self.bandwidth, self.kernel) 
+        self.name = self.name.format(self.__class__.__name__,
+                                     self.bandwidth, self.kernel)
         return self.name
-        
-

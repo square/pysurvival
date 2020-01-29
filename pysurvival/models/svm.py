@@ -1,5 +1,5 @@
 from __future__ import absolute_import
-import torch 
+import torch
 import numpy as np
 import pandas as pd
 import scipy
@@ -10,14 +10,12 @@ from pysurvival.utils import optimization as opt
 from pysurvival.models import BaseModel
 from pysurvival.models._svm import _SVMModel
 
-
 # Available Kernel functions
-KERNELS = { 'Linear': 0, 'Polynomial': 1, 'Gaussian':2, 'Normal':2,
-            'Exponential':3, 'Tanh':4, 'Sigmoid': 5, 'Rational Quadratic':6,
-            'Inverse Multiquadratic': 7,  'Multiquadratic': 8}
+KERNELS = {'Linear': 0, 'Polynomial': 1, 'Gaussian': 2, 'Normal': 2,
+           'Exponential': 3, 'Tanh': 4, 'Sigmoid': 5, 'Rational Quadratic': 6,
+           'Inverse Multiquadratic': 7, 'Multiquadratic': 8}
 
-REVERSE_KERNELS = {value:key for (key, value) in KERNELS.items() }
-
+REVERSE_KERNELS = {value: key for (key, value) in KERNELS.items()}
 
 
 class SurvivalSVMModel(BaseModel):
@@ -76,25 +74,22 @@ class SurvivalSVMModel(BaseModel):
 
     """
 
-
-    def __init__(self, kernel = "linear", scale=1., offset=0., degree=1.,
-      auto_scaler = True):
-
+    def __init__(self, kernel="linear", scale=1., offset=0., degree=1.,
+                 auto_scaler=True):
 
         # Ensuring that the provided kernel is available
         valid_kernel = [key for key in KERNELS.keys() \
-        if kernel.lower().replace('_', ' ') in key.lower().replace('_', ' ')]
+                        if kernel.lower().replace('_', ' ') in key.lower().replace('_', ' ')]
 
         if len(valid_kernel) == 0:
             raise NotImplementedError('{} is not a valid kernel function.'
-                .format(kernel))
+                                      .format(kernel))
         else:
             kernel_type = KERNELS[valid_kernel[0]]
             kernel = valid_kernel[0]
 
         # Checking the kernel parameters
-        if not (degree >= 0. and \
-          (isinstance(degree, float) or isinstance(degree, int)) ):
+        if not (degree >= 0. and (isinstance(degree, float) or isinstance(degree, int))):
             error = "degree parameter is not valid. degree is a >= 0 value"
             raise ValueError(error)
 
@@ -114,22 +109,19 @@ class SurvivalSVMModel(BaseModel):
         self.degree = degree
 
         # Initializing the C++ object
-        self.model = _SVMModel( self.kernel_type, self.scale, self.offset, 
-          self.degree)
+        self.model = _SVMModel(self.kernel_type, self.scale, self.offset,
+                               self.degree)
 
         # Initializing the elements from BaseModel
         super(SurvivalSVMModel, self).__init__(auto_scaler)
-
-        
 
     def __repr__(self):
         """ Creates the representation of the Object """
 
         self.name = self.__class__.__name__
-        if 'kernel' in self.name :
+        if 'kernel' in self.name:
             self.name += "(kernel: '{}'".format(self.kernel) + ')'
         return self.name
-
 
     def save(self, path_file):
         """ Save the model paremeters of the model (.params) and Compress 
@@ -147,32 +139,30 @@ class SurvivalSVMModel(BaseModel):
 
         # Delete the C++ object before saving
         del self.model
-        
+
         # Saving the model
         super(SurvivalSVMModel, self).save(path_file)
 
         # Re-introduce the C++ object
-        self.model = _SVMModel( self.kernel_type, self.scale, self.offset, 
-          self.degree)
+        self.model = _SVMModel(self.kernel_type, self.scale, self.offset,
+                               self.degree)
         self.load_properties()
-        
 
     def load(self, path_file):
         """ Load the model parameters from a zip file into a C++ external
             model 
-        """        
+        """
         # Loading the model
         super(SurvivalSVMModel, self).load(path_file)
 
         # Re-introduce the C++ object
-        self.model = _SVMModel( self.kernel_type, self.scale, self.offset, 
-          self.degree)
+        self.model = _SVMModel(self.kernel_type, self.scale, self.offset,
+                               self.degree)
         self.load_properties()
 
-
-    def fit(self, X, T, E, with_bias = True, init_method='glorot_normal', 
-            lr = 1e-2, max_iter = 100, l2_reg = 1e-4, tol = 1e-3, 
-            verbose = True):
+    def fit(self, X, T, E, with_bias=True, init_method='glorot_normal',
+            lr=1e-2, max_iter=100, l2_reg=1e-4, tol=1e-3,
+            verbose=True):
         """
         Fitting a Survival Support Vector Machine model.
 
@@ -294,20 +284,20 @@ class SurvivalSVMModel(BaseModel):
             self.variables = X.columns.tolist()
         else:
             self.variables = ['x_{}'.format(i) for i in range(self.num_vars)]
-        
+
         # Adding a bias or not
         self.with_bias = with_bias
         if with_bias:
             self.variables += ['intercept']
-        p = int(self.num_vars + 1.*with_bias)
+        p = int(self.num_vars + 1. * with_bias)
 
         # Checking the format of the data 
         X, T, E = utils.check_data(X, T, E)
 
         if with_bias:
             # Adding the intercept
-            X = np.c_[X, [1.]*N]
-        X = self.scaler.fit_transform( X )
+            X = np.c_[X, [1.] * N]
+        X = self.scaler.fit_transform(X)
 
         # Initializing the parameters 
         if self.kernel_type == 0:
@@ -316,49 +306,46 @@ class SurvivalSVMModel(BaseModel):
             W = np.zeros((N, 1))
         W = opt.initialization(init_method, W, False).flatten()
         W = W.astype(np.float64)
-        
+
         # Optimizing to find best parameters 
-        self.model.newton_optimization(X, T, E, W, lr, l2_reg, 
-                                 tol, max_iter, verbose)
+        self.model.newton_optimization(X, T, E, W, lr, l2_reg,
+                                       tol, max_iter, verbose)
         self.save_properties()
 
         return self
 
-
     def save_properties(self):
         """ Loading the properties of the model """
 
-        self.weights        = np.array( self.model.W )
-        self.Kernel_Matrix  = np.array( self.model.Kernel_Matrix )
-        self.kernel_type    =           self.model.kernel_type 
-        self.scale          =           self.model.scale 
-        self.offset         =           self.model.offset 
-        self.degree         =           self.model.degree 
-        self.loss           = np.array( self.model.loss )
-        self.inv_Hessian    = np.array( self.model.inv_Hessian )
-        self.loss_values    = np.array( self.model.loss_values )
-        self.grad2_values   = np.array( self.model.grad2_values )
-        self.internal_X     = np.array( self.model.internal_X )
-
+        self.weights = np.array(self.model.W)
+        self.Kernel_Matrix = np.array(self.model.Kernel_Matrix)
+        self.kernel_type = self.model.kernel_type
+        self.scale = self.model.scale
+        self.offset = self.model.offset
+        self.degree = self.model.degree
+        self.loss = np.array(self.model.loss)
+        self.inv_Hessian = np.array(self.model.inv_Hessian)
+        self.loss_values = np.array(self.model.loss_values)
+        self.grad2_values = np.array(self.model.grad2_values)
+        self.internal_X = np.array(self.model.internal_X)
 
     def load_properties(self):
         """ Loading the properties of the model """
 
-        self.model.W              = self.weights
-        self.model.Kernel_Matrix  = self.Kernel_Matrix
-        self.model.kernel_type    = self.kernel_type
-        self.model.scale          = self.scale
-        self.model.offset         = self.offset
-        self.model.degree         = self.degree
-        self.model.loss           = self.loss
-        self.model.inv_Hessian    = self.inv_Hessian
-        self.model.loss_values    = self.loss_values
-        self.model.grad2_values   = self.grad2_values
-        self.model.internal_X     = self.internal_X 
-        self.kernel               = REVERSE_KERNELS[self.kernel_type]
+        self.model.W = self.weights
+        self.model.Kernel_Matrix = self.Kernel_Matrix
+        self.model.kernel_type = self.kernel_type
+        self.model.scale = self.scale
+        self.model.offset = self.offset
+        self.model.degree = self.degree
+        self.model.loss = self.loss
+        self.model.inv_Hessian = self.inv_Hessian
+        self.model.loss_values = self.loss_values
+        self.model.grad2_values = self.grad2_values
+        self.model.internal_X = self.internal_X
+        self.kernel = REVERSE_KERNELS[self.kernel_type]
 
-
-    def predict_risk(self, x, use_log = False):
+    def predict_risk(self, x, use_log=False):
         """ Predicts the Risk Score
         
             Parameter
@@ -373,7 +360,7 @@ class SurvivalSVMModel(BaseModel):
             -------
             * `risk_score`, np.ndarray
                 array-like representing the prediction of Risk Score function
-        """        
+        """
 
         # Ensuring that the C++ model has the fitted parameters
         self.load_properties()
@@ -385,62 +372,52 @@ class SurvivalSVMModel(BaseModel):
         if x.ndim == 1:
             if self.with_bias:
                 x = np.r_[x, 1.]
-            x = self.scaler.transform( x.reshape(1, -1) )
+            x = self.scaler.transform(x.reshape(1, -1))
         elif x.ndim == 2:
             n = x.shape[0]
             if self.with_bias:
-                x = np.c_[x, [1.]*n]
-            x = self.scaler.transform( x )
+                x = np.c_[x, [1.] * n]
+            x = self.scaler.transform(x)
 
         # Calculating prdiction
-        risk = np.exp( self.model.get_score(x) )
+        risk = np.exp(self.model.get_score(x))
 
         if use_log:
-            return np.log( risk )
+            return np.log(risk)
         else:
             return risk
 
-
-
     def predict_cumulative_hazard(self, *args, **kargs):
-        raise NotImplementedError(self.not_implemented_error)
-
+        raise NotImplementedError()
 
     def predict_cdf(self, *args, **kargs):
-        raise NotImplementedError(self.not_implemented_error)
-
+        raise NotImplementedError()
 
     def predict_survival(self, *args, **kargs):
-        raise NotImplementedError(self.not_implemented_error)
-
+        raise NotImplementedError()
 
     def predict_density(self, *args, **kargs):
-        raise NotImplementedError(self.not_implemented_error)
-
+        raise NotImplementedError()
 
     def predict_hazard(self, *args, **kargs):
-        raise NotImplementedError(self.not_implemented_error)
-
+        raise NotImplementedError()
 
 
 class LinearSVMModel(SurvivalSVMModel):
 
-    def __init__(self, auto_scaler = True):
-
-        super(LinearSVMModel, self).__init__(kernel = "linear", scale=1., 
-            offset=0., degree=1., auto_scaler = True)
-
+    def __init__(self, auto_scaler=True):
+        super(LinearSVMModel, self).__init__(kernel="linear", scale=1.,
+                                             offset=0., degree=1., auto_scaler=True)
 
 
 class KernelSVMModel(SurvivalSVMModel):
 
-    def __init__(self, kernel = "gaussian", scale=1., offset=0., degree=1.,
-      auto_scaler = True):
-
+    def __init__(self, kernel="gaussian", scale=1., offset=0., degree=1.,
+                 auto_scaler=True):
         if "linear" in kernel.lower():
             error = "To use a 'linear' svm model, create an instance of"
             error += "pysurvival.models.svm.LinearSVMModel"
             raise ValueError(error)
 
-        super(KernelSVMModel, self).__init__(kernel = kernel, scale=scale, 
-            offset=offset, degree=degree, auto_scaler = auto_scaler)
+        super(KernelSVMModel, self).__init__(kernel=kernel, scale=scale,
+                                             offset=offset, degree=degree, auto_scaler=auto_scaler)

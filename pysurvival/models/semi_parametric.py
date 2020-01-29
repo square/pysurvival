@@ -1,5 +1,5 @@
 from __future__ import absolute_import
-import torch 
+import torch
 import numpy as np
 import pandas as pd
 import scipy
@@ -35,43 +35,42 @@ class CoxPHModel(BaseModel):
             * http://www.sthda.com/english/wiki/cox-proportional-hazards-model
     """
 
-    def get_summary(self, alpha = 0.95, precision=3):
+    def get_summary(self, alpha=0.95, precision=3):
         """ Providing the summary of the regression results:
                 * standard errors
                 * z-score 
                 * p-value
         """
-        
+
         # Flattening the coef 
         W_flat = self.weights.flatten()
 
         # calculating standard error 
-        self.std_err  = np.sqrt(self.inv_Hessian.diagonal())/self.std_scale   
+        self.std_err = np.sqrt(self.inv_Hessian.diagonal()) / self.std_scale
 
         # Confidence Intervals 
         alpha = scipy.stats.norm.ppf((1. + alpha) / 2.)
-        lower_ci = np.round( W_flat - alpha * self.std_err, precision)
-        upper_ci = np.round( W_flat + alpha * self.std_err, precision)
-        z = np.round(W_flat / self.std_err , precision)
-        p_values = np.round(scipy.stats.chi2.sf( np.square(z), 1), precision)
+        lower_ci = np.round(W_flat - alpha * self.std_err, precision)
+        upper_ci = np.round(W_flat + alpha * self.std_err, precision)
+        z = np.round(W_flat / self.std_err, precision)
+        p_values = np.round(scipy.stats.chi2.sf(np.square(z), 1), precision)
         W = np.round(W_flat, precision)
         std_err = np.round(self.std_err, precision)
-        
+
         # Creating summary
-        df = np.c_[self.variables, W, std_err, 
-                    lower_ci, upper_ci, z, p_values]
-        df = pd.DataFrame(data = df,
-                          columns = ['variables', 'coef', 'std. err', 
-                                     'lower_ci', 'upper_ci',
-                                     'z', 'p_values'])
+        df = np.c_[self.variables, W, std_err,
+                   lower_ci, upper_ci, z, p_values]
+        df = pd.DataFrame(data=df,
+                          columns=['variables', 'coef', 'std. err',
+                                   'lower_ci', 'upper_ci',
+                                   'z', 'p_values'])
         self.summary = df
 
         return df
 
-    
-    def fit(self, X, T, E, init_method='glorot_normal', lr = 1e-2, 
-            max_iter = 100, l2_reg = 1e-2, alpha = 0.95,
-            tol = 1e-3, verbose = True ):
+    def fit(self, X, T, E, init_method='glorot_normal', lr=1e-2,
+            max_iter=100, l2_reg=1e-2, alpha=0.95,
+            tol=1e-3, verbose=True):
         """
         Fitting a proportional hazards regression model using
         the Efron's approximation method to take into account tied times.
@@ -188,7 +187,7 @@ class CoxPHModel(BaseModel):
           Function for Censored Data". Journal of the American Statistical 
           Association. 72 (359): 557-565. 
         """
-        
+
         # Collecting features names
         N, self.num_vars = X.shape
         if isinstance(X, pd.DataFrame):
@@ -201,8 +200,8 @@ class CoxPHModel(BaseModel):
         order = np.argsort(-T)
         T = T[order]
         E = E[order]
-        X = self.scaler.fit_transform( X[order, :] )
-        self.std_scale = np.sqrt( self.scaler.var_ )
+        X = self.scaler.fit_transform(X[order, :])
+        self.std_scale = np.sqrt(self.scaler.var_)
 
         # Initializing the model
         self.model = _CoxPHModel()
@@ -214,29 +213,29 @@ class CoxPHModel(BaseModel):
         W = np.zeros(self.num_vars)
         W = opt.initialization(init_method, W, False).flatten()
         W = W.astype(np.float64)
-        
+
         # Optimizing to find best parameters 
-        epsilon=1e-9
-        self.model.newton_optimization(X, T, E, W, lr, l2_reg, tol, epsilon, 
-            max_iter, verbose)
-        
+        epsilon = 1e-9
+        self.model.newton_optimization(X, T, E, W, lr, l2_reg, tol, epsilon,
+                                       max_iter, verbose)
+
         # Saving the Cython attributes in the Python object
-        self.weights = np.array( self.model.W )
+        self.weights = np.array(self.model.W)
         self.loss = self.model.loss
-        self.times = np.array( self.model.times)
-        self.gradient = np.array( self.model.gradient )
-        self.Hessian = np.array( self.model.Hessian )
-        self.inv_Hessian = np.array( self.model.inv_Hessian )
-        self.loss_values = np.array( self.model.loss_values )
-        self.grad2_values = np.array( self.model.grad2_values )
+        self.times = np.array(self.model.times)
+        self.gradient = np.array(self.model.gradient)
+        self.Hessian = np.array(self.model.Hessian)
+        self.inv_Hessian = np.array(self.model.inv_Hessian)
+        self.loss_values = np.array(self.model.loss_values)
+        self.grad2_values = np.array(self.model.grad2_values)
 
         # Computing baseline functions
-        score = np.exp( np.dot(X, self.weights) )
+        score = np.exp(np.dot(X, self.weights))
         baselines = _baseline_functions(score, T, E)
 
         # Saving the Cython attributes in the Python object
-        self.baseline_hazard = np.array( baselines[1] )
-        self.baseline_survival = np.array( baselines[2] )
+        self.baseline_hazard = np.array(baselines[1])
+        self.baseline_survival = np.array(baselines[2])
         del self.model
         self.get_time_buckets()
 
@@ -244,10 +243,8 @@ class CoxPHModel(BaseModel):
         self.get_summary(alpha)
 
         return self
-    
-    
-    
-    def predict(self, x, t = None):
+
+    def _predict(self, x, t=None, **kwargs):
         """ 
         Predicting the hazard, density and survival functions
         
@@ -261,30 +258,29 @@ class CoxPHModel(BaseModel):
                 should be calculated. If None, the method returns 
                 the functions for all times t. 
         """
-        
+
         # Convert x into the right format
         x = utils.check_data(x)
-        
+
         # Sacling the dataset
         if x.ndim == 1:
-            x = self.scaler.transform( x.reshape(1, -1) )
+            x = self.scaler.transform(x.reshape(1, -1))
         elif x.ndim == 2:
-            x = self.scaler.transform( x )
-            
+            x = self.scaler.transform(x)
+
         # Calculating risk_score, hazard, density and survival 
-        phi      = np.exp( np.dot(x, self.weights) )
-        hazard   = self.baseline_hazard*phi.reshape(-1, 1)
+        phi = np.exp(np.dot(x, self.weights))
+        hazard = self.baseline_hazard * phi.reshape(-1, 1)
         survival = np.power(self.baseline_survival, phi.reshape(-1, 1))
-        density  = hazard*survival
+        density = hazard * survival
         if t is None:
             return hazard, density, survival
         else:
-            min_index = [ abs(a_j_1-t) for (a_j_1, a_j) in self.time_buckets ]
+            min_index = [abs(a_j_1 - t) for (a_j_1, a_j) in self.time_buckets]
             index = np.argmin(min_index)
             return hazard[:, index], density[:, index], survival[:, index]
 
-
-    def predict_risk(self, x, use_log = False):
+    def predict_risk(self, x, use_log=False):
         """
         Predicting the risk score functions
         
@@ -293,25 +289,23 @@ class CoxPHModel(BaseModel):
                 x is the testing dataset containing the features
                 x should not be standardized before, the model
                 will take care of it
-        """        
+        """
 
-         # Convert x into the right format
+        # Convert x into the right format
         x = utils.check_data(x)
-        
+
         # Scaling the dataset
         if x.ndim == 1:
-            x = self.scaler.transform( x.reshape(1, -1) )
+            x = self.scaler.transform(x.reshape(1, -1))
         elif x.ndim == 2:
-            x = self.scaler.transform( x )
-            
+            x = self.scaler.transform(x)
+
         # Calculating risk_score
-        risk_score  = np.exp( np.dot(x, self.weights) )   
+        risk_score = np.exp(np.dot(x, self.weights))
         if not use_log:
             risk_score = np.exp(risk_score)
 
         return risk_score
-
-        
 
 
 class NonLinearCoxPHModel(BaseModel):
@@ -364,16 +358,14 @@ class NonLinearCoxPHModel(BaseModel):
                 applied             
     """
 
-    def __init__(self, structure=None, auto_scaler = True):
-        
+    def __init__(self, structure=None, auto_scaler=True):
+
         # Saving attributes
         self.structure = structure
         self.loss_values = []
-        
+
         # Initializing the elements from BaseModel
         super(NonLinearCoxPHModel, self).__init__(auto_scaler)
-
-
 
     def risk_fail_matrix(self, T, E):
         """ Calculating the Risk, Fail matrices to calculate the loss 
@@ -381,47 +373,45 @@ class NonLinearCoxPHModel(BaseModel):
         """
 
         N = T.shape[0]
-        Risk = np.zeros( (self.nb_times, N) )
-        Fail = np.zeros( (self.nb_times, N) )
-        
+        Risk = np.zeros((self.nb_times, N))
+        Fail = np.zeros((self.nb_times, N))
+
         for i in range(N):
-            
+
             # At risk
-            index_risk = np.argwhere( self.times <= T[i] ).flatten()
-            Risk[ index_risk, i] = 1.
-            
+            index_risk = np.argwhere(self.times <= T[i]).flatten()
+            Risk[index_risk, i] = 1.
+
             # Failed
-            if E[i] == 1 :
-                index_fail = np.argwhere( self.times == T[i] )[0]
+            if E[i] == 1:
+                index_fail = np.argwhere(self.times == T[i])[0]
                 Fail[index_fail, i] = 1.
 
-        self.nb_fail_per_time = np.sum( Fail, axis = 1 ).astype(int)
+        self.nb_fail_per_time = np.sum(Fail, axis=1).astype(int)
         return torch.FloatTensor(Risk), torch.FloatTensor(Fail)
-
 
     def efron_matrix(self):
         """ Computing the Efron Coefficient matrices to calculate the loss 
             function by vectorizing all the quantities at stake
         """
-        
-        max_nb_fails   = int(max(self.nb_fail_per_time))
-        Efron_coef     = np.zeros( (self.nb_times, max_nb_fails ) )
-        Efron_one      = np.zeros( (self.nb_times, max_nb_fails ) )
-        Efron_anti_one = np.ones(  (self.nb_times, max_nb_fails ) )
-        
-        for i, d in enumerate(self.nb_fail_per_time) :
+
+        max_nb_fails = int(max(self.nb_fail_per_time))
+        Efron_coef = np.zeros((self.nb_times, max_nb_fails))
+        Efron_one = np.zeros((self.nb_times, max_nb_fails))
+        Efron_anti_one = np.ones((self.nb_times, max_nb_fails))
+
+        for i, d in enumerate(self.nb_fail_per_time):
             if d > 0:
-                Efron_coef[i, :d] = [ h*1.0/d for h in range( d )]
-                Efron_one [i, :d] = 1.
+                Efron_coef[i, :d] = [h * 1.0 / d for h in range(d)]
+                Efron_one[i, :d] = 1.
                 Efron_anti_one[i, :d] = 0.
-                
+
         Efron_coef = torch.FloatTensor(Efron_coef)
-        Efron_one = torch.FloatTensor(Efron_one)                
-        Efron_anti_one = torch.FloatTensor(Efron_anti_one)        
+        Efron_one = torch.FloatTensor(Efron_one)
+        Efron_anti_one = torch.FloatTensor(Efron_anti_one)
         return Efron_coef, Efron_one, Efron_anti_one
 
-
-    def loss_function(self, model, X, Risk, Fail, 
+    def loss_function(self, model, X, Risk, Fail,
                       Efron_coef, Efron_one, Efron_anti_one, l2_reg):
         """ Efron's approximation loss function by vectorizing 
             all the quantities at stake
@@ -429,38 +419,37 @@ class NonLinearCoxPHModel(BaseModel):
 
         # Calculating the score
         pre_score = model(X)
-        score = torch.reshape( torch.exp(pre_score), (-1, 1) )
+        score = torch.reshape(torch.exp(pre_score), (-1, 1))
         max_nb_fails = Efron_coef.shape[1]
 
         # Numerator calculation
-        log_score = torch.log( score )
-        log_fail  = torch.mm(Fail, log_score)
-        numerator = torch.sum(log_fail)  
+        log_score = torch.log(score)
+        log_fail = torch.mm(Fail, log_score)
+        numerator = torch.sum(log_fail)
 
         # Denominator calculation
-        risk_score = torch.reshape( torch.mm(Risk, score), (-1,1) )
-        risk_score = risk_score.repeat(1, max_nb_fails)        
-        
-        fail_score = torch.reshape( torch.mm(Fail, score), (-1,1) )
+        risk_score = torch.reshape(torch.mm(Risk, score), (-1, 1))
+        risk_score = risk_score.repeat(1, max_nb_fails)
+
+        fail_score = torch.reshape(torch.mm(Fail, score), (-1, 1))
         fail_score = fail_score.repeat(1, max_nb_fails)
-        
-        Efron_Fail  = fail_score*Efron_coef 
-        Efron_Risk  = risk_score*Efron_one
-        log_efron   = torch.log( Efron_Risk - Efron_Fail + Efron_anti_one)
-                
-        denominator = torch.sum( torch.sum(log_efron, dim=1) )  
-        
+
+        Efron_Fail = fail_score * Efron_coef
+        Efron_Risk = risk_score * Efron_one
+        log_efron = torch.log(Efron_Risk - Efron_Fail + Efron_anti_one)
+
+        denominator = torch.sum(torch.sum(log_efron, dim=1))
+
         # Adding regularization
         loss = - (numerator - denominator)
         for w in model.parameters():
-            loss += l2_reg*torch.sum(w*w)/2.
-            
+            loss += l2_reg * torch.sum(w * w) / 2.
+
         return loss
 
-
-    def fit(self, X, T, E, init_method = 'glorot_uniform',
-            optimizer ='adam', lr = 1e-4, num_epochs = 1000,
-            dropout = 0.2, batch_normalization=False, bn_and_dropout=False,
+    def fit(self, X, T, E, init_method='glorot_uniform',
+            optimizer='adam', lr=1e-4, num_epochs=1000,
+            dropout=0.2, batch_normalization=False, bn_and_dropout=False,
             l2_reg=1e-5, verbose=True):
         """ 
         Fit the estimator based on the given parameters.
@@ -598,12 +587,12 @@ class NonLinearCoxPHModel(BaseModel):
         # Extracting data parameters
         N, self.num_vars = X.shape
         input_shape = self.num_vars
-    
+
         # Scaling data 
         if self.auto_scaler:
-            X_original = self.scaler.fit_transform( X ) 
-            
-        # Sorting X, T, E in descending order according to T
+            X_original = self.scaler.fit_transform(X)
+
+            # Sorting X, T, E in descending order according to T
         order = np.argsort(-T)
         T = T[order]
         E = E[order]
@@ -613,29 +602,29 @@ class NonLinearCoxPHModel(BaseModel):
         self.get_time_buckets()
 
         # Initializing the model
-        model = nn.NeuralNet(input_shape, 1, self.structure, 
-                             init_method, dropout, batch_normalization, 
-                             bn_and_dropout )
+        model = nn.NeuralNet(input_shape, 1, self.structure,
+                             init_method, dropout, batch_normalization,
+                             bn_and_dropout)
 
         # Looping through the data to calculate the loss
-        X = torch.FloatTensor(X_original) 
+        X = torch.FloatTensor(X_original)
 
         # Computing the Risk and Fail tensors
         Risk, Fail = self.risk_fail_matrix(T, E)
-        Risk = torch.FloatTensor(Risk) 
-        Fail = torch.FloatTensor(Fail) 
+        Risk = torch.FloatTensor(Risk)
+        Fail = torch.FloatTensor(Fail)
 
         # Computing Efron's matrices
         Efron_coef, Efron_one, Efron_anti_one = self.efron_matrix()
-        Efron_coef = torch.FloatTensor(Efron_coef) 
-        Efron_one = torch.FloatTensor(Efron_one) 
-        Efron_anti_one = torch.FloatTensor(Efron_anti_one) 
+        Efron_coef = torch.FloatTensor(Efron_coef)
+        Efron_one = torch.FloatTensor(Efron_one)
+        Efron_anti_one = torch.FloatTensor(Efron_anti_one)
 
         # Performing order 1 optimization
-        model, loss_values = opt.optimize(self.loss_function, model, optimizer, 
-            lr, num_epochs, verbose, X=X, Risk=Risk, Fail=Fail, 
-            Efron_coef=Efron_coef, Efron_one=Efron_one, 
-            Efron_anti_one=Efron_anti_one, l2_reg=l2_reg)
+        model, loss_values = opt.optimize(self.loss_function, model, optimizer,
+                                          lr, num_epochs, verbose, X=X, Risk=Risk, Fail=Fail,
+                                          Efron_coef=Efron_coef, Efron_one=Efron_one,
+                                          Efron_anti_one=Efron_anti_one, l2_reg=l2_reg)
 
         # Saving attributes
         self.model = model.eval()
@@ -650,14 +639,13 @@ class NonLinearCoxPHModel(BaseModel):
         baselines = _baseline_functions(score, T, E)
 
         # Saving the Cython attributes in the Python object
-        self.times = np.array( baselines[0] )
-        self.baseline_hazard = np.array( baselines[1] )
-        self.baseline_survival = np.array( baselines[2] )
+        self.times = np.array(baselines[0])
+        self.baseline_hazard = np.array(baselines[1])
+        self.baseline_survival = np.array(baselines[2])
 
         return self
 
-
-    def predict(self, x, t = None):
+    def _predict(self, x, t=None, **kwargs):
         """ 
         Predicting the hazard, density and survival functions
         
@@ -671,31 +659,30 @@ class NonLinearCoxPHModel(BaseModel):
                 should be calculated. If None, the method returns 
                 the functions for all times t. 
         """
-        
+
         # Convert x into the right format
         x = utils.check_data(x)
-        
+
         # Scaling the dataset
         if x.ndim == 1:
-            x = self.scaler.transform( x.reshape(1, -1) )
+            x = self.scaler.transform(x.reshape(1, -1))
         elif x.ndim == 2:
-            x = self.scaler.transform( x )
-            
+            x = self.scaler.transform(x)
+
         # Calculating risk_score, hazard, density and survival 
-        score    = self.model(torch.FloatTensor(x)).data.numpy().flatten()
-        phi      = np.exp( score )
-        hazard   = self.baseline_hazard*phi.reshape(-1, 1)
+        score = self.model(torch.FloatTensor(x)).data.numpy().flatten()
+        phi = np.exp(score)
+        hazard = self.baseline_hazard * phi.reshape(-1, 1)
         survival = np.power(self.baseline_survival, phi.reshape(-1, 1))
-        density  = hazard*survival
+        density = hazard * survival
         if t is None:
             return hazard, density, survival
         else:
-            min_index = [ abs(a_j_1-t) for (a_j_1, a_j) in self.time_buckets ]
+            min_index = [abs(a_j_1 - t) for (a_j_1, a_j) in self.time_buckets]
             index = np.argmin(min_index)
             return hazard[:, index], density[:, index], survival[:, index]
 
-
-    def predict_risk(self, x, use_log = False):
+    def predict_risk(self, x, use_log=False):
         """
         Predicting the risk score functions
         
@@ -704,17 +691,17 @@ class NonLinearCoxPHModel(BaseModel):
                 x is the testing dataset containing the features
                 x should not be standardized before, the model
                 will take care of it
-        """        
+        """
 
         # Convert x into the right format
         x = utils.check_data(x)
-        
+
         # Scaling the data
         if self.auto_scaler:
             if x.ndim == 1:
-                x = self.scaler.transform( x.reshape(1, -1) )
+                x = self.scaler.transform(x.reshape(1, -1))
             elif x.ndim == 2:
-                x = self.scaler.transform( x )
+                x = self.scaler.transform(x)
         else:
             # Ensuring x has 2 dimensions
             if x.ndim == 1:
@@ -730,29 +717,28 @@ class NonLinearCoxPHModel(BaseModel):
 
         return score
 
-
     def __repr__(self):
         """ Representing the class object """
 
         if self.structure is None:
             super(NonLinearCoxPHModel, self).__repr__()
             return self.name
-            
+
         else:
             S = len(self.structure)
             self.name = self.__class__.__name__
             empty = len(self.name)
             self.name += '( '
             for i, s in enumerate(self.structure):
-                n = 'Layer({}): '.format(i+1)
-                activation = nn.activation_function(s['activation'], 
-                    return_text=True)
-                n += 'activation = {}, '.format( s['activation'] )
-                n += 'num_units = {} '.format( s['num_units'] )
-                
-                if i != S-1:
+                n = 'Layer({}): '.format(i + 1)
+                activation = nn.activation_function(s['activation'],
+                                                    return_text=True)
+                n += 'activation = {}, '.format(s['activation'])
+                n += 'num_units = {} '.format(s['num_units'])
+
+                if i != S - 1:
                     self.name += n + '; \n'
-                    self.name += empty*' ' + '  '
+                    self.name += empty * ' ' + '  '
                 else:
                     self.name += n
             self.name += ')'

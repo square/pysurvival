@@ -1,5 +1,5 @@
 from __future__ import absolute_import
-import torch 
+import torch
 import numpy as np
 import copy
 import multiprocessing
@@ -8,6 +8,8 @@ from pysurvival import utils
 from pysurvival.utils import neural_networks as nn
 from pysurvival.utils import optimization as opt
 from pysurvival.models import BaseModel
+
+
 # %matplotlib inline
 
 class BaseMultiTaskModel(BaseModel):
@@ -76,7 +78,7 @@ class BaseMultiTaskModel(BaseModel):
         Determines whether a sklearn scaler should be automatically applied
     """
 
-    def __init__(self, structure, bins = 100, auto_scaler=True):
+    def __init__(self, structure, bins=100, auto_scaler=True):
 
         # Saving the attributes
         self.loss_values = []
@@ -85,31 +87,29 @@ class BaseMultiTaskModel(BaseModel):
 
         # Initializing the elements from BaseModel
         super(BaseMultiTaskModel, self).__init__(auto_scaler)
-        
-        
-    def get_times(self, T, is_min_time_zero = True, extra_pct_time = 0.1):
+
+    def get_times(self, T, is_min_time_zero=True, extra_pct_time=0.1):
         """ Building the time axis (self.times) as well as the time intervals 
             ( all the [ t(k-1), t(k) ) in the time axis.
         """
 
         # Setting the min_time and max_time
         max_time = max(T)
-        if is_min_time_zero :
-            min_time = 0. 
+        if is_min_time_zero:
+            min_time = 0.
         else:
             min_time = min(T)
-        
+
         # Setting optional extra percentage time
         if 0. <= extra_pct_time <= 1.:
             p = extra_pct_time
         else:
-            raise Exception("extra_pct_time has to be between [0, 1].") 
+            raise Exception("extra_pct_time has to be between [0, 1].")
 
-        # Building time points and time buckets
-        self.times = np.linspace(min_time, max_time*(1. + p), self.bins)
+            # Building time points and time buckets
+        self.times = np.linspace(min_time, max_time * (1. + p), self.bins)
         self.get_time_buckets()
         self.num_times = len(self.time_buckets)
-
 
     def compute_XY(self, X, T, E, is_min_time_zero, extra_pct_time):
         """ Given the survival_times, events and time_points vectors, 
@@ -118,31 +118,31 @@ class BaseMultiTaskModel(BaseModel):
                 Y = [[0, 0, 1, 0, 0],  # unit experienced an event at t = 3
                      [0, 1, 0, 0, 0],  # unit experienced an event at t = 2
                      [0, 1, 1, 1, 1],] # unit was censored at t = 2
-        """ 
+        """
 
         # building times axis
         self.get_times(T, is_min_time_zero, extra_pct_time)
-        n_units  = T.shape[0]
-        
+        n_units = T.shape[0]
+
         # Initializing the output variable
         Y_cens, Y_uncens = [], []
         X_cens, X_uncens = [], []
 
         # Building the output variable
-        for i, (t, e) in enumerate( zip(T, E) ):
-            y = np.zeros(self.num_times+1)
-            min_abs_value = [abs(a_j_1-t) for (a_j_1, a_j) in self.time_buckets]
+        for i, (t, e) in enumerate(zip(T, E)):
+            y = np.zeros(self.num_times + 1)
+            min_abs_value = [abs(a_j_1 - t) for (a_j_1, a_j) in self.time_buckets]
             index = np.argmin(min_abs_value)
 
             if e == 1:
                 y[index] = 1.
-                X_uncens.append( X[i, :].tolist() )
-                Y_uncens.append( y.tolist() )
+                X_uncens.append(X[i, :].tolist())
+                Y_uncens.append(y.tolist())
 
-            else:                
+            else:
                 y[(index):] = 1.
-                X_cens.append( X[i, :].tolist() )
-                Y_cens.append( y.tolist() )
+                X_cens.append(X[i, :].tolist())
+                Y_cens.append(y.tolist())
 
         # Transform into torch.Tensor
         X_cens = torch.FloatTensor(X_cens)
@@ -150,56 +150,51 @@ class BaseMultiTaskModel(BaseModel):
         Y_cens = torch.FloatTensor(Y_cens)
         Y_uncens = torch.FloatTensor(Y_uncens)
 
-        return X_cens, X_uncens, Y_cens, Y_uncens 
-        
+        return X_cens, X_uncens, Y_cens, Y_uncens
 
-    def loss_function(self, model, X_cens, X_uncens, Y_cens, Y_uncens, 
-        Triangle, l2_reg, l2_smooth):
+    def loss_function(self, model, X_cens, X_uncens, Y_cens, Y_uncens,
+                      Triangle, l2_reg, l2_smooth):
         """ Computes the loss function of the any MTLR model. 
             All the operations have been vectorized to ensure optimal speed
         """
 
         # Likelihood Calculations -- Uncensored
         score_uncens = model(X_uncens)
-        phi_uncens = torch.exp( torch.mm(score_uncens, Triangle) )
-        reduc_phi_uncens = torch.sum(phi_uncens*Y_uncens, dim = 1)
+        phi_uncens = torch.exp(torch.mm(score_uncens, Triangle))
+        reduc_phi_uncens = torch.sum(phi_uncens * Y_uncens, dim=1)
 
         # Likelihood Calculations -- Censored
         score_cens = model(X_cens)
-        phi_cens = torch.exp( torch.mm(score_cens, Triangle) )
-        reduc_phi_cens = torch.sum( phi_cens*Y_cens, dim = 1)
+        phi_cens = torch.exp(torch.mm(score_cens, Triangle))
+        reduc_phi_cens = torch.sum(phi_cens * Y_cens, dim=1)
 
         # Likelihood Calculations -- Normalization
-        z_uncens = torch.exp( torch.mm(score_uncens, Triangle) )
-        reduc_z_uncens = torch.sum( z_uncens, dim = 1)
+        z_uncens = torch.exp(torch.mm(score_uncens, Triangle))
+        reduc_z_uncens = torch.sum(z_uncens, dim=1)
 
-        z_cens = torch.exp( torch.mm(score_cens, Triangle) )
-        reduc_z_cens = torch.sum( z_cens, dim = 1)
+        z_cens = torch.exp(torch.mm(score_cens, Triangle))
+        reduc_z_cens = torch.sum(z_cens, dim=1)
 
         # MTLR cost function
         loss = - (
-                    torch.sum( torch.log(reduc_phi_uncens) ) \
-                  + torch.sum( torch.log(reduc_phi_cens) )  \
-
-                  - torch.sum( torch.log(reduc_z_uncens) ) \
-                  - torch.sum( torch.log(reduc_z_cens) ) 
-                 )
+                torch.sum(torch.log(reduc_phi_uncens)) + torch.sum(torch.log(reduc_phi_cens)) - torch.sum(
+            torch.log(reduc_z_uncens)) - torch.sum(torch.log(reduc_z_cens))
+        )
 
         # Adding the regularized loss
         nb_set_parameters = len(list(model.parameters()))
         for i, w in enumerate(model.parameters()):
-            loss += l2_reg*torch.sum(w*w)/2.
-            
+            loss += l2_reg * torch.sum(w * w) / 2.
+
             if i >= nb_set_parameters - 2:
-                loss += l2_smooth*norm_diff(w)
-                
+                loss += l2_smooth * norm_diff(w)
+
         return loss
 
-
-    def fit(self, X, T, E, init_method = 'glorot_uniform', optimizer ='adam', 
-            lr = 1e-4, num_epochs = 1000, dropout = 0.2, l2_reg=1e-2, 
+    def fit(self, X, T, E, init_method='glorot_uniform', optimizer='adam',
+            lr=1e-4, num_epochs=1000, dropout=None, l2_reg=1e-2,
             l2_smooth=1e-2, batch_normalization=False, bn_and_dropout=False,
-            verbose=True, extra_pct_time = 0.1, is_min_time_zero=True):
+            verbose=True, extra_pct_time=0.1, is_min_time_zero=True):
         """ Fit the estimator based on the given parameters.
 
         Parameters:
@@ -247,7 +242,7 @@ class BaseMultiTaskModel(BaseModel):
         * `num_epochs`: **int** *(default=1000)* -- 
             The number of iterations in the optimization
 
-        * `dropout`: **float** *(default=0.5)* -- 
+        * `dropout`: **float** *(default=`None`)* --
             Randomly sets a fraction rate of input units to 0 
             at each update during training time, which helps prevent overfitting.
 
@@ -347,38 +342,37 @@ class BaseMultiTaskModel(BaseModel):
         # Extracting data parameters
         nb_units, self.num_vars = X.shape
         input_shape = self.num_vars
-    
+
         # Scaling data 
         if self.auto_scaler:
-            X = self.scaler.fit_transform( X ) 
+            X = self.scaler.fit_transform(X)
 
-        # Building the time axis, time buckets and output Y
+            # Building the time axis, time buckets and output Y
         X_cens, X_uncens, Y_cens, Y_uncens \
             = self.compute_XY(X, T, E, is_min_time_zero, extra_pct_time)
 
         # Initializing the model
-        model = nn.NeuralNet(input_shape, self.num_times, self.structure, 
-                             init_method, dropout, batch_normalization, 
-                             bn_and_dropout )
+        model = nn.NeuralNet(input_shape, self.num_times, self.structure,
+                             init_method, dropout, batch_normalization,
+                             bn_and_dropout)
 
         # Creating the Triangular matrix
-        Triangle = np.tri(self.num_times, self.num_times + 1, dtype=np.float32) 
+        Triangle = np.tri(self.num_times, self.num_times + 1, dtype=np.float32)
         Triangle = torch.FloatTensor(Triangle)
 
         # Performing order 1 optimization
-        model, loss_values = opt.optimize(self.loss_function, model, optimizer, 
-            lr, num_epochs, verbose,  X_cens=X_cens, X_uncens=X_uncens, 
-            Y_cens=Y_cens, Y_uncens=Y_uncens, Triangle=Triangle, 
-            l2_reg=l2_reg, l2_smooth=l2_smooth)
+        model, loss_values = opt.optimize(self.loss_function, model, optimizer,
+                                          lr, num_epochs, verbose, X_cens=X_cens, X_uncens=X_uncens,
+                                          Y_cens=Y_cens, Y_uncens=Y_uncens, Triangle=Triangle,
+                                          l2_reg=l2_reg, l2_smooth=l2_smooth)
 
         # Saving attributes
         self.model = model.eval()
         self.loss_values = loss_values
 
         return self
-    
 
-    def predict(self, x, t = None):
+    def _predict(self, x, t=None, **kwargs):
         """ Predicting the hazard, density and survival functions
         
         Parameters:
@@ -392,16 +386,16 @@ class BaseMultiTaskModel(BaseModel):
              time at which the prediction should be performed. 
              If None, then return the function for all available t.
         """
-        
+
         # Convert x into the right format
         x = utils.check_data(x)
 
         # Scaling the data
         if self.auto_scaler:
             if x.ndim == 1:
-                x = self.scaler.transform( x.reshape(1, -1) )
+                x = self.scaler.transform(x.reshape(1, -1))
             elif x.ndim == 2:
-                x = self.scaler.transform( x )
+                x = self.scaler.transform(x)
         else:
             # Ensuring x has 2 dimensions
             if x.ndim == 1:
@@ -409,30 +403,29 @@ class BaseMultiTaskModel(BaseModel):
 
         # Transforming into pytorch objects
         x = torch.FloatTensor(x)
-                
+
         # Predicting using linear/nonlinear function
         score_torch = self.model(x)
         score = score_torch.data.numpy()
-                
+
         # Cretaing the time triangles
-        Triangle1 = np.tri(self.num_times , self.num_times + 1 )
-        Triangle2 = np.tri(self.num_times+1 , self.num_times + 1 )
+        Triangle1 = np.tri(self.num_times, self.num_times + 1)
+        Triangle2 = np.tri(self.num_times + 1, self.num_times + 1)
 
         # Calculating the score, density, hazard and Survival
-        phi = np.exp( np.dot(score, Triangle1) )
+        phi = np.exp(np.dot(score, Triangle1))
         div = np.repeat(np.sum(phi, 1).reshape(-1, 1), phi.shape[1], axis=1)
-        density = (phi/div)
+        density = (phi / div)
         Survival = np.dot(density, Triangle2)
-        hazard = density[:, :-1]/Survival[:, 1:]
+        hazard = density[:, :-1] / Survival[:, 1:]
 
         # Returning the full functions of just one time point
         if t is None:
             return hazard, density, Survival
         else:
-            min_abs_value = [abs(a_j_1-t) for (a_j_1, a_j) in self.time_buckets]
+            min_abs_value = [abs(a_j_1 - t) for (a_j_1, a_j) in self.time_buckets]
             index = np.argmin(min_abs_value)
             return hazard[:, index], density[:, index], Survival[:, index]
-
 
     def predict_risk(self, x, use_log=False):
         """ Computing the risk score 
@@ -456,7 +449,6 @@ class BaseMultiTaskModel(BaseModel):
             return risk
 
 
-
 class LinearMultiTaskModel(BaseMultiTaskModel):
     """ LinearMultiTaskModel is the original Multi-Task model, 
         a.k.a the Multi-Task Logistic Regression model (MTLR).
@@ -478,25 +470,24 @@ class LinearMultiTaskModel(BaseMultiTaskModel):
                 applied
 
     """
-    
-    def __init__(self, bins = 100, auto_scaler=True):
+
+    def __init__(self, bins=100, auto_scaler=True):
         super(LinearMultiTaskModel, self).__init__(
-            structure = None, bins = bins, auto_scaler=auto_scaler)
+            structure=None, bins=bins, auto_scaler=auto_scaler)
 
-
-    def fit(self, X, T, E, init_method = 'glorot_uniform', optimizer ='adam', 
-            lr = 1e-4, num_epochs = 1000, l2_reg=1e-2, l2_smooth=1e-2, 
-            verbose=True, extra_pct_time = 0.1, is_min_time_zero=True):
-
-        super(LinearMultiTaskModel, self).fit(X=X, T=T, E=E, 
-            init_method = init_method, optimizer =optimizer, 
-            lr = lr, num_epochs = num_epochs, dropout = None, l2_reg=l2_reg, 
-            l2_smooth=l2_smooth, batch_normalization=False, 
-            bn_and_dropout=False, verbose=verbose, 
-            extra_pct_time = extra_pct_time, is_min_time_zero=is_min_time_zero)
+    def fit(self, X, T, E, init_method='glorot_uniform', optimizer='adam',
+            lr=1e-4, num_epochs=1000, dropout=0.2, l2_reg=1e-2,
+            l2_smooth=1e-2, batch_normalization=False, bn_and_dropout=False,
+            verbose=True, extra_pct_time=0.1, is_min_time_zero=True):
+        super(LinearMultiTaskModel, self).fit(X=X, T=T, E=E,
+                                              init_method=init_method, optimizer=optimizer,
+                                              lr=lr, num_epochs=num_epochs, dropout=None, l2_reg=l2_reg,
+                                              l2_smooth=l2_smooth, batch_normalization=False,
+                                              bn_and_dropout=False, verbose=verbose,
+                                              extra_pct_time=extra_pct_time, is_min_time_zero=is_min_time_zero)
 
         return self
-    
+
 
 class NeuralMultiTaskModel(BaseMultiTaskModel):
     """ NeuralMultiTaskModel is the Neural Multi-Task Logistic Regression 
@@ -557,39 +548,38 @@ class NeuralMultiTaskModel(BaseMultiTaskModel):
     * `auto_scaler`: **boolean** *(default=True)* -- 
         Determines whether a sklearn scaler should be automatically applied
     """
-    
-    def __init__(self, structure, bins = 100, auto_scaler = True):
+
+    def __init__(self, structure, bins=100, auto_scaler=True):
 
         # Checking the validity of structure
         structure = nn.check_mlp_structure(structure)
 
         # Initializing the instance
         super(NeuralMultiTaskModel, self).__init__(
-            structure = structure, bins = bins, auto_scaler = auto_scaler)
-    
-    
+            structure=structure, bins=bins, auto_scaler=auto_scaler)
+
     def __repr__(self):
         """ Representing the class object """
 
         if self.structure is None:
             super(NeuralMultiTaskModel, self).__repr__()
             return self.name
-            
+
         else:
             S = len(self.structure)
             self.name = self.__class__.__name__
             empty = len(self.name)
             self.name += '( '
             for i, s in enumerate(self.structure):
-                n = 'Layer({}): '.format(i+1)
-                activation = nn.activation_function(s['activation'], 
-                    return_text=True)
-                n += 'activation = {}, '.format( s['activation'] )
-                n += 'units = {} '.format( s['num_units'] )
-                
-                if i != S-1:
+                n = 'Layer({}): '.format(i + 1)
+                activation = nn.activation_function(s['activation'],
+                                                    return_text=True)
+                n += 'activation = {}, '.format(s['activation'])
+                n += 'units = {} '.format(s['num_units'])
+
+                if i != S - 1:
                     self.name += n + '; \n'
-                    self.name += empty*' ' + '  '
+                    self.name += empty * ' ' + '  '
                 else:
                     self.name += n
             self.name = self.name + ')'
@@ -598,9 +588,9 @@ class NeuralMultiTaskModel(BaseMultiTaskModel):
 
 def norm_diff(W):
     """ Special norm function for the last layer of the MTLR """
-    dims=len(W.shape)
-    if dims==1:
-        diff = W[1:]-W[:-1]
-    elif dims==2:
-        diff = W[1:, :]-W[:-1, :]
-    return torch.sum(diff*diff)
+    dims = len(W.shape)
+    if dims == 1:
+        diff = W[1:] - W[:-1]
+    elif dims == 2:
+        diff = W[1:, :] - W[:-1, :]
+    return torch.sum(diff * diff)
