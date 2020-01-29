@@ -10,9 +10,9 @@ from pysurvival.models import BaseModel
 from pysurvival.models._survival_forest import _SurvivalForestModel
 from pysurvival import PYTHON_VERSION
 
-
 # Available Splitting
-SPLITTING_RULES = { 'logrank': 1, 'maxstat': 4, 'extratrees':5}
+SPLITTING_RULES = {'logrank': 1, 'maxstat': 4, 'extratrees': 5}
+
 
 class BaseSurvivalForest(BaseModel):
     """
@@ -32,14 +32,14 @@ class BaseSurvivalForest(BaseModel):
 
     """
 
-    def __init__(self, splitrule = "Logrank", num_trees = 10):
+    def __init__(self, splitrule="Logrank", num_trees=10):
 
         # Checking the format of num_trees
-        if not ( isinstance(num_trees, int) or isinstance(num_trees, float) ):
+        if not (isinstance(num_trees, int) or isinstance(num_trees, float)):
             error = '{} is not a valid value for "num_trees" '
             error += 'as "num_trees" is a positive integer'.format(num_trees)
             raise ValueError(error)
-        if num_trees <= 0 :
+        if num_trees <= 0:
             error = '{} is not a valid value for "num_trees" '
             error += 'as "num_trees" is a positive integer'.format(num_trees)
             raise ValueError(error)
@@ -57,8 +57,7 @@ class BaseSurvivalForest(BaseModel):
         self.model = _SurvivalForestModel()
 
         # Initializing the elements from BaseModel
-        super(BaseSurvivalForest, self).__init__(auto_scaler = False)
-
+        super(BaseSurvivalForest, self).__init__(auto_scaler=False)
 
     def save(self, path_file):
         """ Save the model parameters of the model and compress them into 
@@ -76,19 +75,18 @@ class BaseSurvivalForest(BaseModel):
 
         # Delete the C++ object before saving
         del self.model
-        
+
         # Saving the model
         super(BaseSurvivalForest, self).save(path_file)
 
         # Re-introduce the C++ object
         self.model = _SurvivalForestModel()
         self.load_properties()
-        
 
     def load(self, path_file):
         """ Load the model parameters from a zip file into a C++ external
             model 
-        """   
+        """
 
         # Loading the model
         super(BaseSurvivalForest, self).load(path_file)
@@ -97,12 +95,11 @@ class BaseSurvivalForest(BaseModel):
         self.model = _SurvivalForestModel()
         self.load_properties()
 
-
-    def fit(self, X, T, E, max_features = 'sqrt', max_depth = 5, 
-            min_node_size = 10, num_threads = -1, weights = None, 
-            sample_size_pct = 0.63, alpha = 0.5, minprop=0.1,
-            num_random_splits = 100, importance_mode = 'impurity_corrected', 
-            seed = None, save_memory=False ):
+    def fit(self, X, T, E, max_features='sqrt', max_depth=5,
+            min_node_size=10, num_threads=-1, weights=None,
+            sample_size_pct=0.63, alpha=0.5, minprop=0.1,
+            num_random_splits=100, importance_mode='impurity_corrected',
+            seed=None, save_memory=False):
         """
         Arguments:
         ---------
@@ -238,15 +235,15 @@ class BaseSurvivalForest(BaseModel):
         all_data_features = ["time", "event"] + features
 
         # Transforming the strings into bytes
-        all_data_features = utils.as_bytes(all_data_features, 
-            python_version=PYTHON_VERSION)
+        all_data_features = utils.as_bytes(all_data_features,
+                                           python_version=PYTHON_VERSION)
 
         # Checking the format of the data 
         X, T, E = utils.check_data(X, T, E)
         if X.ndim == 1:
-            X = X.reshape(1,-1)
-            T = T.reshape(1,-1)
-            E = E.reshape(1,-1)
+            X = X.reshape(1, -1)
+            T = T.reshape(1, -1)
+            E = E.reshape(1, -1)
         input_data = np.c_[T, E, X]
 
         # Number of trees
@@ -257,17 +254,17 @@ class BaseSurvivalForest(BaseModel):
             seed = 0
 
         # sample_size_pct
-        if not isinstance(sample_size_pct, float): 
+        if not isinstance(sample_size_pct, float):
             error = "Error: Invalid value for sample_size_pct, "
             error += "please provide a value that is > 0 and <= 1."
-            raise ValueError(error) 
+            raise ValueError(error)
 
-        if (sample_size_pct <= 0 or sample_size_pct > 1) :
+        if (sample_size_pct <= 0 or sample_size_pct > 1):
             error = "Error: Invalid value for sample_size_pct, "
             error += "please provide a value that is > 0 and <= 1."
-            raise ValueError(error)        
+            raise ValueError(error)
 
-        # Split Rule
+            # Split Rule
         if self.splitrule.lower() == 'logrank':
             split_mode = 1
             alpha = 0
@@ -279,25 +276,25 @@ class BaseSurvivalForest(BaseModel):
             num_random_splits = 1
 
             # Maxstat splitting
-            if not isinstance(alpha, float): 
+            if not isinstance(alpha, float):
                 error = "Error: Invalid value for alpha, "
                 error += "please provide a value that is > 0 and < 1."
-                raise ValueError(error) 
+                raise ValueError(error)
 
-            if (alpha <= 0 or alpha >= 1) :
+            if (alpha <= 0 or alpha >= 1):
                 error = "Error: Invalid value for alpha, "
                 error += "please provide a value between 0 and 1."
                 raise ValueError(error)
 
-            if not isinstance(minprop, float): 
+            if not isinstance(minprop, float):
                 error = "Error: Invalid value for minprop, "
                 error += "please provide a value between 0 and 0.5"
-                raise ValueError(error)    
+                raise ValueError(error)
 
-            if (minprop < 0 or minprop > 0.5) :
+            if (minprop < 0 or minprop > 0.5):
                 error = "Error: Invalid value for minprop, "
                 error += "please provide a value between 0 and 0.5"
-                raise ValueError(error)             
+                raise ValueError(error)
 
         elif self.splitrule.lower() == 'extratrees':
             split_mode = 5
@@ -309,10 +306,10 @@ class BaseSurvivalForest(BaseModel):
         if isinstance(self.max_features, str):
 
             if self.max_features.lower() == 'sqrt':
-                num_variables_to_use = int( np.sqrt(self.num_variables) )
+                num_variables_to_use = int(np.sqrt(self.num_variables))
 
-            elif 'log' in self.max_features.lower() :
-                num_variables_to_use = int( np.log(self.num_variables) )
+            elif 'log' in self.max_features.lower():
+                num_variables_to_use = int(np.log(self.num_variables))
 
             elif self.max_features.lower() == 'all':
                 num_variables_to_use = self.num_variables
@@ -321,10 +318,10 @@ class BaseSurvivalForest(BaseModel):
                 raise ValueError("Unknown max features option")
 
         elif isinstance(self.max_features, float) or \
-            isinstance(self.max_features, int):
+                isinstance(self.max_features, int):
 
             if 0 < self.max_features < 1:
-                num_variables_to_use = int(self.num_variables*self.max_features)
+                num_variables_to_use = int(self.num_variables * self.max_features)
 
             elif self.max_features >= 1:
                 num_variables_to_use = min(self.num_variables, self.max_features)
@@ -342,15 +339,15 @@ class BaseSurvivalForest(BaseModel):
             raise ValueError("Unknown max features option")
 
         # Defining importance mode
-        if 'permutation' in importance_mode.lower() :
+        if 'permutation' in importance_mode.lower():
 
             if 'scaled' in importance_mode.lower() or \
-            'normalized' in importance_mode.lower():
+                    'normalized' in importance_mode.lower():
                 importance_mode = 2
             else:
                 importance_mode = 3
 
-        elif 'impurity' in importance_mode.lower() :
+        elif 'impurity' in importance_mode.lower():
             importance_mode = 5
 
         else:
@@ -359,7 +356,7 @@ class BaseSurvivalForest(BaseModel):
 
         # Weights
         if weights is None:
-            case_weights = [1./N]*N
+            case_weights = [1. / N] * N
         else:
             case_weights = utils.check_data(weights)
 
@@ -371,11 +368,11 @@ class BaseSurvivalForest(BaseModel):
 
         # Fitting the model using the C++ object
         verbose = True
-        self.model.fit( input_data, all_data_features, case_weights,
-                num_trees, num_variables_to_use, min_node_size, max_depth,
-                alpha, minprop, num_random_splits, sample_size_pct, 
-                importance_mode, split_mode, verbose, seed, num_threads, 
-                save_memory)
+        self.model.fit(input_data, all_data_features, case_weights,
+                       num_trees, num_variables_to_use, min_node_size, max_depth,
+                       alpha, minprop, num_random_splits, sample_size_pct,
+                       importance_mode, split_mode, verbose, seed, num_threads,
+                       save_memory)
 
         # Saving the attributes
         self.save_properties()
@@ -390,55 +387,55 @@ class BaseSurvivalForest(BaseModel):
         self.variable_importance_table = pd.DataFrame(
             data={'feature': list(self.variable_importance.keys()),
                   'importance': list(self.variable_importance.values())
-                    },
-            columns=['feature', 'importance']).\
+                  },
+            columns=['feature', 'importance']). \
             sort_values('importance', ascending=0).reset_index(drop=True)
         importance = self.variable_importance_table['importance'].values
         importance = np.maximum(importance, 0.)
-        sum_imp = sum(importance)*1.
-        self.variable_importance_table['pct_importance']= importance/sum_imp
+        sum_imp = sum(importance) * 1.
+        self.variable_importance_table['pct_importance'] = importance / sum_imp
 
         return self
 
-
-    def predict(self, X, t = None, num_threads=-1):
+    def _predict(self, x, t=None, **kwargs):
+        num_threads = kwargs.pop("num_threads", -1)
 
         # Checking if the data has the right format
-        X = utils.check_data(X)
+        X = utils.check_data(x)
         if X.ndim == 1:
-            X = X.reshape(1,-1)
-        T = np.array([1.]*X.shape[0])
-        E = np.array([1.]*X.shape[0])
+            X = X.reshape(1, -1)
+        T = np.array([1.] * X.shape[0])
+        E = np.array([1.] * X.shape[0])
         input_data = np.c_[T, E, X]
 
         # Loading the attributes of the model
         self.load_properties()
 
         # Computing Survival
-        survival = np.array(self.model.predict_survival(input_data,num_threads))     
+        survival = np.array(self.model.predict_survival(input_data, num_threads))
 
         # Computing hazard
-        hazard = np.array(self.model.predict_hazard(input_data, num_threads))  
+        hazard = np.array(self.model.predict_hazard(input_data, num_threads))
 
         # Computing density
-        density  = hazard*survival
+        density = hazard * survival
 
         if t is None:
             return hazard, density, survival
         else:
-            min_index = [ abs(a_j_1-t) for (a_j_1, a_j) in self.time_buckets]
+            min_index = [abs(a_j_1 - t) for (a_j_1, a_j) in self.time_buckets]
             index = np.argmin(min_index)
             return hazard[:, index], density[:, index], survival[:, index]
 
-
-    def predict_risk(self, X, num_threads=-1):
+    def predict_risk(self, x, **kwargs):
+        num_threads = kwargs.pop("num_threads", -1)
 
         # Checking if the data has the right format
-        X = utils.check_data(X)
+        X = utils.check_data(x)
         if X.ndim == 1:
-            X = X.reshape(1,-1)
-        T = np.array([1.]*X.shape[0])
-        E = np.array([1.]*X.shape[0])
+            X = X.reshape(1, -1)
+        T = np.array([1.] * X.shape[0])
+        E = np.array([1.] * X.shape[0])
         input_data = np.c_[T, E, X]
 
         # Loading the attributes of the model
@@ -448,97 +445,95 @@ class BaseSurvivalForest(BaseModel):
         risk = self.model.predict_risk(input_data, num_threads)
         return np.array(risk)
 
-
     def save_properties(self):
         """ Loading the properties of the model """
 
-        self.times                     = self.model.unique_timepoints
-        self.num_trees                 = self.model.num_trees
-        self.chf                       = self.model.chf
-        self.is_ordered                = self.model.is_ordered
-        self.split_varIDs              = self.model.split_varIDs
-        self.split_values              = self.model.split_values
-        self.child_nodeIDs             = self.model.child_nodeIDs
-        self.status_varID              = self.model.status_varID
-        self.overall_prediction_error  = self.model.overall_prediction_error
-        self.dependent_varID           = self.model.dependent_varID
-        self.min_node_size             = self.model.min_node_size
-        self.variable_importance_      = self.model.variable_importance
-        self.mtry                      = self.model.mtry
+        self.times = self.model.unique_timepoints
+        self.num_trees = self.model.num_trees
+        self.chf = self.model.chf
+        self.is_ordered = self.model.is_ordered
+        self.split_varIDs = self.model.split_varIDs
+        self.split_values = self.model.split_values
+        self.child_nodeIDs = self.model.child_nodeIDs
+        self.status_varID = self.model.status_varID
+        self.overall_prediction_error = self.model.overall_prediction_error
+        self.dependent_varID = self.model.dependent_varID
+        self.min_node_size = self.model.min_node_size
+        self.variable_importance_ = self.model.variable_importance
+        self.mtry = self.model.mtry
         self.num_independent_variables = self.model.num_independent_variables
-        self.variable_names            = self.model.variable_names
-
+        self.variable_names = self.model.variable_names
 
     def load_properties(self):
         """ Loading the properties of the model """
 
-        self.model.unique_timepoints         = self.times
-        self.model.num_trees                 = self.num_trees
-        self.model.chf                       = self.chf
-        self.model.is_ordered                = self.is_ordered
-        self.model.split_varIDs              = self.split_varIDs
-        self.model.split_values              = self.split_values
-        self.model.child_nodeIDs             = self.child_nodeIDs
-        self.model.status_varID              = self.status_varID
-        self.model.overall_prediction_error  = self.overall_prediction_error
-        self.model.dependent_varID           = self.dependent_varID
-        self.model.min_node_size             = self.min_node_size
-        self.model.variable_importance       = self.variable_importance_
-        self.model.mtry                      = self.mtry
+        self.model.unique_timepoints = self.times
+        self.model.num_trees = self.num_trees
+        self.model.chf = self.chf
+        self.model.is_ordered = self.is_ordered
+        self.model.split_varIDs = self.split_varIDs
+        self.model.split_values = self.split_values
+        self.model.child_nodeIDs = self.child_nodeIDs
+        self.model.status_varID = self.status_varID
+        self.model.overall_prediction_error = self.overall_prediction_error
+        self.model.dependent_varID = self.dependent_varID
+        self.model.min_node_size = self.min_node_size
+        self.model.variable_importance = self.variable_importance_
+        self.model.mtry = self.mtry
         self.model.num_independent_variables = self.num_independent_variables
-        self.model.variable_names            = self.variable_names
+        self.model.variable_names = self.variable_names
 
 
 class RandomSurvivalForestModel(BaseSurvivalForest):
 
-    def __init__(self, num_trees = 10):
+    def __init__(self, num_trees=10):
         super(RandomSurvivalForestModel, self).__init__("logrank", num_trees)
 
-    def fit( self, X, T, E, max_features = 'sqrt', max_depth = 5, 
-            min_node_size = 10, num_threads = -1, weights = None, 
-            sample_size_pct = 0.63, importance_mode = 'normalized_permutation', 
-            seed = None, save_memory=False ):
-
-        return super(RandomSurvivalForestModel, self).fit(X=X, T=T, E=E, 
-            max_features=max_features, max_depth=max_depth, weights = weights, 
-            min_node_size=min_node_size, num_threads=num_threads, 
-            sample_size_pct = sample_size_pct, seed = seed, 
-            save_memory=save_memory, importance_mode = importance_mode)
+    def fit(self, X, T, E, max_features='sqrt', max_depth=5,
+            min_node_size=10, num_threads=-1, weights=None,
+            sample_size_pct=0.63, alpha=0.5, minprop=0.1,
+            num_random_splits=100, importance_mode='normalized_permutation',
+            seed=None, save_memory=False):
+        return super(RandomSurvivalForestModel, self).fit(X=X, T=T, E=E,
+                                                          max_features=max_features, max_depth=max_depth,
+                                                          weights=weights,
+                                                          min_node_size=min_node_size, num_threads=num_threads,
+                                                          sample_size_pct=sample_size_pct, seed=seed,
+                                                          save_memory=save_memory, importance_mode=importance_mode)
 
 
 class ExtraSurvivalTreesModel(BaseSurvivalForest):
 
-    def __init__(self, num_trees = 10):
+    def __init__(self, num_trees=10):
         super(ExtraSurvivalTreesModel, self).__init__("extratrees", num_trees)
 
-    def fit( self, X, T, E, max_features = 'sqrt', max_depth = 5, 
-            min_node_size = 10, num_threads = -1, weights = None, 
-            sample_size_pct = 0.63,  num_random_splits = 100, 
-            importance_mode = 'normalized_permutation', 
-            seed = None, save_memory=False ):
-
-        return super(ExtraSurvivalTreesModel, self).fit(X=X, T=T, E=E, 
-            max_features=max_features, max_depth=max_depth, weights = weights, 
-            min_node_size=min_node_size, num_threads=num_threads, 
-            sample_size_pct = sample_size_pct, seed = seed, 
-            num_random_splits = num_random_splits, save_memory=save_memory,
-            importance_mode = importance_mode)
+    def fit(self, X, T, E, max_features='sqrt', max_depth=5,
+            min_node_size=10, num_threads=-1, weights=None,
+            sample_size_pct=0.63, alpha=0.5, minprop=0.1,
+            num_random_splits=100, importance_mode='normalized_permutation',
+            seed=None, save_memory=False):
+        return super(ExtraSurvivalTreesModel, self).fit(X=X, T=T, E=E,
+                                                        max_features=max_features, max_depth=max_depth, weights=weights,
+                                                        min_node_size=min_node_size, num_threads=num_threads,
+                                                        sample_size_pct=sample_size_pct, seed=seed,
+                                                        num_random_splits=num_random_splits, save_memory=save_memory,
+                                                        importance_mode=importance_mode)
 
 
 class ConditionalSurvivalForestModel(BaseSurvivalForest):
 
-    def __init__(self, num_trees = 10):
+    def __init__(self, num_trees=10):
         super(ConditionalSurvivalForestModel, self).__init__("maxstat", num_trees)
 
-    def fit( self, X, T, E, max_features = 'sqrt', max_depth = 5, 
-            min_node_size = 10, num_threads = -1, weights = None, 
-            sample_size_pct = 0.63, alpha = 0.5, minprop=0.1,
-            importance_mode = 'normalized_permutation', seed = None, 
-            save_memory=False ):
-
-        return super(ConditionalSurvivalForestModel, self).fit(X=X, T=T, E=E, 
-            max_features = max_features, max_depth = max_depth, 
-            min_node_size = min_node_size, num_threads = num_threads, 
-            weights = weights, sample_size_pct = sample_size_pct, 
-            alpha = alpha, minprop=minprop, importance_mode = importance_mode, 
-            seed = seed, save_memory=save_memory )
+    def fit(self, X, T, E, max_features='sqrt', max_depth=5,
+            min_node_size=10, num_threads=-1, weights=None,
+            sample_size_pct=0.63, alpha=0.5, minprop=0.1,
+            num_random_splits=100, importance_mode='normalized_permutation',
+            seed=None, save_memory=False):
+        return super(ConditionalSurvivalForestModel, self).fit(X=X, T=T, E=E,
+                                                               max_features=max_features, max_depth=max_depth,
+                                                               min_node_size=min_node_size, num_threads=num_threads,
+                                                               weights=weights, sample_size_pct=sample_size_pct,
+                                                               alpha=alpha, minprop=minprop,
+                                                               importance_mode=importance_mode,
+                                                               seed=seed, save_memory=save_memory)

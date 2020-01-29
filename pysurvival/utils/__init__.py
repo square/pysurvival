@@ -75,22 +75,7 @@ def check_data(*args):
             else:
                 result = x[0]
 
-    return result               
-
-
-def as_bytes(string_array, python_version=3):
-    """ Transforming an array of string into an array of bytes in Python 3 
-    """
-
-    if python_version >= 3:
-        results = []
-        for s in string_array:
-            # results.append( codecs.latin_1_encode(s)[0] )
-            results.append( s.encode('utf-8') )
-    else:
-        results = string_array
-
-    return results
+    return result
 
 
 def rank_scores(T, E):

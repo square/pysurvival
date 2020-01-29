@@ -69,7 +69,7 @@ map<int, double> concordance_index(vector<double> risk, vector<double> T,
 					w *= censored_km.predict_survival(T[i], true);
 
 					// count pairs 
-					if( (T[i]<T[j]) | (T[j]==T[i] & E[j]==0) ){
+					if( (T[i]<T[j]) || (T[j]==T[i] && E[j]==0) ){
 						weightedPairs += 1./w;
 
 						// concordant pairs
@@ -78,7 +78,7 @@ map<int, double> concordance_index(vector<double> risk, vector<double> T,
 						}
 
 						// pairs with equal predictions count 1/2 or nothing
-						if ((risk[i] == risk[j]) & include_ties){
+						if ((risk[i] == risk[j]) && include_ties){
 							weightedConcPairs += (1./w)/2.;
 						}
 
@@ -251,7 +251,7 @@ map<int, vector<double> > time_ROC(vector<double> risk, vector<double> T,
 		i = order_risk[j];
 
 		// Calculating the True Positive Rates
-		if ( (T[i] < t) and (E[i] == 1.) ){
+		if ( (T[i] < t) && (E[i] == 1.) ){
 			S_censored = fmax(censored_km.predict_survival(T[i], true), 1e-4);
 			weighted_cases[j] = 1./(N*S_censored);
 		}

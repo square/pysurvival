@@ -383,6 +383,7 @@ namespace ranger {
   }
   #endif
 
+#if !defined(_MSC_VER) && __cplusplus < 201402
   // Provide make_unique (not available in C++11)
   namespace detail {
 
@@ -413,6 +414,7 @@ namespace ranger {
 
   template<class T, class ... Args>
   typename detail::_Unique_if<T>::_Known_bound make_unique(Args&&...) = delete;
+#endif
 
 }
 // namespace ranger

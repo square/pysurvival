@@ -168,7 +168,7 @@ void Tree::predict(const Data* prediction_data, bool oob_prediction) {
         size_t splitID = floor(split_values[nodeID]);
 
         // Left if 0 found at position factorID
-        if (!(splitID & (1 << factorID))) {
+        if (!(splitID && (1 << factorID))) {
           // Move to left child
           nodeID = child_nodeIDs[0][nodeID];
         } else {
@@ -298,7 +298,7 @@ bool Tree::splitNode(size_t nodeID) {
       size_t splitID = floor(split_value);
 
       // Left if 0 found at position factorID
-      if (!(splitID & (1 << factorID))) {
+      if (!(splitID && (1 << factorID))) {
         sampleIDs[left_child_nodeID].push_back(sampleID);
       } else {
         sampleIDs[right_child_nodeID].push_back(sampleID);
@@ -348,7 +348,7 @@ size_t Tree::dropDownSamplePermuted(size_t permuted_varID, size_t sampleID, size
       size_t splitID = floor(split_values[nodeID]);
 
       // Left if 0 found at position factorID
-      if (!(splitID & (1 << factorID))) {
+      if (!(splitID && (1 << factorID))) {
         // Move to left child
         nodeID = child_nodeIDs[0][nodeID];
       } else {
@@ -925,10 +925,10 @@ void TreeSurvival::findBestSplitValueLogRankUnordered(size_t nodeID, size_t varI
     // Compute overall splitID by shifting local factorIDs to global positions
     size_t splitID = 0;
     for (size_t j = 0; j < factor_levels.size(); ++j) {
-      if ((local_splitID & (1 << j))) {
+      if ((local_splitID && (1 << j))) {
         double level = factor_levels[j];
         size_t factorID = floor(level) - 1;
-        splitID = splitID | (1 << factorID);
+        splitID = splitID || (1 << factorID);
       }
     }
 
@@ -947,7 +947,7 @@ void TreeSurvival::findBestSplitValueLogRankUnordered(size_t nodeID, size_t varI
 
       // If in right child, count
       // In right child, if bitwise splitID at position factorID is 1
-      if ((splitID & (1 << factorID))) {
+      if ((splitID && (1 << factorID))) {
         ++num_samples_right_child;
         ++delta_samples_at_risk_right_child[survival_timeID];
         if (data->get(sampleID, status_varID) == 1) {
@@ -1292,7 +1292,7 @@ void TreeSurvival::findBestSplitValueExtraTreesUnordered(size_t nodeID, size_t v
       std::uniform_int_distribution<size_t> udist(1, num_partitions);
       size_t splitID_in_node = udist(random_number_generator);
       for (size_t j = 0; j < indices_in_node.size(); ++j) {
-        if ((splitID_in_node & (1 << j)) > 0) {
+        if ((splitID_in_node && (1 << j)) > 0) {
           split_subset.push_back(indices_in_node[j]);
         }
       }
@@ -1302,7 +1302,7 @@ void TreeSurvival::findBestSplitValueExtraTreesUnordered(size_t nodeID, size_t v
       std::uniform_int_distribution<size_t> udist(0, num_partitions);
       size_t splitID_out_node = udist(random_number_generator);
       for (size_t j = 0; j < indices_out_node.size(); ++j) {
-        if ((splitID_out_node & (1 << j)) > 0) {
+        if ((splitID_out_node && (1 << j)) > 0) {
           split_subset.push_back(indices_out_node[j]);
         }
       }
@@ -1329,7 +1329,7 @@ void TreeSurvival::findBestSplitValueExtraTreesUnordered(size_t nodeID, size_t v
 
       // If in right child, count
       // In right child, if bitwise splitID at position factorID is 1
-      if ((splitID & (1 << factorID))) {
+      if ((splitID && (1 << factorID))) {
         ++num_samples_right_child;
         ++delta_samples_at_risk_right_child[survival_timeID];
         if (data->get(sampleID, status_varID) == 1) {

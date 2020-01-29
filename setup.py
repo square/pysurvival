@@ -6,6 +6,7 @@
 # Version 2.0, January 2004
 # http://www.apache.org/licenses/
 
+import sys
 import os
 import codecs
 import re
@@ -56,7 +57,10 @@ def read_version(*file_paths):
     raise RuntimeError("Unable to find version string.")
 
 # Extensions Compilation arguments #
-extra_compile_args = ['-std=c++11', "-O3"] 
+if sys.platform.lower().startswith("win"):
+    extra_compile_args = ["/O2"]
+else:
+    extra_compile_args = ['-std=c++11', "-O3"]
 
 # Extensions info #
 ext_modules = [ 
@@ -142,6 +146,7 @@ setup(name=NAME,
           'Intended Audience :: Science/Research',
           'Operating System :: MacOS',
           'Operating System :: Unix',
+          'Operating System :: Microsoft :: Windows',
           'Programming Language :: Python :: 2',
           'Programming Language :: Python :: 2.7',
           'Programming Language :: Python :: 3',
