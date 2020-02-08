@@ -602,6 +602,8 @@ class NonLinearCoxPHModel(BaseModel):
         # Scaling data 
         if self.auto_scaler:
             X_original = self.scaler.fit_transform( X ) 
+        else:
+            X_original = X
             
         # Sorting X, T, E in descending order according to T
         order = np.argsort(-T)
