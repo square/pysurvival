@@ -129,7 +129,7 @@ map<int, vector<double> > brier_score(vector<vector<double> > Survival,
 	size_t i, j, M, N = Survival.size();
 	double censored_s, bs, t, S;
 	map<int, vector<double> > results;
-	int n, times_ = 0; //'times'
+	size_t n, times_ = 0; //'times'
 	int brier_scores_ = 1; //'brier_scores'
 	KaplanMeierModel censored_km;
 	vector<double> weights_km, times_to_consider, brier_scores_values;

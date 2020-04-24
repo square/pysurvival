@@ -29,19 +29,19 @@ vector<int>  argsort(vector<double> v, bool descending){
     vector<double> temp_v;
 
     if(descending){
-    	for (int i = 0; i < n; ++i){
+    	for (size_t i = 0; i < n; ++i){
     		temp_v.push_back(-v[i]);
     	}
     	v = temp_v;
     }
 
-    for (int i = 0; i < n; ++i){
+    for (size_t i = 0; i < n; ++i){
     	a.push_back(make_pair(v[i], i));
     }
 
     //sort indexes based on comparing values in v
     sort(a.begin(),a.end());
-    for (int i = 0; i < n; ++i){
+    for (size_t i = 0; i < n; ++i){
     	idx.push_back( a[i].second );
     }
     return idx;
@@ -53,7 +53,7 @@ vector<pair<double, double> > get_time_buckets(vector<double> times ){
     vector<pair<double, double> > results;
 
     // Computing the time buckets
-    for (int i = 0; i < N-1; ++i){
+    for (size_t i = 0; i < N-1; ++i){
         results.push_back(make_pair(times[i], times[i+1]));
     }
 
@@ -103,7 +103,7 @@ vector<double> reverse(vector<double> x){
 int argmin_buckets(double x, vector<pair<double, double> > buckets){
 	size_t index_x = 0, J = buckets.size();
 	double a, min_value = numeric_limits<double>::max();
-	for (int j = 0; j < J; ++j){
+	for (size_t j = 0; j < J; ++j){
 		a = buckets[j].first;
 		if(fabs(x-a)<= min_value){
 			min_value = fabs(x-a);
@@ -151,7 +151,7 @@ vector<double> cumsum( vector<double> v){
 	size_t N = v.size();
 	vector<double> results;
 	results.resize(N, 0.);
-	for (int i = 0; i < N; ++i){
+	for (size_t i = 0; i < N; ++i){
 		s += v[i];
 		results[i] = s;
 	}
@@ -186,7 +186,7 @@ map< int, vector<double> > baseline_functions(vector<double> score,
     vector<double> times, T_temp, E_temp;
     vector<int> desc_index = argsort(T, true);
     int n;
-    for (int i = 0; i < N; ++i){
+    for (size_t i = 0; i < N; ++i){
         n = desc_index[i];
         T_temp.push_back(T[n]);
         E_temp.push_back(E[n]);
@@ -195,7 +195,7 @@ map< int, vector<double> > baseline_functions(vector<double> score,
     E = E_temp;
 
 	// Calculating the Baseline hazard function
-    for (int i = 0; i < N; ++i){
+    for (size_t i = 0; i < N; ++i){
 
 		// Calculating the at risk variables
 		sum_theta_risk += score[i];

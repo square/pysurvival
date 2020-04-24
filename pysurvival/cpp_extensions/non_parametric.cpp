@@ -122,7 +122,7 @@ vector<double> KaplanMeierModel::fit(vector<double> T, vector<double> E,
     vector<double> T_temp, E_temp, weights_temp;
     vector<int> desc_index = argsort(T, true);
     int n;
-    for (int i = 0; i < N; ++i){
+    for (size_t i = 0; i < N; ++i){
         n = desc_index[i];
         T_temp.push_back(T[n]);
 
@@ -139,7 +139,7 @@ vector<double> KaplanMeierModel::fit(vector<double> T, vector<double> E,
 
     // Looping through the data to calculate Survival, hazard, 
     // Cumulative_Hazard and Variance 
-    for (int i = 0; i < N; ++i){
+    for (size_t i = 0; i < N; ++i){
 
         // Computing the at risk vector
         nb_at_risk += weights[i];
@@ -180,7 +180,7 @@ vector<double> KaplanMeierModel::fit(vector<double> T, vector<double> E,
     cum_std_error = 0.;
     survival_old = 1.;
 
-    for (int j = 0; j < Nt; ++j){
+    for (size_t j = 0; j < Nt; ++j){
 
         // Calculating hazard
         hazard_new = events[j]*1./at_risk[j];
@@ -382,7 +382,7 @@ vector<double> KernelModel::fit(vector<double> T, vector<double> E,
     	this->survival.push_back(1.-s);
     }
 
-    for (int i = 0; i < N; ++i){
+    for (size_t i = 0; i < N; ++i){
     	this->hazard.push_back( this->density[i]/max(this->survival[i], min_survival) );
     	this->cumulative_hazard.push_back(log(max(this->survival[i], min_survival)));
     }
