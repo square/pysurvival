@@ -40,6 +40,7 @@ namespace ranger {
 			if (col < num_cols_no_snp) {
 				return data[col * num_rows + row];
 			}
+			throw std::runtime_error("get(): col out of bounds");
 		};
 
 		size_t getVariableID(const std::string& variable_name) const;
@@ -67,6 +68,7 @@ namespace ranger {
 			if (col < num_cols_no_snp) {
 				return index_data[col * num_rows + row];
 			}
+			throw std::runtime_error("getIndex(): col out of bounds");
 		}
 
 		void loadData(std::vector <std::vector<double> > Input_Data, std::vector<std::string> variable_names){
