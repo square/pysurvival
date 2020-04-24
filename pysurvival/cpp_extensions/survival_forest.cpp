@@ -1046,7 +1046,7 @@ size_t ForestSurvival::getTreePredictionTerminalNodeID(size_t tree_idx, size_t s
 
       // Adjusting the number of threads to be <= number of cores
       uint max_num_threads = thread::hardware_concurrency();
-      if ((num_threads < 0) | ((uint)num_threads >= max_num_threads)){
+      if ((num_threads < 0) || ((uint)num_threads >= max_num_threads)){
         num_threads = max_num_threads; 
       } else if(num_threads == 0){
             num_threads = 1; 
@@ -1154,7 +1154,7 @@ size_t ForestSurvival::getTreePredictionTerminalNodeID(size_t tree_idx, size_t s
 
     // Adjusting the number of threads to be <= number of cores
     uint max_num_threads = thread::hardware_concurrency();
-    if ((num_threads < 0) | ((uint)num_threads >= max_num_threads)){
+    if ((num_threads < 0) || ((uint)num_threads >= max_num_threads)){
       num_threads = max_num_threads; 
     } else if(num_threads == 0){
           num_threads = 1; 

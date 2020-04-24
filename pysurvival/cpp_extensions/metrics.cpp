@@ -69,7 +69,7 @@ map<int, double> concordance_index(vector<double> risk, vector<double> T,
 					w *= censored_km.predict_survival(T[i], true);
 
 					// count pairs 
-					if( (T[i]<T[j]) | (T[j]==T[i] & E[j]==0) ){
+					if( (T[i]<T[j]) || (T[j]==T[i] && E[j]==0) ){
 						weightedPairs += 1./w;
 
 						// concordant pairs
@@ -78,7 +78,7 @@ map<int, double> concordance_index(vector<double> risk, vector<double> T,
 						}
 
 						// pairs with equal predictions count 1/2 or nothing
-						if ((risk[i] == risk[j]) & include_ties){
+						if ((risk[i] == risk[j]) && include_ties){
 							weightedConcPairs += (1./w)/2.;
 						}
 

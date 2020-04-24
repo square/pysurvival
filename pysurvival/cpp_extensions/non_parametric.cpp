@@ -149,7 +149,7 @@ vector<double> KaplanMeierModel::fit(vector<double> T, vector<double> E,
             nb_events += weights[i];
         }
 
-        if (i < N-1 & T[i] == T[i+1]){
+        if (i < N-1 && T[i] == T[i+1]){
             continue;
         } else{
             times.push_back(T[i]);
@@ -315,7 +315,7 @@ vector<double> KernelModel::fit(vector<double> T, vector<double> E,
 
     // check if the kernel matrix fits in memory
     size = this->times.size()*km_times.size();
-    while(k_ < 10 & size/exp(k_*log(10)) > 1.){
+    while(k_ < 10 && size/exp(k_*log(10)) > 1.){
     	k_+=1;
     }
 

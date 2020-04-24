@@ -205,7 +205,7 @@ map< int, vector<double> > baseline_functions(vector<double> score,
 			nb_fails += 1;
 		}
 
-		if (i < N-1 & T[i] == T[i+1]){
+		if (i < N-1 && T[i] == T[i+1]){
 			continue;
 		}
 
