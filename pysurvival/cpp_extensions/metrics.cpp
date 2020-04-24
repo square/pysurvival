@@ -141,7 +141,6 @@ map<int, vector<double> > brier_score(vector<vector<double> > Survival,
 
 	// Initializing/computing the brier score vector
 	M = times.size();
-	size_t Nt = time_buckets.size();
 	for (j = 0; j < M; ++j){
 		bs = 0.;
 

@@ -1006,7 +1006,6 @@ size_t ForestSurvival::getTreePredictionTerminalNodeID(size_t tree_idx, size_t s
 
       // variable names to be always selected
       std::vector<std::string> always_split_variable_names;
-      bool use_always_split_variable_names;
       always_split_variable_names.clear();
 
       // Dealing with unordered factor covariates-> all features are numerical so it doesn't apply
@@ -1062,8 +1061,6 @@ size_t ForestSurvival::getTreePredictionTerminalNodeID(size_t tree_idx, size_t s
 
       // Data
       std::unique_ptr<Data> data { };
-      size_t num_rows = input_data.size();
-      size_t num_cols = input_data[0].size();
       data = make_unique<Data>();
       data->loadData(input_data, variable_names);
 
@@ -1116,7 +1113,6 @@ size_t ForestSurvival::getTreePredictionTerminalNodeID(size_t tree_idx, size_t s
 
     // variable names to be always selected
     std::vector<std::string> always_split_variable_names;
-    bool use_always_split_variable_names;
     always_split_variable_names.clear();
 
     // Dealing with unordered factor covariates-> all features are numerical so it doesn't apply
@@ -1173,8 +1169,6 @@ size_t ForestSurvival::getTreePredictionTerminalNodeID(size_t tree_idx, size_t s
 
     // Data
     std::unique_ptr<Data> data { };
-    size_t num_rows = input_data.size();
-    size_t num_cols = input_data[0].size();
     data = make_unique<Data>();
     data->loadData(input_data, variable_names);
 
