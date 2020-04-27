@@ -69,7 +69,7 @@ map<int, double> concordance_index(vector<double> risk, vector<double> T,
 					w *= censored_km.predict_survival(T[i], true);
 
 					// count pairs 
-					if( (T[i]<T[j]) | (T[j]==T[i] & E[j]==0) ){
+					if( (T[i]<T[j]) || (T[j]==T[i] && E[j]==0) ){
 						weightedPairs += 1./w;
 
 						// concordant pairs
@@ -78,7 +78,7 @@ map<int, double> concordance_index(vector<double> risk, vector<double> T,
 						}
 
 						// pairs with equal predictions count 1/2 or nothing
-						if ((risk[i] == risk[j]) & include_ties){
+						if ((risk[i] == risk[j]) && include_ties){
 							weightedConcPairs += (1./w)/2.;
 						}
 
@@ -129,7 +129,7 @@ map<int, vector<double> > brier_score(vector<vector<double> > Survival,
 	size_t i, j, M, N = Survival.size();
 	double censored_s, bs, t, S;
 	map<int, vector<double> > results;
-	int n, times_ = 0; //'times'
+	size_t n, times_ = 0; //'times'
 	int brier_scores_ = 1; //'brier_scores'
 	KaplanMeierModel censored_km;
 	vector<double> weights_km, times_to_consider, brier_scores_values;
@@ -141,7 +141,6 @@ map<int, vector<double> > brier_score(vector<vector<double> > Survival,
 
 	// Initializing/computing the brier score vector
 	M = times.size();
-	size_t Nt = time_buckets.size();
 	for (j = 0; j < M; ++j){
 		bs = 0.;
 
