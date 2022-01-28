@@ -6,5 +6,4 @@ progressbar
 pyarrow
 scikit-learn 
 scipy
-sklearn
 torch
