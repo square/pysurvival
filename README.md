@@ -29,6 +29,10 @@ If you have already installed a working version of gcc, the easiest way to insta
 ```
 pip install pysurvival
 ```
+Alternatively, it can be done via conda:
+```bash
+conda install -c conda-forge pysurvival
+```
 The full description of the installation steps can be found [here](https://www.pysurvival.io/installation.html).
 
 ---
