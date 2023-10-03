@@ -5,7 +5,7 @@
 ## What is Pysurvival ?
 PySurvival is an open source python package for Survival Analysis modeling - *the modeling concept used to analyze or predict when an event is likely to happen*. It is built upon the most commonly used machine learning packages such [NumPy](http://www.numpy.org/), [SciPy](https://www.scipy.org/) and [PyTorch](https://pytorch.org/).
 
-PySurvival is compatible with Python 2.7-3.7.
+PySurvival is compatible with Python 2.7-3.10.
 
 Check out the documentation [here](https://www.pysurvival.io)
 
