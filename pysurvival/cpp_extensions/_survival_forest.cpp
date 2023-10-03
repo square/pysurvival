@@ -6345,9 +6345,9 @@ static void __pyx_tp_dealloc_10pysurvival_6models_16_survival_forest__SurvivalFo
   {
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
-    ++Py_REFCNT(o);
+    Py_SET_REFCNT(o, Py_REFCNT(o) + 1);
     __pyx_pw_10pysurvival_6models_16_survival_forest_20_SurvivalForestModel_3__dealloc__(o);
-    --Py_REFCNT(o);
+    Py_SET_REFCNT(o, Py_REFCNT(o) - 1);
     PyErr_Restore(etype, eval, etb);
   }
   (*Py_TYPE(o)->tp_free)(o);
@@ -6820,7 +6820,7 @@ static int __Pyx_modinit_type_init_code(void) {
   __pyx_vtable_10pysurvival_6models_16_survival_forest__SurvivalForestModel.predict_hazard = (std::vector<std::vector<double> >  (*)(struct __pyx_obj_10pysurvival_6models_16_survival_forest__SurvivalForestModel *, std::vector<std::vector<double> > , int __pyx_skip_dispatch, struct __pyx_opt_args_10pysurvival_6models_16_survival_forest_20_SurvivalForestModel_predict_hazard *__pyx_optional_args))__pyx_f_10pysurvival_6models_16_survival_forest_20_SurvivalForestModel_predict_hazard;
   __pyx_vtable_10pysurvival_6models_16_survival_forest__SurvivalForestModel.predict_risk = (std::vector<double>  (*)(struct __pyx_obj_10pysurvival_6models_16_survival_forest__SurvivalForestModel *, std::vector<std::vector<double> > , int __pyx_skip_dispatch, struct __pyx_opt_args_10pysurvival_6models_16_survival_forest_20_SurvivalForestModel_predict_risk *__pyx_optional_args))__pyx_f_10pysurvival_6models_16_survival_forest_20_SurvivalForestModel_predict_risk;
   if (PyType_Ready(&__pyx_type_10pysurvival_6models_16_survival_forest__SurvivalForestModel) < 0) __PYX_ERR(1, 57, __pyx_L1_error)
-  __pyx_type_10pysurvival_6models_16_survival_forest__SurvivalForestModel.tp_print = 0;
+  __pyx_type_10pysurvival_6models_16_survival_forest__SurvivalForestModel.tp_repr = 0;
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_10pysurvival_6models_16_survival_forest__SurvivalForestModel.tp_dictoffset && __pyx_type_10pysurvival_6models_16_survival_forest__SurvivalForestModel.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_10pysurvival_6models_16_survival_forest__SurvivalForestModel.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
