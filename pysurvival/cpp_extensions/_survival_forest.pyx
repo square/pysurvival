@@ -4,13 +4,15 @@
 # Importing cython and C++ 
 #---------------------------
 import cython
-from libcpp.vector cimport vector
-from libcpp.string cimport string
-from libcpp.pair cimport pair
-from libcpp.map cimport map
-from libcpp.set cimport set
-from libcpp cimport bool
+
 from libc.stdint cimport uint32_t as uint
+from libcpp cimport bool
+from libcpp.map cimport map
+from libcpp.pair cimport pair
+from libcpp.set cimport set
+from libcpp.string cimport string
+from libcpp.vector cimport vector
+
 
 # Importing C++ object SurvivalForestModel from SurvivalForestModel.h
 #-----------------------------------------------------------

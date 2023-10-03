@@ -4,17 +4,21 @@
 # Importing Numpy
 #-----------------
 import numpy as np
+
 cimport numpy as cnp
 
 # Importing cython and C++ 
 #---------------------------
+
 import cython
-from libcpp.vector cimport vector
-from libcpp.string cimport string
+
+from libc.stdlib cimport RAND_MAX, rand, srand
+from libcpp cimport bool
 from libcpp.map cimport map
 from libcpp.set cimport set
-from libcpp cimport bool
-from libc.stdlib cimport rand, srand, RAND_MAX
+from libcpp.string cimport string
+from libcpp.vector cimport vector
+
 
 # Importing math functions
 #--------------------------
