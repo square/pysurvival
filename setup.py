@@ -8,6 +8,7 @@ import codecs
 import os
 import re
 from distutils.core import Extension, setup
+from setuptools import find_packages
 
 # Package meta-data.
 NAME = "pysurvival"
@@ -117,5 +118,6 @@ setup(
         "Topic :: Software Development",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
+    packages=find_packages(),
     ext_modules=ext_modules,
 )
