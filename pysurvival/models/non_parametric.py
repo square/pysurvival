@@ -255,7 +255,6 @@ class NonParametricModel(BaseModel):
 
 
 class KaplanMeierModel(NonParametricModel):
-
     """Kaplan-Meier Model
         ------------------
 
@@ -286,7 +285,6 @@ class KaplanMeierModel(NonParametricModel):
 
 
 class SmoothKaplanMeierModel(NonParametricModel):
-
     """SmoothKaplanMeierModel
     ------------------------
     Because the standard Kaplan-Meier estimator is a step function with jumps

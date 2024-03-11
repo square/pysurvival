@@ -8,6 +8,7 @@ import codecs
 import os
 import re
 from distutils.core import Extension, setup
+
 from setuptools import find_packages
 
 # Package meta-data.

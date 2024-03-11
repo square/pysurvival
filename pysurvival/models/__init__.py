@@ -6,7 +6,6 @@ import tempfile
 import zipfile
 
 import numpy as np
-import pandas as pd
 import pyarrow as pa
 import torch
 from sklearn.preprocessing import StandardScaler
